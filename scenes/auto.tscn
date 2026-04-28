@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ctp6c5ids34rm"]
+
+[ext_resource type="Script" uid="uid://brgeutlwpposn" path="res://scripts/auto.gd" id="1_1uxfn"]
+[ext_resource type="Texture2D" uid="uid://bw6cqctfpbn0h" path="res://assets/Auto/pixelcar/PNG/6500/Right/1Rpix6500.png" id="2_bo7k4"]
+[ext_resource type="Texture2D" uid="uid://cww0ndpniuv5o" path="res://assets/Auto/pixelcar/PNG/6500/Right/2Rpix6500.png" id="3_0tup5"]
+[ext_resource type="Texture2D" uid="uid://dn5dqwaib2cp" path="res://assets/Auto/pixelcar/PNG/6500/Right/3Rpix6500.png" id="4_wuu35"]
+[ext_resource type="Texture2D" uid="uid://d2j8uj64su6rh" path="res://assets/Auto/pixelcar/PNG/6500/Right/4Rpix6500.png" id="5_t37eo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glhpg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bo7k4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0tup5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wuu35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t37eo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Auto" type="CharacterBody2D" unique_id=651395351]
+script = ExtResource("1_1uxfn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=159593156]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=172095698]
+sprite_frames = SubResource("SpriteFrames_glhpg")
+animation = &"idle"
+frame_progress = 0.7944021
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=511620876]

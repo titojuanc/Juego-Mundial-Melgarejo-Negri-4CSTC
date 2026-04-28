@@ -22,7 +22,7 @@ KeepDriving
 --Cansansio -> Reduce energia max
 --Hambriento -> Aumenta consumo de energia
 --En el flow -> Se reducen los peligros
---Bien Dormido //
+--Bien Descansado //
 --Bien Comido //
 -Modificar el auto en ciudad con garage x $$$:
 --Baul -> Tamaño
