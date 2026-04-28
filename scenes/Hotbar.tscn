@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dr7uu3mk1toit"]
+
+[node name="Hotbar" type="CanvasLayer" unique_id=2060931644]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1242197350]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot1" type="PanelContainer" parent="HBoxContainer" unique_id=279240254]
+layout_mode = 2
+
+[node name="Slot2" type="PanelContainer" parent="HBoxContainer" unique_id=110414462]
+layout_mode = 2
+
+[node name="Slot3" type="PanelContainer" parent="HBoxContainer" unique_id=115165531]
+layout_mode = 2
+
+[node name="Slot4" type="PanelContainer" parent="HBoxContainer" unique_id=964588090]
+layout_mode = 2

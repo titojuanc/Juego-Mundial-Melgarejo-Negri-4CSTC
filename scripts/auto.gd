@@ -4,13 +4,29 @@ extends CharacterBody2D
 @onready var anim_player = $AnimationPlayer
 
 func _ready() -> void:
-	position = Vector2.ZERO
+	pass
+
+func _physics_process(delta: float) -> void:
+	if not anim_player.is_playing():
+		mover()
 
 func mover_arriba():
-	position.y += 20
+	sprite.position.y += 5
 
 func mover_abajo():
-	position.y -=20
+	sprite.position.y -= 5
 	
 func mover_medio():
-	position.y = 0
+	sprite.position.y = 0
+
+func mover():
+	anim_player.play("andar")
+	
+func parar_anim_player():
+	anim_player.stop()
+
+func mover_ruedas():
+	sprite.play("idle")
+
+func parar_ruedas():
+	sprite.stop()

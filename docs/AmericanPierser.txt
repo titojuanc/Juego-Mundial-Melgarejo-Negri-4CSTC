@@ -1,4 +1,4 @@
--Tratar el juego en base a semillas
+-Investigar el juego en base a semillas
 
 KeepDriving
 -Inventario
@@ -41,3 +41,9 @@ Historia
 Assets
 -Fondos parallax (por capas)
 -Assets de ruta (Ruedas, caja de herramientas, autos, calles, ciudades)
+
+Indicadores
+1-Auto
+2-Nafta
+3-Energia
+4-Plata
