@@ -1,0 +1,43 @@
+-Tratar el juego en base a semillas
+
+KeepDriving
+-Inventario
+-Tienda
+-Modificadores de estado - Items tambien los aplican
+-Energia, plata, nafta y vida de auto
+-Dormir, mapa, inventario y contador de dias
+-Guantera con items activos 
+-Minijuego de laburo (+plata)
+-Desvios de la panam
+-Ciudades con distinto abastecimiento
+-Personajes q subis:
+--Mecanico: Arregla vida auto en eventos, Habla mucho- gasta energia
+--Mayor Edad: poder comprar otros items. Si dormis muy agotado, roba plata y se va
+--Gambler: Rerollear peligro. Por la noche apuesta un poco de guita y apuesta
+-Segun bioma/ruta, aparecen distintos peligros
+-Fases de "pelea por turnos":
+--Turno Jugador, se saca los peligros
+--Turno Ruta, le pone peligros/ataca
+-estados:
+--Cansansio -> Reduce energia max
+--Hambriento -> Aumenta consumo de energia
+--En el flow -> Se reducen los peligros
+--Bien Dormido //
+--Bien Comido //
+-Modificar el auto en ciudad con garage x $$$:
+--Baul -> Tamaño
+--Motor -> Velocidad, Consumo Nafta
+-- Tanque -> Tamaño
+-Dificultad = Relacion con los viejos para el game over y eventos
+-Grua -> tantas veces como plata tengas
+-Cada evento tiene probabilidad de salir, y a su vez probabilidades de peligros.
+
+Historia
+-Alaska auto panamericana
+-Ruta Alaska, Canada, USA, Mexico, CentroAmerica, Colombia, Peru, Chile, Argentina
+-Contar datos del pais en el que estas
+-Postales
+
+Assets
+-Fondos parallax (por capas)
+-Assets de ruta (Ruedas, caja de herramientas, autos, calles, ciudades)
