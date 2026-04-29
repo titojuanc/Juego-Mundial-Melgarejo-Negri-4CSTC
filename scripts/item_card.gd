@@ -1,13 +1,12 @@
 extends PanelContainer
 class_name ItemCard
 
-@onready var icono: TextureRect = $VBoxContainer/Icono
-@onready var nombre: Label = $VBoxContainer/Nombre
+@onready var icono: TextureRect = $Control/Icono
 @onready var slots: Array = [
-	$VBoxContainer/Indicadores/Slot1,
-	$VBoxContainer/Indicadores/Slot2,
-	$VBoxContainer/Indicadores/Slot3,
-	$VBoxContainer/Indicadores/Slot4
+	$Control/Indicadores/Slot1,
+	$Control/Indicadores/Slot2,
+	$Control/Indicadores/Slot3,
+	$Control/Indicadores/Slot4
 	]
 	
 var item: Item
@@ -15,22 +14,25 @@ var item: Item
 func configurar(p_item: Item):
 	item = p_item
 	icono.texture = item.icono
-	nombre.text = item.nombre
 	
 	for i in range (4):
-		if item.indicadores[i] != null:
+		if i < item.indicadores.size() and item.indicadores[i] != null:
 			var id = item.indicadores[i]
 			slots[i].texture = cargar_icono_indicador(id)
+			slots[i].custom_minimum_size = Vector2(15, 15)
 		else:
 			slots[i].texture = null
+			slots[i].custom_minimum_size = Vector2(0, 0)
 
 func cargar_icono_indicador(id : int):
+	var atlas = AtlasTexture.new()
+	atlas.atlas = load("res://assets/Items/items_sheet.png")
 	match id:
-		1: return load("res://assets/Indicadores/Auto.png")
-		2: return load("res://assets/Indicadores/Nafta.png")
-		3: return load("res://assets/Indicadores/Energia.png")
-		4: return load("res://assets/Indicadores/Dinero.png")
-	return null
+		1: atlas.region = Rect2(528.624, 400.607, 14.589, 14.713)
+		2: atlas.region = Rect2(64.73, 416.69, 14.335, 14.713)
+		3: atlas.region = Rect2(145.655, 416.587, 13.665, 13.81)
+		4: atlas.region = Rect2(128.644, 512.736, 14.742, 13.809)
+	return atlas
 	
 func _get_drag_data(at_position: Vector2):
 	if item == null:

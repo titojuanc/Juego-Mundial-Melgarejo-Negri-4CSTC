@@ -11,5 +11,5 @@ region = Rect2(480.9777, 401.0066, 14.033264, 13.981506)
 script = ExtResource("2_h8n47")
 nombre = "Cinta"
 icono = SubResource("AtlasTexture_p3fb0")
-indicadores = [1, null, null, null]
+indicadores = [1, 1]
 metadata/_custom_type_script = "uid://c83orae0ir8g5"
