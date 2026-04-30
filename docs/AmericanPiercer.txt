@@ -1,7 +1,7 @@
 -Investigar el juego en base a semillas
 
 KeepDriving
--Inventario
+-Inventario 
 -Tienda
 -Modificadores de estado - Items tambien los aplican
 -Energia, plata, nafta y vida de auto

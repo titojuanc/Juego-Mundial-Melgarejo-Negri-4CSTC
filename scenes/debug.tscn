@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dex4rn13xu8ne" path="res://scripts/debug.gd" id="1_4pmxj"]
 [ext_resource type="PackedScene" uid="uid://dr7uu3mk1toit" path="res://scenes/Hotbar.tscn" id="2_4pmxj"]
+[ext_resource type="PackedScene" uid="uid://vgsvj06505qw" path="res://scenes/inventario.tscn" id="3_3vd64"]
 
 [node name="Debug" type="Node2D" unique_id=325662370]
 script = ExtResource("1_4pmxj")
 
 [node name="Hotbar" parent="." unique_id=2060931644 instance=ExtResource("2_4pmxj")]
+
+[node name="Inventario" parent="." unique_id=1702106210 instance=ExtResource("3_3vd64")]

@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://dr7uu3mk1toit"]
 
+[ext_resource type="Script" uid="uid://baoxcqinjfx46" path="res://scripts/hotbar.gd" id="1_4w0l1"]
 [ext_resource type="Texture2D" uid="uid://bahe3qlp7y6un" path="res://assets/Inventario/Sample-InventorySlotsSet.png" id="1_ndj5e"]
+[ext_resource type="Script" uid="uid://lc8nw4d06102" path="res://scripts/slot_hotbar.gd" id="3_ycoti"]
 
 [node name="Hotbar" type="CanvasLayer" unique_id=2060931644]
+script = ExtResource("1_4w0l1")
 
 [node name="Control" type="Control" parent="." unique_id=664930822]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1477252612]
 position = Vector2(1714.5, 978.5)
@@ -26,6 +30,8 @@ offset_left = 1540.0
 offset_top = 942.0
 offset_right = -1166.1001
 offset_bottom = -625.42505
+mouse_filter = 1
+script = ExtResource("3_ycoti")
 
 [node name="Slot2" type="PanelContainer" parent="Control" unique_id=110414462]
 layout_mode = 1
@@ -38,6 +44,8 @@ offset_left = 889.816
 offset_top = 403.5
 offset_right = 964.816
 offset_bottom = 478.5
+mouse_filter = 1
+script = ExtResource("3_ycoti")
 
 [node name="Slot3" type="PanelContainer" parent="Control" unique_id=115165531]
 layout_mode = 1
@@ -50,6 +58,8 @@ offset_left = 559.7739
 offset_top = 403.5
 offset_right = 634.7739
 offset_bottom = 478.5
+mouse_filter = 1
+script = ExtResource("3_ycoti")
 
 [node name="Slot4" type="PanelContainer" parent="Control" unique_id=964588090]
 layout_mode = 1
@@ -62,3 +72,5 @@ offset_left = 179.86389
 offset_top = 403.5
 offset_right = 254.86389
 offset_bottom = 478.5
+mouse_filter = 1
+script = ExtResource("3_ycoti")
