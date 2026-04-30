@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="AmericanPersier"
-run/main_scene="uid://bl1cgh0jl4ufw"
+run/main_scene="uid://bqm0rbgdv1age"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

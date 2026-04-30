@@ -7,9 +7,8 @@
 [node name="Control" type="Control" parent="." unique_id=664930822]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -64.0
-offset_right = 1854.0
-offset_bottom = 1077.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1477252612]
 position = Vector2(1714.5, 978.5)

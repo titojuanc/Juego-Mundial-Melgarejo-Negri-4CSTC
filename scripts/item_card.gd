@@ -12,6 +12,8 @@ class_name ItemCard
 var item: Item
 
 func configurar(p_item: Item):
+	#p_item sería el sprite?
+	#es el tres okok
 	item = p_item
 	icono.texture = item.icono
 	
@@ -28,6 +30,7 @@ func cargar_icono_indicador(id : int):
 	var atlas = AtlasTexture.new()
 	atlas.atlas = load("res://assets/Items/items_sheet.png")
 	match id:
+		#acá se definieron los íconos de las 4 stats. Deberíamos definirlos en algo más global, para acceder a ellos más cómodamente.
 		1: atlas.region = Rect2(528.624, 400.607, 14.589, 14.713)
 		2: atlas.region = Rect2(64.73, 416.69, 14.335, 14.713)
 		3: atlas.region = Rect2(145.655, 416.587, 13.665, 13.81)
@@ -42,6 +45,3 @@ func _get_drag_data(at_position: Vector2):
 	set_drag_preview(preview)
 	
 	return item
-	
-
-	
