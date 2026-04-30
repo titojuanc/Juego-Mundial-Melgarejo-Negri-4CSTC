@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dr7uu3mk1toit"]
+
+[ext_resource type="Texture2D" uid="uid://bahe3qlp7y6un" path="res://assets/Inventario/Sample-InventorySlotsSet.png" id="1_ndj5e"]
+
+[node name="Hotbar" type="CanvasLayer" unique_id=2060931644]
+
+[node name="Control" type="Control" parent="." unique_id=664930822]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -64.0
+offset_right = 1854.0
+offset_bottom = 1077.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1477252612]
+position = Vector2(1714.5, 978.5)
+scale = Vector2(5.3466673, 4.9583344)
+texture = ExtResource("1_ndj5e")
+region_enabled = true
+region_rect = Rect2(27.642418, 78.71241, 75.61019, 24.49208)
+
+[node name="Slot1" type="PanelContainer" parent="Control" unique_id=279240254]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.45
+anchor_bottom = 1.5250001
+offset_left = 1540.0
+offset_top = 942.0
+offset_right = -1166.1001
+offset_bottom = -625.42505
+
+[node name="Slot2" type="PanelContainer" parent="Control" unique_id=110414462]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.5
+anchor_right = 0.388
+anchor_bottom = 0.5
+offset_left = 889.816
+offset_top = 403.5
+offset_right = 964.816
+offset_bottom = 478.5
+
+[node name="Slot3" type="PanelContainer" parent="Control" unique_id=115165531]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.60700005
+anchor_top = 0.5
+anchor_right = 0.60700005
+anchor_bottom = 0.5
+offset_left = 559.7739
+offset_top = 403.5
+offset_right = 634.7739
+offset_bottom = 478.5
+
+[node name="Slot4" type="PanelContainer" parent="Control" unique_id=964588090]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85200006
+anchor_top = 0.5
+anchor_right = 0.85200006
+anchor_bottom = 0.5
+offset_left = 179.86389
+offset_top = 403.5
+offset_right = 254.86389
+offset_bottom = 478.5

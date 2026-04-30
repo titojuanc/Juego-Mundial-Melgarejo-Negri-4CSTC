@@ -11,8 +11,19 @@ config_version=5
 [application]
 
 config/name="AmericanPersier"
+run/main_scene="uid://bl1cgh0jl4ufw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://bqvuuar5mcjk2"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
 
 [physics]
 

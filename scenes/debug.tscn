@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bl1cgh0jl4ufw"]
+
+[ext_resource type="Script" uid="uid://dex4rn13xu8ne" path="res://scripts/debug.gd" id="1_4pmxj"]
+[ext_resource type="PackedScene" uid="uid://dr7uu3mk1toit" path="res://scenes/Hotbar.tscn" id="2_4pmxj"]
+
+[node name="Debug" type="Node2D" unique_id=325662370]
+script = ExtResource("1_4pmxj")
+
+[node name="Hotbar" parent="." unique_id=2060931644 instance=ExtResource("2_4pmxj")]

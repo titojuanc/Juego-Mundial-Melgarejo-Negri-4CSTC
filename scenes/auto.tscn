@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://ctp6c5ids34rm"]
+
+[ext_resource type="Script" uid="uid://brgeutlwpposn" path="res://scripts/auto.gd" id="1_1uxfn"]
+[ext_resource type="Texture2D" uid="uid://bw6cqctfpbn0h" path="res://posibles-assets/Auto/pixelcar/PNG/6500/Right/1Rpix6500.png" id="2_bo7k4"]
+[ext_resource type="Texture2D" uid="uid://cww0ndpniuv5o" path="res://posibles-assets/Auto/pixelcar/PNG/6500/Right/2Rpix6500.png" id="3_0tup5"]
+[ext_resource type="Texture2D" uid="uid://dn5dqwaib2cp" path="res://posibles-assets/Auto/pixelcar/PNG/6500/Right/3Rpix6500.png" id="4_wuu35"]
+[ext_resource type="Texture2D" uid="uid://d2j8uj64su6rh" path="res://posibles-assets/Auto/pixelcar/PNG/6500/Right/4Rpix6500.png" id="5_t37eo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glhpg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bo7k4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0tup5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wuu35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t37eo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uxfn"]
+
+[sub_resource type="Animation" id="Animation_1uxfn"]
+resource_name = "andar"
+length = 0.8
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"mover_medio"
+}, {
+"args": [],
+"method": &"mover_arriba"
+}, {
+"args": [],
+"method": &"mover_medio"
+}, {
+"args": [],
+"method": &"mover_abajo"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"mover_ruedas"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bo7k4"]
+_data = {
+&"andar": SubResource("Animation_1uxfn")
+}
+
+[node name="Auto" type="CharacterBody2D" unique_id=651395351]
+script = ExtResource("1_1uxfn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=172095698]
+scale = Vector2(0.15892312, 0.17003106)
+sprite_frames = SubResource("SpriteFrames_glhpg")
+animation = &"idle"
+frame_progress = 0.7944021
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=159593156]
+shape = SubResource("RectangleShape2D_1uxfn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=511620876]
+libraries/ = SubResource("AnimationLibrary_bo7k4")
