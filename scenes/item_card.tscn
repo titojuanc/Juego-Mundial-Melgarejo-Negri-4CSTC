@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://d0krflh2qifp3"]
+
+[ext_resource type="Script" uid="uid://c8dk2uwvnjgip" path="res://scripts/item_card.gd" id="1_ce1kl"]
+
+[node name="ItemCard" type="PanelContainer" unique_id=68152229]
+z_index = 1
+clip_contents = true
+custom_minimum_size = Vector2(55, 55)
+offset_right = 75.0
+offset_bottom = 75.0
+mouse_filter = 1
+script = ExtResource("1_ce1kl")
+
+[node name="Control" type="Control" parent="." unique_id=1271845847]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Icono" type="TextureRect" parent="Control" unique_id=279266791]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.5
+offset_right = -12.5
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Indicadores" type="HBoxContainer" parent="Control" unique_id=1056070333]
+layout_mode = 0
+offset_top = 57.0
+offset_right = 75.0
+offset_bottom = 72.0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Slot1" type="TextureRect" parent="Control/Indicadores" unique_id=1914787448]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Slot2" type="TextureRect" parent="Control/Indicadores" unique_id=420767865]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Slot3" type="TextureRect" parent="Control/Indicadores" unique_id=1672462881]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Slot4" type="TextureRect" parent="Control/Indicadores" unique_id=701204198]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 4

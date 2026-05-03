@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://c64m30gfi5l2e"]
+
+[ext_resource type="Script" uid="uid://2uhjsgb1oh57" path="res://scripts/HUD_ener_auto_nafta.gd" id="1_1etfg"]
+[ext_resource type="Texture2D" uid="uid://bmkoayp2m5ykg" path="res://assets/Barras/UI BARS/empty_bar.png" id="2_7hsmw"]
+[ext_resource type="Texture2D" uid="uid://cnyqkqyl07no2" path="res://assets/Barras/UI BARS/energy_bar.png" id="3_nysna"]
+[ext_resource type="Texture2D" uid="uid://btywku8gvt6lo" path="res://assets/Barras/UI BARS/health_bar.png" id="4_nysna"]
+[ext_resource type="Texture2D" uid="uid://dbfhxu8ureq2q" path="res://assets/Barras/UI BARS/shield_bar.png" id="5_f6qnu"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1799149189]
+script = ExtResource("1_1etfg")
+
+[node name="Control" type="Control" parent="." unique_id=1983946518]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 49.0
+offset_bottom = 22.0
+
+[node name="Energia" type="Node2D" parent="Control" unique_id=1817787375]
+position = Vector2(58, 959)
+scale = Vector2(2, 2)
+
+[node name="Vacio" type="Sprite2D" parent="Control/Energia" unique_id=798061863]
+position = Vector2(98, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("2_7hsmw")
+region_enabled = true
+region_rect = Rect2(0, 0, 98, 16.235)
+
+[node name="Lleno" type="Sprite2D" parent="Control/Energia" unique_id=165374024]
+position = Vector2(98, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("3_nysna")
+region_enabled = true
+region_rect = Rect2(0, 0, 98, 16.234917)
+
+[node name="Nafta" type="Node2D" parent="Control" unique_id=1573587516]
+position = Vector2(58, 859)
+scale = Vector2(2, 2)
+
+[node name="Vacio" type="Sprite2D" parent="Control/Nafta" unique_id=1455265158]
+position = Vector2(98, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("2_7hsmw")
+region_enabled = true
+region_rect = Rect2(0, 0, 98, 16.235)
+
+[node name="Lleno" type="Sprite2D" parent="Control/Nafta" unique_id=1716487808]
+position = Vector2(98, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("4_nysna")
+region_enabled = true
+region_rect = Rect2(0, 0, 98, 16.234917)
+
+[node name="Auto" type="Node2D" parent="Control" unique_id=2022656855]
+position = Vector2(58, 759)
+scale = Vector2(2, 2)
+
+[node name="Vacio" type="Sprite2D" parent="Control/Auto" unique_id=1147763307]
+position = Vector2(98, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("2_7hsmw")
+region_enabled = true
+region_rect = Rect2(0, 0, 98, 16.235)
+
+[node name="Lleno" type="Sprite2D" parent="Control/Auto" unique_id=1050664405]
+position = Vector2(98, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("5_f6qnu")
+region_enabled = true
+region_rect = Rect2(0, 0, 98, 16.234917)
