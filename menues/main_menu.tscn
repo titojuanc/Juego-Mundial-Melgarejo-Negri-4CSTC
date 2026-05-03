@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://bqm0rbgdv1age"]
 
+[ext_resource type="Texture2D" uid="uid://bdjn4qjohhi51" path="res://assets/Fondos/forest/forest_sky.png" id="1_e47kt"]
+[ext_resource type="Texture2D" uid="uid://dq2trtfkayls" path="res://assets/Fondos/forest/forest_mountain.png" id="2_bqgr7"]
+[ext_resource type="Texture2D" uid="uid://ddpj2vjxld18b" path="res://assets/Fondos/forest/forest_back.png" id="3_1e0ll"]
+
 [node name="MainMenu" type="Control" unique_id=768065045]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +11,76 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Fondo" type="Control" parent="." unique_id=1205391279]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Parallax2D" type="Parallax2D" parent="Fondo" unique_id=1604305638]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D" unique_id=1834468567]
+position = Vector2(960.49994, 489)
+scale = Vector2(1.0099999, 1)
+texture = ExtResource("1_e47kt")
+
+[node name="Parallax2D_" type="Parallax2D" parent="Fondo" unique_id=961777796]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D_" unique_id=235865023]
+position = Vector2(1897, 912)
+texture = ExtResource("2_bqgr7")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Fondo" unique_id=1818315504]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(25, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D3" unique_id=184416551]
+position = Vector2(1900, 396)
+texture = ExtResource("3_1e0ll")
+
+[node name="Titulo" type="Label" parent="." unique_id=100646653]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 82.0
+offset_right = 384.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "PLACEHOLDER
+"
+
+[node name="Button" type="Button" parent="." unique_id=1196191634]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 580.0
+offset_right = 234.0
+offset_bottom = 664.0
+text = "JUGAR"
+
+[node name="Button4" type="Button" parent="." unique_id=395669591]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 925.0
+offset_right = 235.0
+offset_bottom = 1009.0
+text = "JUGAR"
+
+[node name="Button3" type="Button" parent="." unique_id=1959145507]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 799.0
+offset_right = 237.0
+offset_bottom = 883.0
+text = "JUGAR"
+
+[node name="Button2" type="Button" parent="." unique_id=379727649]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 688.0
+offset_right = 237.0
+offset_bottom = 772.0
+text = "JUGAR"

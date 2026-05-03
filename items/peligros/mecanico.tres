@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Peligro" format=3 uid="uid://by4gcr3pgt3mp"]
+
+[ext_resource type="Script" uid="uid://01asixolwx2d" path="res://scripts/peligro.gd" id="1_peligro"]
+
+[resource]
+script = ExtResource("1_peligro")
+nombre = "Mecanico"
+tipo = 1
