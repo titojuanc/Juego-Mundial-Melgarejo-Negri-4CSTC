@@ -10,3 +10,13 @@ func _ready():
 	var card_2 = item_card_scene.instantiate()
 	$Hotbar/Control/Slot2.add_child(card_2)  
 	card_2.configurar(manzana)               
+
+func _input(event):
+	if event.is_action_pressed("ui_up"):
+		StatsManager.aumentar_energia(1)
+		StatsManager.aumentar_auto(1)
+		StatsManager.aumentar_nafta(1)
+	if event.is_action_pressed("ui_down"):
+		StatsManager.reducir_energia(1)
+		StatsManager.reducir_auto(1)
+		StatsManager.reducir_nafta(1)
