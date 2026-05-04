@@ -11,12 +11,14 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up"):
+		var instancia_encuentro = encuentro.instantiate()
 		if en_movimiento:
 			fondo.parar() 
 			en_movimiento=false
 		else:
 			fondo.reanudar()
+			auto.mover()
+			instancia_encuentro.terminar()
 			en_movimiento=true
-		var instancia_encuentro = encuentro.instantiate()
 		instancia_encuentro._iniciar(auto)
 		add_child(instancia_encuentro)
