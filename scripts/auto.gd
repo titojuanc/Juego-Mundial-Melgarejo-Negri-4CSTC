@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var anim_player = $AnimationPlayer
-
+var si = true
 func _ready() -> void:
 	pass
 
