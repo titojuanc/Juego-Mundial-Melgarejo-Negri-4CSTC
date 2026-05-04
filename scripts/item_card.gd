@@ -36,7 +36,6 @@ func cargar_icono_indicador(id : int):
 	return atlas
 	
 func _get_drag_data(at_position: Vector2):
-	print("iniciando drag")
 	if item == null:
 		return
 		

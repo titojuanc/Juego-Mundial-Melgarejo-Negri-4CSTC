@@ -11,7 +11,6 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	for hijo in get_children():
 		if hijo is DangerCard:
 			return hijo._can_drop_data(at_position, data)
-	print("can drop en slot encuentro")
 	return false
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
