@@ -1,8 +1,14 @@
 [gd_resource type="Resource" script_class="Peligro" format=3 uid="uid://ch0cid10dog77"]
 
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="1_2jl0v"]
 [ext_resource type="Script" uid="uid://01asixolwx2d" path="res://scripts/peligro.gd" id="1_peligro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veca8"]
+atlas = ExtResource("1_2jl0v")
+region = Rect2(145.655, 416.587, 13.665, 13.81)
 
 [resource]
 script = ExtResource("1_peligro")
 nombre = "Energia"
+icono = SubResource("AtlasTexture_veca8")
 tipo = 3
