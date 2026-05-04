@@ -1,2 +1,1 @@
 1-Al iniciar, si un item de la hotbar lo muevo a la posicion de otro, se solapan y luego se elimina el de abajo al mover
-2-Danger card no funciona en la hotbar de encuentro
