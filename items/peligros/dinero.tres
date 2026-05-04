@@ -1,8 +1,14 @@
 [gd_resource type="Resource" script_class="Peligro" format=3 uid="uid://dopvxfjpru4hr"]
 
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="1_6nx4q"]
 [ext_resource type="Script" uid="uid://01asixolwx2d" path="res://scripts/peligro.gd" id="1_peligro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wynff"]
+atlas = ExtResource("1_6nx4q")
+region = Rect2(128.644, 512.736, 14.742, 13.809)
 
 [resource]
 script = ExtResource("1_peligro")
 nombre = "Dinero"
+icono = SubResource("AtlasTexture_wynff")
 tipo = 4
