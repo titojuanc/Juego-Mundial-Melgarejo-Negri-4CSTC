@@ -7,18 +7,23 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 		return false
 	if not data.has("item") or not data.has("origen"):
 		return false
-	return true
+		
+	for hijo in get_children():
+		if hijo is DangerCard:
+			return hijo._can_drop_data(at_position, data)
+	print("can drop en slot encuentro")
+	return false
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
+	for hijo in get_children():
+		if hijo is DangerCard:
+			hijo._drop_data(at_position, data)
+			return
+	
 	var origen = data["origen"]
-
-	# Eliminar el item del slot de origen
 	for hijo in origen.get_children():
 		hijo.queue_free()
-
 	if origen.get_script() == preload("res://scripts/slot_hotbar.gd"):
 		HotbarManager.sacar_item(origen.index)
 	elif origen.get_script() == preload("res://scripts/slot_inventario.gd"):
 		InventarioManager.sacar_item(origen.index)
-
-	# El item no se guarda ni se muestra: se consume/elimina automáticamente

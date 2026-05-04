@@ -26,3 +26,6 @@ func _input(event):
 		StatsManager.reducir_energia(1)
 		StatsManager.reducir_auto(1)
 		StatsManager.reducir_nafta(1)
+
+func _drop_data(at_position: Vector2, data: Variant) -> void:
+	print("drop en debug")

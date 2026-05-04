@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8l1c7ne4hss6" path="res://scripts/hotbar_encuentro.gd" id="1_8fyki"]
 [ext_resource type="Texture2D" uid="uid://bahe3qlp7y6un" path="res://assets/Inventario/Sample-InventorySlotsSet.png" id="2_2erd5"]
-[ext_resource type="Script" uid="uid://lc8nw4d06102" path="res://scripts/slot_hotbar.gd" id="3_vdmvm"]
+[ext_resource type="Script" uid="uid://br0gqqehb83q7" path="res://scripts/slot_encuentro.gd" id="3_8fyki"]
 
 [node name="Hotbar_Encuentro" type="CanvasLayer" unique_id=2060931644]
 script = ExtResource("1_8fyki")
@@ -10,11 +10,10 @@ script = ExtResource("1_8fyki")
 [node name="Control" type="Control" parent="." unique_id=664930822]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 842.0
-offset_top = 813.0
-offset_right = 1347.0
-offset_bottom = 912.0
-mouse_filter = 1
+
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=710550264]
 position = Vector2(112, 7)
@@ -33,7 +32,7 @@ offset_top = -29.0
 offset_right = -444.25
 offset_bottom = -104.975006
 mouse_filter = 1
-script = ExtResource("3_vdmvm")
+script = ExtResource("3_8fyki")
 
 [node name="Slot2" type="PanelContainer" parent="Control" unique_id=2099749198]
 layout_mode = 1
@@ -47,7 +46,7 @@ offset_top = -81.5
 offset_right = 1.0599976
 offset_bottom = -6.5
 mouse_filter = 1
-script = ExtResource("3_vdmvm")
+script = ExtResource("3_8fyki")
 
 [node name="Slot3" type="PanelContainer" parent="Control" unique_id=262065214]
 layout_mode = 1
@@ -61,7 +60,7 @@ offset_top = -80.5
 offset_right = -200.53503
 offset_bottom = -5.5
 mouse_filter = 1
-script = ExtResource("3_vdmvm")
+script = ExtResource("3_8fyki")
 
 [node name="Slot4" type="PanelContainer" parent="Control" unique_id=1329296377]
 layout_mode = 1
@@ -75,4 +74,4 @@ offset_top = -80.5
 offset_right = -416.26
 offset_bottom = -5.5
 mouse_filter = 1
-script = ExtResource("3_vdmvm")
+script = ExtResource("3_8fyki")

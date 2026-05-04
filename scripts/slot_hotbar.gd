@@ -7,10 +7,6 @@ var item_card_scene = preload("res://scenes/item_card.tscn")
 func _ready() -> void:
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _can_drop_data(at_position: Vector2, data: Variant):
 	if not data is Dictionary:
 		return false
@@ -21,13 +17,10 @@ func _can_drop_data(at_position: Vector2, data: Variant):
 func _drop_data(at_position: Vector2, data: Variant):
 	var item = data["item"]
 	var origen = data["origen"]
-	
 	if HotbarManager.slots[index] != null:
 		return
-		
 	for hijo in origen.get_children():
 		hijo.queue_free()
-	
 	if origen.get_script() == preload("res://scripts/slot_hotbar.gd"):
 		HotbarManager.sacar_item(origen.index)
 	else:
