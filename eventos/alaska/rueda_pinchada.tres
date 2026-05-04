@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Evento" format=3 uid="uid://cqh4hne3023le"]
+
+[ext_resource type="Script" uid="uid://cxspuao0kc7kw" path="res://scripts/evento_encuentro.gd" id="1_4qlpr"]
+
+[resource]
+script = ExtResource("1_4qlpr")
+peligros = {
+"auto": 70.0,
+"dinero": 0.0,
+"energia": 10.0,
+"nafta": 20.0
+}
+minimos = {
+"auto": 0,
+"dinero": 0,
+"energia": 0,
+"nafta": 0
+}
