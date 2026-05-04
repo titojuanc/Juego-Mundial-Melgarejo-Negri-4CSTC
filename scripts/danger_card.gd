@@ -20,13 +20,12 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var origen = data["origen"]
-
 	for hijo in origen.get_children():
 		hijo.queue_free()
-
+	
 	if origen.get_script() == preload("res://scripts/slot_hotbar.gd"):
 		HotbarManager.sacar_item(origen.index)
 	elif origen.get_script() == preload("res://scripts/slot_inventario.gd"):
 		InventarioManager.sacar_item(origen.index)
-
+	
 	queue_free()

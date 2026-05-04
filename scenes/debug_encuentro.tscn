@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://5tauc5m0dhm5"]
+
+[node name="DebugEncuentro" type="Node2D" unique_id=1386822980]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1889758715]

@@ -14,7 +14,7 @@ func _ready():
 	$Hotbar/Control/Slot2.add_child(card_2)  
 	card_2.configurar(manzana)
 	var danger_1 = danger_card.instantiate()
-	$Hotbar/Control/Slot4.add_child(danger_1)  
+	$Encuentro/Control/Slot4.add_child(danger_1)  
 	danger_1.configurar(peligro_mecanico)
 	
 func _input(event):
