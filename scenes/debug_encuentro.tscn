@@ -1,5 +1,15 @@
 [gd_scene format=3 uid="uid://5tauc5m0dhm5"]
 
-[node name="DebugEncuentro" type="Node2D" unique_id=1386822980]
+[ext_resource type="PackedScene" uid="uid://ctp6c5ids34rm" path="res://scenes/auto.tscn" id="1_snvhl"]
+[ext_resource type="Script" uid="uid://bpk8lob5ut23p" path="res://scripts/debug_encuentro.gd" id="1_wsigu"]
+[ext_resource type="PackedScene" uid="uid://sk34u7jera4u" path="res://scenes/ruta_1.tscn" id="2_0b71t"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1889758715]
+[node name="DebugEncuentro" type="Node2D" unique_id=1386822980]
+script = ExtResource("1_wsigu")
+
+[node name="Ruta_1" parent="." unique_id=1021237360 instance=ExtResource("2_0b71t")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Auto" parent="." unique_id=651395351 instance=ExtResource("1_snvhl")]
+position = Vector2(330, 890)
+scale = Vector2(0.4, 0.4)

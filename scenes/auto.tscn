@@ -81,7 +81,6 @@ script = ExtResource("1_1uxfn")
 scale = Vector2(0.15892312, 0.17003106)
 sprite_frames = SubResource("SpriteFrames_glhpg")
 animation = &"idle"
-frame_progress = 0.7944021
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=159593156]
 shape = SubResource("RectangleShape2D_1uxfn")
