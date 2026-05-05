@@ -3,14 +3,17 @@ extends Node
 const MAX_ENERGIA = 6
 const MAX_NAFTA = 6
 const MAX_AUTO = 6
+const DINERO_INICIAL = 500
 
 var energia: int = MAX_ENERGIA
 var nafta: int = MAX_NAFTA
 var vida_auto: int = MAX_AUTO
+var dinero: int = DINERO_INICIAL
 
 signal energia_cambiada(valor)
 signal nafta_cambiada(valor)
 signal auto_cambiado(valor)
+signal dinero_cambiado(valor)
 
 func reducir_energia(cantidad):
 	energia = max(0, energia - cantidad)
@@ -69,3 +72,11 @@ func chequear_auto():
 	if vida_auto == 0:
 		#Costo mecanido exponencial por llamada - Futura logica
 		print("Auto destruido - Llamar mecanico")
+
+func reducir_dinero(cantidad):
+	dinero = max(0, dinero - cantidad)
+	emit_signal("dinero_cambiado", dinero)
+
+func aumentar_dinero(cantidad):
+	dinero += cantidad
+	emit_signal("dinero_cambiado", dinero)

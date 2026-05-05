@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://c64m30gfi5l2e"]
 
 [ext_resource type="Script" uid="uid://2uhjsgb1oh57" path="res://scripts/HUD_ener_auto_nafta.gd" id="1_1etfg"]
-[ext_resource type="Texture2D" uid="uid://bmkoayp2m5ykg" path="res://assets/Barras/UI BARS/empty_bar.png" id="2_7hsmw"]
-[ext_resource type="Texture2D" uid="uid://cnyqkqyl07no2" path="res://assets/Barras/UI BARS/energy_bar.png" id="3_nysna"]
-[ext_resource type="Texture2D" uid="uid://btywku8gvt6lo" path="res://assets/Barras/UI BARS/health_bar.png" id="4_nysna"]
-[ext_resource type="Texture2D" uid="uid://dbfhxu8ureq2q" path="res://assets/Barras/UI BARS/shield_bar.png" id="5_f6qnu"]
+[ext_resource type="Texture2D" uid="uid://bmkoayp2m5ykg" path="res://posibles-assets/Barras/UI BARS/empty_bar.png" id="2_7hsmw"]
+[ext_resource type="Texture2D" uid="uid://cnyqkqyl07no2" path="res://posibles-assets/Barras/UI BARS/energy_bar.png" id="3_nysna"]
+[ext_resource type="Texture2D" uid="uid://btywku8gvt6lo" path="res://posibles-assets/Barras/UI BARS/health_bar.png" id="4_nysna"]
+[ext_resource type="Texture2D" uid="uid://dbfhxu8ureq2q" path="res://posibles-assets/Barras/UI BARS/shield_bar.png" id="5_f6qnu"]
+[ext_resource type="Script" uid="uid://bj3gaua1iwyb0" path="res://scripts/dinero.gd" id="6_f6qnu"]
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="7_k4w17"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1799149189]
 script = ExtResource("1_1etfg")
@@ -70,3 +72,22 @@ scale = Vector2(2, 2)
 texture = ExtResource("5_f6qnu")
 region_enabled = true
 region_rect = Rect2(0, 0, 98, 16.234917)
+
+[node name="Dinero" type="HBoxContainer" parent="Control" unique_id=1031402732]
+layout_mode = 0
+offset_left = 1600.0
+offset_top = 830.0
+offset_right = 1640.0
+offset_bottom = 913.0
+script = ExtResource("6_f6qnu")
+
+[node name="Icono" type="TextureRect" parent="Control/Dinero" unique_id=1916942489]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_k4w17")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Dinero" unique_id=71423490]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60

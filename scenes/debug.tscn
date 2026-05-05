@@ -14,5 +14,6 @@ script = ExtResource("1_4pmxj")
 [node name="Hotbar" parent="." unique_id=1073938056 instance=ExtResource("2_4pmxj")]
 
 [node name="Inventario" parent="." unique_id=1702106210 instance=ExtResource("3_3vd64")]
+visible = false
 
-[node name="CanvasLayer" parent="." unique_id=1799149189 instance=ExtResource("4_hqhvd")]
+[node name="HUD" parent="." unique_id=1799149189 instance=ExtResource("4_hqhvd")]
