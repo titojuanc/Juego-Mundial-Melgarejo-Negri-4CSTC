@@ -55,7 +55,6 @@ func _get_drag_data(at_position: Vector2):
 		return
 	
 	GameManager.item_arrastrando = item
-	print("Arrastrando: ", GameManager.item_arrastrando)
 	var datos = {
 		"item": item,
 		"origen": get_parent()
@@ -76,7 +75,6 @@ func _on_resized():
 	
 func _notification(what):
 	if what == NOTIFICATION_DRAG_END:
-		print("Drag terminado, limpiando")
 		GameManager.item_arrastrando = null
 	
 func _on_mouse_entered():

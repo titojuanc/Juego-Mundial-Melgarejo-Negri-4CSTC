@@ -17,14 +17,12 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	
 	if slots_a_borrar.is_empty():
 		return
-	
 	for i in slots_a_borrar:
 		var slot = _get_slot(i)
 		if slot:
 			for hijo in slot.get_children():
-				if hijo is DangerCard:
+				if hijo is DangerCard and not hijo.get("es_preview") == false:
 					hijo.queue_free()
-		
 	for hijo in origen.get_children():
 		hijo.queue_free()
 	if origen.get_script() == preload("res://scripts/slot_hotbar.gd"):
@@ -34,7 +32,6 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 
 func _buscar_secuencia_valida(item: Item) -> int:
 	var indicadores = item.indicadores.filter(func(x): return x != null)
-	print("Indicadores filtrados: ", indicadores)
 	if indicadores.is_empty():
 		return -1
 	var parent = get_parent()
@@ -51,7 +48,6 @@ func _buscar_secuencia_valida(item: Item) -> int:
 			if hijo is DangerCard:
 				dc = hijo
 				break
-		print("Slot %d: dc=%s, tipo=%s" % [index + i, dc, dc.peligro.tipo if dc else "null"])
 		if dc == null or dc.peligro.tipo != indicadores[i]:
 			return -1
 	return indicadores.size()
@@ -79,6 +75,6 @@ func _get_danger_card(slot: Node) -> DangerCard:
 	if slot == null:
 		return null
 	for hijo in slot.get_children():
-		if hijo is DangerCard:
+		if hijo is DangerCard and hijo.es_preview:
 			return hijo
 	return null

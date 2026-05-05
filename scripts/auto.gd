@@ -31,4 +31,3 @@ func mover_ruedas():
 
 func parar_ruedas():
 	sprite.stop()
-	print("Entre")

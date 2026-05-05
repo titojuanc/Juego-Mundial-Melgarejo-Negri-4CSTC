@@ -33,14 +33,9 @@ func configurar_peligros(evento:Resource):
 		var roll = aleatorizador.randf_range(0.0, 100.0)
 		if roll < chance:
 			if conteo[peligro] < evento.maximos[peligro]:
-				print("apareció " + peligro)
 				hotbar_peligros[i] = peligro
 				conteo[peligro] += 1
 				i += 1
-			else:
-				print("maximo de "+peligro+" alcanzado.")
-		else:
-			print("no apareció " + peligro)
 	
 	for peligro in evento.minimos:
 		var faltan = evento.minimos[peligro] - conteo[peligro]
@@ -49,9 +44,6 @@ func configurar_peligros(evento:Resource):
 				hotbar_peligros[i] = peligro
 				conteo[peligro] += 1
 				i += 1
-	
-	print(hotbar_peligros)
-
 
 func terminar():
 	queue_free()

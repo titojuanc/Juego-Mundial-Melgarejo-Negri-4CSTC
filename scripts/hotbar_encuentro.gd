@@ -54,7 +54,6 @@ func _process(_delta: float) -> void:
 			_limpiar_preview()
 	
 func _on_zona_entered():
-	print("Entró al control, item_arrastrando: ", GameManager.item_arrastrando)
 	if GameManager.item_arrastrando == null:
 		return
 	_mostrar_preview(GameManager.item_arrastrando)
@@ -106,7 +105,8 @@ func _get_slot_cercano(mouse_pos: Vector2):
 	var menor_distancia = INF
 	var slot_cercano = 0
 	for i in range(slots_encuentro.size()):
-		var distancia = mouse_pos.distance_to(slots_encuentro[i].global_position)
+		var centro = slots_encuentro[i].global_position + slots_encuentro[i].size / 2
+		var distancia = mouse_pos.distance_to(centro)
 		if distancia < menor_distancia:
 			menor_distancia = distancia
 			slot_cercano = i

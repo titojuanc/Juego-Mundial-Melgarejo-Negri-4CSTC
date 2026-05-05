@@ -9,8 +9,7 @@ func _ready():
 	var manzana = load("res://items/manzana.tres")
 	var card_1 = item_card_scene.instantiate()
 	$Hotbar/Control/Slot1.add_child(card_1)  
-	card_1.configurar(cinta)
-	print(str(card_1.icono))     
+	card_1.configurar(cinta)  
 	HotbarManager.colocar_item(0, cinta)
 	var card_2 = item_card_scene.instantiate()
 	$Hotbar/Control/Slot2.add_child(card_2)  
@@ -19,9 +18,11 @@ func _ready():
 	var danger_1 = danger_card.instantiate()
 	$HotbarEncuentro/Control/Slot2.add_child(danger_1)  
 	danger_1.configurar(peligro_auto)
+	danger_1.es_preview = true
 	var danger_2 = danger_card.instantiate()
 	$HotbarEncuentro/Control/Slot3.add_child(danger_2)  
 	danger_2.configurar(peligro_auto)
+	danger_2.es_preview = true
 	
 func _input(event):
 	if event.is_action_pressed("ui_up"):
@@ -32,6 +33,3 @@ func _input(event):
 		StatsManager.reducir_energia(1)
 		StatsManager.reducir_auto(1)
 		StatsManager.reducir_nafta(1)
-
-func _drop_data(at_position: Vector2, data: Variant) -> void:
-	print("drop en debug")
