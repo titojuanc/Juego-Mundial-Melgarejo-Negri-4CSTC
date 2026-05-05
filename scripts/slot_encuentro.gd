@@ -7,7 +7,8 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 		return false
 	if not data.has("item") or not data.has("origen"):
 		return false
-	return true
+	var item: Item = data["item"]
+	return not _calcular_slots_a_borrar(item).is_empty()
 	
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	var item: Item = data["item"]
