@@ -1,5 +1,6 @@
 - flag de acceder al inventario
 - Señal de evento por comenzar
+- cantidad de usos de los items
 - Hacer que la item_card cubra los peligros que dice cubrir en sus indicadores
 - que el evento termine cuando se acaban los peligros en su barra
 - agrandar la hotbar

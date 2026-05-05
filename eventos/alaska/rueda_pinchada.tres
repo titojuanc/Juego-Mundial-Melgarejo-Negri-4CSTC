@@ -11,8 +11,14 @@ peligros = {
 "nafta": 20.0
 }
 minimos = {
-"auto": 0,
+"auto": 2,
 "dinero": 0,
 "energia": 0,
-"nafta": 0
+"nafta": 1
+}
+maximos = {
+"auto": 3,
+"dinero": 1,
+"energia": 1,
+"nafta": 2
 }
