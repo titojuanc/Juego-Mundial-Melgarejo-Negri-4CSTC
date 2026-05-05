@@ -1,3 +1,265 @@
 [gd_scene format=3 uid="uid://dfc2rr8jptm0b"]
 
-[node name="Tienda" type="Node2D" unique_id=195477967]
+[ext_resource type="Script" uid="uid://cqcqhfobco5no" path="res://scripts/tienda.gd" id="1_wmpum"]
+[ext_resource type="Texture2D" uid="uid://b524mx0y70ouv" path="res://assets/Inventario/inventoryOnly.png" id="2_jbjbo"]
+[ext_resource type="Script" uid="uid://dav5ymg72pggr" path="res://scripts/slot_inventario.gd" id="3_llk16"]
+
+[node name="Tienda" type="CanvasLayer" unique_id=1890331605]
+script = ExtResource("1_wmpum")
+
+[node name="Control" type="Control" parent="." unique_id=1541367370]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1068.0
+offset_right = 1920.0
+offset_bottom = 702.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1842230897]
+layout_mode = 0
+offset_right = 387.0
+offset_bottom = 319.0
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_jbjbo")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Slot1" type="PanelContainer" parent="Control" unique_id=432139247]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 42.0
+offset_right = 156.0
+offset_bottom = 156.0
+script = ExtResource("3_llk16")
+
+[node name="Slot2" type="PanelContainer" parent="Control" unique_id=1335451724]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 42.0
+offset_right = 288.0
+offset_bottom = 156.0
+script = ExtResource("3_llk16")
+
+[node name="Slot3" type="PanelContainer" parent="Control" unique_id=1420620722]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 42.0
+offset_right = 420.0
+offset_bottom = 156.0
+script = ExtResource("3_llk16")
+
+[node name="Slot4" type="PanelContainer" parent="Control" unique_id=1467852525]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 42.0
+offset_right = 552.0
+offset_bottom = 156.0
+script = ExtResource("3_llk16")
+
+[node name="Slot5" type="PanelContainer" parent="Control" unique_id=1493173635]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 42.0
+offset_right = 684.0
+offset_bottom = 156.0
+script = ExtResource("3_llk16")
+
+[node name="Slot6" type="PanelContainer" parent="Control" unique_id=1547857577]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 42.0
+offset_right = 814.0
+offset_bottom = 156.0
+script = ExtResource("3_llk16")
+
+[node name="Slot7" type="PanelContainer" parent="Control" unique_id=987197753]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 170.0
+offset_right = 156.0
+offset_bottom = 284.0
+script = ExtResource("3_llk16")
+
+[node name="Slot8" type="PanelContainer" parent="Control" unique_id=592206995]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 170.0
+offset_right = 288.0
+offset_bottom = 284.0
+script = ExtResource("3_llk16")
+
+[node name="Slot9" type="PanelContainer" parent="Control" unique_id=1266199502]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 170.0
+offset_right = 420.0
+offset_bottom = 284.0
+script = ExtResource("3_llk16")
+
+[node name="Slot10" type="PanelContainer" parent="Control" unique_id=739911972]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 170.0
+offset_right = 552.0
+offset_bottom = 284.0
+script = ExtResource("3_llk16")
+
+[node name="Slot11" type="PanelContainer" parent="Control" unique_id=257082733]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 170.0
+offset_right = 684.0
+offset_bottom = 284.0
+script = ExtResource("3_llk16")
+
+[node name="Slot12" type="PanelContainer" parent="Control" unique_id=2022408339]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 170.0
+offset_right = 814.0
+offset_bottom = 284.0
+script = ExtResource("3_llk16")
+
+[node name="Slot13" type="PanelContainer" parent="Control" unique_id=990516023]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 298.0
+offset_right = 156.0
+offset_bottom = 412.0
+script = ExtResource("3_llk16")
+
+[node name="Slot14" type="PanelContainer" parent="Control" unique_id=464023262]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 298.0
+offset_right = 288.0
+offset_bottom = 412.0
+script = ExtResource("3_llk16")
+
+[node name="Slot15" type="PanelContainer" parent="Control" unique_id=331364839]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 298.0
+offset_right = 420.0
+offset_bottom = 412.0
+script = ExtResource("3_llk16")
+
+[node name="Slot16" type="PanelContainer" parent="Control" unique_id=1628219545]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 298.0
+offset_right = 552.0
+offset_bottom = 412.0
+script = ExtResource("3_llk16")
+
+[node name="Slot17" type="PanelContainer" parent="Control" unique_id=478833976]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 298.0
+offset_right = 684.0
+offset_bottom = 412.0
+script = ExtResource("3_llk16")
+
+[node name="Slot18" type="PanelContainer" parent="Control" unique_id=1228273441]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 298.0
+offset_right = 814.0
+offset_bottom = 412.0
+script = ExtResource("3_llk16")
+
+[node name="Slot19" type="PanelContainer" parent="Control" unique_id=1936409898]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 426.0
+offset_right = 156.0
+offset_bottom = 540.0
+script = ExtResource("3_llk16")
+
+[node name="Slot20" type="PanelContainer" parent="Control" unique_id=711488779]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 426.0
+offset_right = 288.0
+offset_bottom = 540.0
+script = ExtResource("3_llk16")
+
+[node name="Slot21" type="PanelContainer" parent="Control" unique_id=39182912]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 426.0
+offset_right = 420.0
+offset_bottom = 540.0
+script = ExtResource("3_llk16")
+
+[node name="Slot22" type="PanelContainer" parent="Control" unique_id=759855247]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 426.0
+offset_right = 552.0
+offset_bottom = 540.0
+script = ExtResource("3_llk16")
+
+[node name="Slot23" type="PanelContainer" parent="Control" unique_id=1659137891]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 426.0
+offset_right = 684.0
+offset_bottom = 540.0
+script = ExtResource("3_llk16")
+
+[node name="Slot24" type="PanelContainer" parent="Control" unique_id=92239804]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 426.0
+offset_right = 814.0
+offset_bottom = 540.0
+script = ExtResource("3_llk16")
+
+[node name="Slot25" type="PanelContainer" parent="Control" unique_id=664691957]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 554.0
+offset_right = 156.0
+offset_bottom = 668.0
+script = ExtResource("3_llk16")
+
+[node name="Slot26" type="PanelContainer" parent="Control" unique_id=246351047]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 554.0
+offset_right = 288.0
+offset_bottom = 668.0
+script = ExtResource("3_llk16")
+
+[node name="Slot27" type="PanelContainer" parent="Control" unique_id=649955057]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 554.0
+offset_right = 420.0
+offset_bottom = 668.0
+script = ExtResource("3_llk16")
+
+[node name="Slot28" type="PanelContainer" parent="Control" unique_id=1833669150]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 554.0
+offset_right = 552.0
+offset_bottom = 668.0
+script = ExtResource("3_llk16")
+
+[node name="Slot29" type="PanelContainer" parent="Control" unique_id=1195090598]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 554.0
+offset_right = 684.0
+offset_bottom = 668.0
+script = ExtResource("3_llk16")
+
+[node name="Slot30" type="PanelContainer" parent="Control" unique_id=1653108476]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 554.0
+offset_right = 814.0
+offset_bottom = 668.0
+script = ExtResource("3_llk16")

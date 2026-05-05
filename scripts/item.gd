@@ -5,3 +5,4 @@ extends Resource
 @export var icono: AtlasTexture = null
 @export var indicadores: Array = [null, null, null, null]
 @export var usos: int = 1
+@export var precio: int = 10

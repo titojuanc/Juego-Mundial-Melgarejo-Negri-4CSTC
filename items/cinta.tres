@@ -13,4 +13,5 @@ nombre = "Cinta"
 icono = SubResource("AtlasTexture_p3fb0")
 indicadores = [1, 1]
 usos = 3
+precio = 30
 metadata/_custom_type_script = "uid://c83orae0ir8g5"

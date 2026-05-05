@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://vgsvj06505qw" path="res://scenes/inventario.tscn" id="3_3vd64"]
 [ext_resource type="PackedScene" uid="uid://c64m30gfi5l2e" path="res://scenes/HUD.tscn" id="4_hqhvd"]
 [ext_resource type="PackedScene" uid="uid://cem3bdpiokhig" path="res://scenes/Hotbar_encuentro.tscn" id="5_kayp2"]
+[ext_resource type="PackedScene" uid="uid://dfc2rr8jptm0b" path="res://menues/tienda.tscn" id="6_j2wbo"]
 
 [node name="Debug" type="Node2D" unique_id=325662370]
 script = ExtResource("1_4pmxj")
@@ -17,3 +18,5 @@ script = ExtResource("1_4pmxj")
 visible = false
 
 [node name="HUD" parent="." unique_id=1799149189 instance=ExtResource("4_hqhvd")]
+
+[node name="Tienda" parent="." unique_id=195477967 instance=ExtResource("6_j2wbo")]

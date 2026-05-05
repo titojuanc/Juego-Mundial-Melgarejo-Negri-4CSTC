@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TiendaPool" format=3 uid="uid://b5e4buhv61uu5"]
+
+[ext_resource type="Script" uid="uid://c83orae0ir8g5" path="res://scripts/item.gd" id="1_kjecv"]
+[ext_resource type="Resource" uid="uid://o1la8vfkepk8" path="res://items/manzana.tres" id="2_dp0bj"]
+[ext_resource type="Script" uid="uid://clwp4sf4wub5w" path="res://scripts/tienda_pool.gd" id="2_ei0tj"]
+[ext_resource type="Resource" uid="uid://r1jkhdfno5l" path="res://items/cinta.tres" id="3_yh60x"]
+
+[resource]
+script = ExtResource("2_ei0tj")
+items = Array[ExtResource("1_kjecv")]([ExtResource("2_dp0bj"), ExtResource("3_yh60x")])
+pesos = Array[int]([75, 25])
+metadata/_custom_type_script = "uid://clwp4sf4wub5w"

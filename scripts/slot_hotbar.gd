@@ -19,12 +19,18 @@ func _drop_data(at_position: Vector2, data: Variant):
 	var origen = data["origen"]
 	if HotbarManager.slots[index] != null:
 		return
-	for hijo in origen.get_children():
-		hijo.queue_free()
-	if origen.get_script() == preload("res://scripts/slot_hotbar.gd"):
-		HotbarManager.sacar_item(origen.index)
+	if origen.get_script() == preload("res://scripts/slot_tienda.gd"):
+		if StatsManager.dinero < item.precio:
+			return
+		StatsManager.reducir_dinero(item.precio)
+		origen.limpiar()
 	else:
-		InventarioManager.sacar_item(origen.index)
+		for hijo in origen.get_children():
+			hijo.queue_free()
+		if origen.get_script() == preload("res://scripts/slot_hotbar.gd"):
+			HotbarManager.sacar_item(origen.index)
+		else:
+			InventarioManager.sacar_item(origen.index)
 		
 	var card = item_card_scene.instantiate()
 	add_child(card)
