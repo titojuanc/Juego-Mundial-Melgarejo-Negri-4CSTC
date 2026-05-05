@@ -85,3 +85,8 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 		var canvas = get_tree().get_first_node_in_group("Hotbar")
 		canvas.ocultar_usos()
+
+func actualizar_usos():
+	var hotbar = get_tree().get_first_node_in_group("Hotbar")
+	if hotbar:
+		hotbar.mostrar_usos(item, global_position)

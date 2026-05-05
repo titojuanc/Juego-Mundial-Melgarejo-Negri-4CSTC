@@ -10,12 +10,6 @@ offset_bottom = 75.0
 mouse_filter = 1
 script = ExtResource("1_ce1kl")
 
-[node name="UsosLabel" type="Label" parent="." unique_id=1740506487]
-z_index = 10
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
 [node name="Control" type="VBoxContainer" parent="." unique_id=229762191]
 layout_mode = 2
 

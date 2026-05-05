@@ -23,12 +23,18 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 			for hijo in slot.get_children():
 				if hijo is DangerCard and not hijo.get("es_preview") == false:
 					hijo.queue_free()
-	for hijo in origen.get_children():
-		hijo.queue_free()
-	if origen.get_script() == preload("res://scripts/slot_hotbar.gd"):
-		HotbarManager.sacar_item(origen.index)
-	elif origen.get_script() == preload("res://scripts/slot_inventario.gd"):
-		InventarioManager.sacar_item(origen.index)
+	item.usos -= 1
+	if item.usos <= 0:
+		for hijo in origen.get_children():
+			hijo.queue_free()
+		if origen.get_script() == preload("res://scripts/slot_hotbar.gd"):
+			HotbarManager.sacar_item(origen.index)
+		elif origen.get_script() == preload("res://scripts/slot_inventario.gd"):
+			InventarioManager.sacar_item(origen.index)
+	else:
+		for hijo in origen.get_children():
+			if hijo is ItemCard:
+				hijo.actualizar_usos()
 
 func _buscar_secuencia_valida(item: Item) -> int:
 	var indicadores = item.indicadores.filter(func(x): return x != null)
