@@ -9,15 +9,19 @@ func _ready():
 	var manzana = load("res://items/manzana.tres")
 	var card_1 = item_card_scene.instantiate()
 	$Hotbar/Control/Slot1.add_child(card_1)  
-	card_1.configurar(cinta)               
+	card_1.configurar(cinta)
+	print(str(card_1.icono))     
 	HotbarManager.colocar_item(0, cinta)
 	var card_2 = item_card_scene.instantiate()
 	$Hotbar/Control/Slot2.add_child(card_2)  
 	card_2.configurar(manzana)
 	HotbarManager.colocar_item(1, manzana)
 	var danger_1 = danger_card.instantiate()
-	$Encuentro/Control/Slot4.add_child(danger_1)  
+	$HotbarEncuentro/Control/Slot2.add_child(danger_1)  
 	danger_1.configurar(peligro_auto)
+	var danger_2 = danger_card.instantiate()
+	$HotbarEncuentro/Control/Slot3.add_child(danger_2)  
+	danger_2.configurar(peligro_auto)
 	
 func _input(event):
 	if event.is_action_pressed("ui_up"):

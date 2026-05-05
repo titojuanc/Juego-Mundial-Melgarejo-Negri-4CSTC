@@ -9,7 +9,7 @@
 [node name="Debug" type="Node2D" unique_id=325662370]
 script = ExtResource("1_4pmxj")
 
-[node name="Encuentro" parent="." unique_id=2060931644 instance=ExtResource("5_kayp2")]
+[node name="HotbarEncuentro" parent="." unique_id=2060931644 instance=ExtResource("5_kayp2")]
 
 [node name="Hotbar" parent="." unique_id=1073938056 instance=ExtResource("2_4pmxj")]
 

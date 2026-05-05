@@ -1,0 +1,2 @@
+1-Al soltar un item en un slot de encuentro vacio, se consume
+2-La preview se muestra al inicio de la hotbar y no por encima de los slots que estoy apuntando

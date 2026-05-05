@@ -16,13 +16,13 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	if not data.has("item") or not data.has("origen"):
 		return false
 	var item: Item = data["item"]
-	var resultado = peligro.tipo in item.indicadores
-	return resultado
-
+	return peligro.tipo in item.indicadores
+	
 func _drop_data(at_position: Vector2, data: Variant) -> void:
+	var item: Item = data["item"]
 	var origen = data["origen"]
 	for hijo in origen.get_children():
-		hijo.queue_free()
+		hijo.queue_free()   
 	if origen.get_script() == preload("res://scripts/slot_hotbar.gd"):
 		HotbarManager.sacar_item(origen.index)
 	elif origen.get_script() == preload("res://scripts/slot_inventario.gd"):
