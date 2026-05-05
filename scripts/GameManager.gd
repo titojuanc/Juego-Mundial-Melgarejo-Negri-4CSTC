@@ -1,7 +1,7 @@
 extends Node
 
-# durabilidad, nafta. energía y dinero.
-# Las 4 stats las manejamos como globales entonces
+var item_arrastrando: Item = null
+
 const INDICADORES = {
 	"auto": Rect2(528.624, 400.607, 14.589, 14.713),
 	"nafta": Rect2(64.73, 416.69, 14.335, 14.713),
