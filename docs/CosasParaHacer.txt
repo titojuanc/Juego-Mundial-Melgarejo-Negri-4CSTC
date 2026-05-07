@@ -5,3 +5,7 @@
 - que el evento termine cuando se acaban los peligros en su barra
 - agrandar la hotbar
 - agregar un icono de peligro nulo, para hacer items que cubran su 
+
+Fran:
+-Poner usos para que se vea siempre
+-Ponerle precio a los items (visualmente)
