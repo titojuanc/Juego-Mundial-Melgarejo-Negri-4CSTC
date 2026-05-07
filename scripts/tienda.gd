@@ -1,6 +1,12 @@
 extends CanvasLayer
+
 @export var pool: TiendaPool
+
+@onready var inventario = get_parent().get_node("Inventario")
+
 var slots: Array = []
+var generada: bool = false
+
 
 func _ready() -> void:
 	slots = [
@@ -39,13 +45,15 @@ func _ready() -> void:
 func abrir(p_pool: TiendaPool = null) -> void:
 	if p_pool:
 		pool = p_pool
-	_generar()
+	if not generada:
+		_generar()
+		generada = true
 	show()
+	inventario.abrir_forzado()
 
 func cerrar() -> void:
 	hide()
-	for slot in slots:
-		slot.limpiar()
+	inventario.cerrar_forzado()
 
 func _generar() -> void:
 	var cantidad = randi_range(pool.min_items, pool.max_items)
@@ -56,14 +64,13 @@ func _generar() -> void:
 
 func _elegir_item() -> Item:
 	var total_peso = 0
-	for peso in pool.pesos:
-		total_peso += peso
+	for entrada in pool.entradas:
+		total_peso += entrada.peso
 	var sorte = randi_range(1, total_peso)
 	var acumulado = 0
-	for i in range(pool.items.size()):
-		acumulado += pool.pesos[i]
+	for entrada in pool.entradas:
+		acumulado += entrada.peso
 		if sorte <= acumulado:
-			return pool.items[i]
-	return pool.items[-1]
-	
+			return entrada.item
+	return pool.entradas[-1].item
 	

@@ -2,6 +2,7 @@ extends Node2D
 
 var item_card_scene = preload("res://scenes/item_card.tscn")
 var danger_card = preload("res://scenes/danger_card.tscn")
+var tienda_pool = preload("res://tiendas/tienda_debug.tres")
 
 func _ready():
 	var peligro_auto = load("res://items/peligros/auto.tres")
@@ -24,7 +25,13 @@ func _ready():
 	danger_2.configurar(peligro_auto)
 	danger_2.es_preview = true
 	
+	
 func _input(event):
+	if event.is_action_pressed("ui_accept"): 
+		if $Tienda.visible:
+			$Tienda.cerrar()
+		else:
+			$Tienda.abrir(tienda_pool)
 	if event.is_action_pressed("ui_up"):
 		StatsManager.aumentar_energia(1)
 		StatsManager.aumentar_auto(1)
