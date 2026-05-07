@@ -12,6 +12,7 @@ func _iniciar(referencia_auto: CharacterBody2D) -> void:
 func configurar_peligros(evento:Resource):
 	var hotbar_peligros = ["", "", "", "", "", "", "", "" ]
 	var aleatorizador = RandomNumberGenerator.new()
+	
 	var minimo_total =0
 	for minimo in evento.minimos:
 		minimo_total += evento.minimos[minimo]
@@ -26,24 +27,42 @@ func configurar_peligros(evento:Resource):
 	for clave in claves:
 		conteo[clave] = 0 
 	
+	var chances_extra = [50.0, 20.0, 10.0]
+	var orden = [3, 4, 2, 5, 1, 6, 0, 7]
+	var cursor = 0
+	
 	var i = 0
 	while i < minimo_total:
-		var peligro = claves[aleatorizador.randi_range(0, 3)]
+		var pendientes = [] #aca se guardan los minimos
+		for clave in claves:
+			if conteo[clave] < evento.minimos[clave]:
+				pendientes.append(clave)
+		
+		if pendientes.is_empty(): # si el evento es totalmente random, no hace nada
+			break
+		
+		var peligro = pendientes[aleatorizador.randi_range(0, pendientes.size()-1)]
 		var chance = evento.peligros[peligro]
 		var roll = aleatorizador.randf_range(0.0, 100.0)
 		if roll < chance:
-			if conteo[peligro] < evento.maximos[peligro]:
-				hotbar_peligros[i] = peligro
+			if conteo[peligro] < evento.maximos[peligro]: #aca se controla los maximos
+				hotbar_peligros[orden[cursor]] = peligro
 				conteo[peligro] += 1
 				i += 1
+				cursor +=1
 	
 	for peligro in evento.minimos:
 		var faltan = evento.minimos[peligro] - conteo[peligro]
 		if faltan > 0:
 			for j in range(faltan):
-				hotbar_peligros[i] = peligro
+				hotbar_peligros[orden[cursor]] = peligro
 				conteo[peligro] += 1
 				i += 1
+				cursor +=1
+	
+	for chance_extra
+	
+	print(hotbar_peligros)
 
 func terminar():
 	queue_free()
