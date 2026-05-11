@@ -34,5 +34,5 @@ func _drop_data(at_position: Vector2, data: Variant):
 		
 	var card = item_card_scene.instantiate()
 	add_child(card)
-	card.configurar(item)
+	card.configurar(item, false)
 	HotbarManager.colocar_item(index, item)

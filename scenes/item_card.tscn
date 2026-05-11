@@ -4,6 +4,8 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce1kl"]
 bg_color = Color(0, 0, 0, 0.5882353)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
 
 [node name="ItemCard" type="PanelContainer" unique_id=68152229]
 z_index = 1
@@ -12,12 +14,6 @@ offset_right = 75.0
 offset_bottom = 75.0
 mouse_filter = 1
 script = ExtResource("1_ce1kl")
-
-[node name="UsosLabel" type="Label" parent="." unique_id=989824151]
-z_index = 1
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_ce1kl")
 
 [node name="Control" type="VBoxContainer" parent="." unique_id=229762191]
 layout_mode = 2
@@ -60,3 +56,31 @@ custom_minimum_size = Vector2(17, 17)
 layout_mode = 2
 expand_mode = 2
 stretch_mode = 5
+
+[node name="LabelControl" type="Control" parent="." unique_id=105836089]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="LabelControl" unique_id=1978819023]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ce1kl")
+
+[node name="Labels" type="HBoxContainer" parent="LabelControl" unique_id=978507483]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="UsosLabel" type="Label" parent="LabelControl/Labels" unique_id=989824151]
+layout_mode = 2
+size_flags_vertical = 0
