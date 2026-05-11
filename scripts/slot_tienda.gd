@@ -14,3 +14,6 @@ func limpiar() -> void:
 	item = null
 	for hijo in get_children():
 		hijo.queue_free()
+
+func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+	return false
