@@ -5,20 +5,20 @@
 [resource]
 script = ExtResource("1_4qlpr")
 peligros = {
-"auto": 70.0,
-"dinero": 0.0,
-"energia": 10.0,
-"nafta": 20.0
+"auto": 25.0,
+"dinero": 25.0,
+"energia": 25.0,
+"nafta": 25.0
 }
 minimos = {
-"auto": 4,
-"dinero": 0,
-"energia": 0,
-"nafta": 4
-}
-maximos = {
-"auto": 4,
+"auto": 1,
 "dinero": 1,
 "energia": 1,
-"nafta": 4
+"nafta": 1
+}
+maximos = {
+"auto": 2,
+"dinero": 2,
+"energia": 2,
+"nafta": 2
 }
