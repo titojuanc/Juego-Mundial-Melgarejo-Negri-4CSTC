@@ -17,13 +17,29 @@ func _ready():
 	card_2.configurar(manzana)
 	HotbarManager.colocar_item(1, manzana)
 	var danger_1 = danger_card.instantiate()
-	$HotbarEncuentro/Control/Slot2.add_child(danger_1)  
+	$HotbarEncuentro/Control/Slot1.add_child(danger_1)  
 	danger_1.configurar(peligro_auto)
 	danger_1.es_preview = true
 	var danger_2 = danger_card.instantiate()
-	$HotbarEncuentro/Control/Slot3.add_child(danger_2)  
+	$HotbarEncuentro/Control/Slot2.add_child(danger_2)  
 	danger_2.configurar(peligro_auto)
 	danger_2.es_preview = true
+	var danger_3 = danger_card.instantiate()
+	$HotbarEncuentro/Control/Slot3.add_child(danger_3)  
+	danger_3.configurar(peligro_auto)
+	danger_3.es_preview = true
+	var danger_4 = danger_card.instantiate()
+	$HotbarEncuentro/Control/Slot4.add_child(danger_4)  
+	danger_4.configurar(peligro_auto)
+	danger_4.es_preview = true
+	var danger_5 = danger_card.instantiate()
+	$HotbarEncuentro/Control/Slot5.add_child(danger_5)  
+	danger_5.configurar(peligro_auto)
+	danger_5.es_preview = true
+	var danger_6 = danger_card.instantiate()
+	$HotbarEncuentro/Control/Slot6.add_child(danger_6)  
+	danger_6.configurar(peligro_auto)
+	danger_6.es_preview = true
 	
 	
 func _input(event):

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c8dk2uwvnjgip" path="res://scripts/item_card.gd" id="1_ce1kl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce1kl"]
-bg_color = Color(0, 0, 0, 0.6)
+bg_color = Color(0, 0, 0, 0.5882353)
 
 [node name="ItemCard" type="PanelContainer" unique_id=68152229]
 z_index = 1
@@ -14,6 +14,7 @@ mouse_filter = 1
 script = ExtResource("1_ce1kl")
 
 [node name="UsosLabel" type="Label" parent="." unique_id=989824151]
+z_index = 1
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ce1kl")
@@ -25,7 +26,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 5
-size_flags_vertical = 7
+size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 expand_mode = 3
 stretch_mode = 6

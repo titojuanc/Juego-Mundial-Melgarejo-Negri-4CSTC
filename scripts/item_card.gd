@@ -2,6 +2,7 @@ extends PanelContainer
 class_name ItemCard
 
 @onready var icono: TextureRect = $Control/Icono
+@onready var usos_label: Label = $UsosLabel
 @onready var slots: Array = [
 	$Control/Indicadores/Slot1,
 	$Control/Indicadores/Slot2,
@@ -13,13 +14,20 @@ var item: Item
 
 func _ready() -> void:
 	resized.connect(_on_resized)
-	mouse_entered.connect(_on_mouse_entered)
-	mouse_exited.connect(_on_mouse_exited)
 
 func configurar(p_item: Item):
 	item = p_item
 	icono.texture = item.icono
 	_actualizar_layout()
+	_actualizar_usos_label()
+
+func _actualizar_usos_label():
+	if item == null:
+		usos_label.text = ""
+		usos_label.visible = false
+		return
+	usos_label.text = str("Usos: " , item.usos)
+	usos_label.visible = true
 
 func _actualizar_layout():
 	var panel_size = size
@@ -43,7 +51,6 @@ func cargar_icono_indicador(id : int):
 	var atlas = AtlasTexture.new()
 	atlas.atlas = load("res://assets/Items/items_sheet.png")
 	match id:
-		#Ahi las defini globalmente
 		1: atlas.region = GameManager.INDICADORES["auto"]
 		2: atlas.region = GameManager.INDICADORES["nafta"]
 		3: atlas.region = GameManager.INDICADORES["energia"]
@@ -76,17 +83,6 @@ func _on_resized():
 func _notification(what):
 	if what == NOTIFICATION_DRAG_END:
 		GameManager.item_arrastrando = null
-	
-func _on_mouse_entered():
-	if item != null:
-		var canvas = get_tree().get_first_node_in_group("Hotbar")
-		canvas.mostrar_usos(item, global_position)
-	
-func _on_mouse_exited():
-		var canvas = get_tree().get_first_node_in_group("Hotbar")
-		canvas.ocultar_usos()
 
 func actualizar_usos():
-	var hotbar = get_tree().get_first_node_in_group("Hotbar")
-	if hotbar:
-		hotbar.mostrar_usos(item, global_position)
+	_actualizar_usos_label()
