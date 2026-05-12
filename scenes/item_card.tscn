@@ -72,15 +72,18 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ce1kl")
 
 [node name="Labels" type="HBoxContainer" parent="LabelControl" unique_id=978507483]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -52.0
+offset_bottom = -23.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_vertical = 0
 mouse_filter = 2
 
 [node name="UsosLabel" type="Label" parent="LabelControl/Labels" unique_id=989824151]
 layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Espaciador" type="Control" parent="LabelControl/Labels" unique_id=1862028628]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 0

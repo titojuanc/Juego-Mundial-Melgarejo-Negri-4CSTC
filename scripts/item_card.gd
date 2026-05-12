@@ -11,8 +11,7 @@ class_name ItemCard
 	]
 
 var item: Item
-var precio_label: RichTextLabel = null
-var icono_dinero: TextureRect
+var precio_label: Label = null
 
 func _ready() -> void:
 	resized.connect(_on_resized)
@@ -90,12 +89,16 @@ func _notification(what):
 
 func mostrar_precio(precio: int):
 	if precio_label == null:
-		precio_label = RichTextLabel.new()   
+		var icono: TextureRect = TextureRect.new()
+		icono.texture = cargar_icono_indicador(4)
+		icono.custom_minimum_size = Vector2(16, 16)
+		icono.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		icono.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		$LabelControl/Labels.add_child(icono)
+		precio_label = Label.new()
+		precio_label.size_flags_horizontal = Control.SIZE_SHRINK_END
 		$LabelControl/Labels.add_child(precio_label)
-	precio_label.text = str(GameManager.crear_icono_dinero(icono) , str(precio))
-	precio_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	precio_label.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
-	precio_label.layout_direction = Control.LAYOUT_DIRECTION_RTL
+	precio_label.text = str(precio)
 
 func actualizar_usos():
 	actualizar_usos_label()

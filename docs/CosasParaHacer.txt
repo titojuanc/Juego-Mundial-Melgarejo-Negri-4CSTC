@@ -7,4 +7,4 @@
 - agregar un icono de peligro nulo, para hacer items que cubran su 
 
 Fran:
--Ponerle la img del dinero al precio
+-
