@@ -6,13 +6,13 @@ var danger_card = preload("res://scenes/danger_card.tscn")
 var auto
 var barra
 
-
 func _iniciar(referencia_auto: CharacterBody2D) -> void:
 	auto = referencia_auto
 	auto.parar_anim_player()
 	var barra_de_evento = Hotbar.instantiate()
 	barra=barra_de_evento
-	add_child(barra_de_evento)
+	GameManager.eliminar_carta.connect(_on_peligro_eliminado)
+	get_parent().add_child(barra_de_evento)
 
 func configurar_peligros(evento:Resource):
 	var hotbar_peligros = ["", "", "", "", "", "", "", "" ]
@@ -97,6 +97,19 @@ func colocar_eventos(lista):
 			carta_peligro.configurar(GameManager.obtener_peligro(peligro))
 		i = i+1
 	pass
+
+func _on_peligro_eliminado()-> void:
+	var eliminar = true
+	for slot in barra.get_child(0).get_children():
+		if slot is PanelContainer:
+			if slot.get_children().is_empty():
+				continue
+			else:
+				eliminar = false
+				break
+	if eliminar:
+		barra.queue_free()
+
 
 func terminar():
 	queue_free()

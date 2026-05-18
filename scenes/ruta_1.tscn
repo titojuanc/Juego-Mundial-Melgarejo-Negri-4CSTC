@@ -8,6 +8,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 script = ExtResource("1_ix6bq")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=89474031]
@@ -17,4 +18,5 @@ autoscroll = Vector2(-600, 0)
 [node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1351200975]
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 texture = ExtResource("1_jpvqy")

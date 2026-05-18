@@ -9,6 +9,10 @@
 [node name="DebugEncuentro" type="Node2D" unique_id=1386822980]
 script = ExtResource("1_wsigu")
 
+[node name="Hotbar" parent="." unique_id=2060931644 instance=ExtResource("4_wsigu")]
+
+[node name="Inventario" parent="." unique_id=1702106210 instance=ExtResource("5_fykob")]
+
 [node name="Ruta_1" parent="." unique_id=1021237360 instance=ExtResource("2_0b71t")]
 offset_left = 3.0517578e-05
 offset_top = 6.1035156e-05
@@ -17,7 +21,3 @@ metadata/_edit_use_anchors_ = true
 [node name="Auto" parent="." unique_id=651395351 instance=ExtResource("1_snvhl")]
 position = Vector2(330, 890)
 scale = Vector2(0.4, 0.4)
-
-[node name="Hotbar" parent="." unique_id=2060931644 instance=ExtResource("4_wsigu")]
-
-[node name="Inventario" parent="." unique_id=1702106210 instance=ExtResource("5_fykob")]
