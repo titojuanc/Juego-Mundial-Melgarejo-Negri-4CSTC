@@ -3,6 +3,7 @@ extends Node2D
 var item_card_scene = preload("res://scenes/item_card.tscn")
 var danger_card = preload("res://scenes/danger_card.tscn")
 var tienda_pool = preload("res://tiendas/tienda_debug.tres")
+var estado_card = preload("res://scenes/estado_card.tscn")
 
 func _ready():
 	var peligro_auto = load("res://items/peligros/auto.tres")
@@ -16,6 +17,7 @@ func _ready():
 	$Hotbar/Control/Slot2.add_child(card_2)  
 	card_2.configurar(manzana.duplicate(), true)
 	HotbarManager.colocar_item(1, manzana)
+	
 	var danger_1 = danger_card.instantiate()
 	$HotbarEncuentro/Control/Slot1.add_child(danger_1)  
 	danger_1.configurar(peligro_auto)
@@ -40,6 +42,12 @@ func _ready():
 	$HotbarEncuentro/Control/Slot6.add_child(danger_6)  
 	danger_6.configurar(peligro_auto)
 	danger_6.es_preview = true
+	
+	EstadoManager.aplicar_estado(Estado.Tipo.COMIDO)
+	EstadoManager.aplicar_estado(Estado.Tipo.CANSANCIO)
+	EstadoManager.aplicar_estado(Estado.Tipo.DESCANSADO)
+	EstadoManager.aplicar_estado(Estado.Tipo.FLOW)
+	EstadoManager.aplicar_estado(Estado.Tipo.HAMBRIENTO)
 	
 	
 func _input(event):

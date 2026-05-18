@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Estado" format=3 uid="uid://cko0hcucecpja"]
+
+[ext_resource type="Texture2D" uid="uid://tx2mtmpcfju8" path="res://assets/Estados/Bien-comido.png" id="1_0ie4o"]
+[ext_resource type="Script" uid="uid://bmqlsxtpca6n3" path="res://scripts/estado.gd" id="1_858k2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7828s"]
+atlas = ExtResource("1_0ie4o")
+
+[resource]
+script = ExtResource("1_858k2")
+nombre = "Comido"
+descripcion = "Consume menos energ"
+icono = SubResource("AtlasTexture_7828s")
+tipo = 4
+metadata/_custom_type_script = "uid://bmqlsxtpca6n3"

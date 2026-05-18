@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Estado" format=3 uid="uid://bt7gc713yhyw4"]
+
+[ext_resource type="Script" uid="uid://bmqlsxtpca6n3" path="res://scripts/estado.gd" id="1_jgw71"]
+[ext_resource type="Texture2D" uid="uid://b6ej7v1w70txg" path="res://assets/Estados/bienDescansado.png" id="1_nr55c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5jqa"]
+atlas = ExtResource("1_nr55c")
+
+[resource]
+script = ExtResource("1_jgw71")
+nombre = "Descansado"
+descripcion = "Aumenta la energia maxima"
+icono = SubResource("AtlasTexture_m5jqa")
+tipo = 3
+metadata/_custom_type_script = "uid://bmqlsxtpca6n3"

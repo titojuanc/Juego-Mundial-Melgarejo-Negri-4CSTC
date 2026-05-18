@@ -22,8 +22,8 @@ KeepDriving
 --Cansansio -> Reduce energia max
 --Hambriento -> Aumenta consumo de energia
 --En el flow -> Se reducen los peligros
---Bien Descansado //
---Bien Comido //
+--Bien Descansado -> Disminuye la dificultad en los peligros
+--Bien Comido -> Disminuye el consumo de energia
 -Modificar el auto en ciudad con garage x $$$:
 --Baul -> Tamaño
 --Motor -> Velocidad, Consumo Nafta
