@@ -27,3 +27,7 @@ func abrir_forzado() -> void:
 func cerrar_forzado() -> void:
 	bloqueado = false
 	hide()
+	
+func bloquear_por_evento() -> void:
+	bloqueado = true
+	hide()

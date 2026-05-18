@@ -1,6 +1,7 @@
 extends Node
 
 var item_arrastrando: Item = null
+var danger_card = load("res://scenes/danger_card.tscn")
 
 const INDICADORES = {
 	"auto": Rect2(528.624, 400.607, 14.589, 14.713),
@@ -8,6 +9,20 @@ const INDICADORES = {
 	"energia": Rect2(145.655, 416.587, 13.665, 13.81),
 	"dinero": Rect2(128.644, 512.736, 14.742, 13.809)
 }
+
+const PELIGROS = {
+	"auto":preload("res://items/peligros/auto.tres"),
+	"nafta":preload("res://items/peligros/nafta.tres"),
+	"energia":preload("res://items/peligros/energia.tres"),
+	"dinero":preload("res://items/peligros/dinero.tres")
+}
+
+func crear_peligro() -> DangerCard:
+	var peligro = danger_card.instantiate()
+	return peligro
+
+func obtener_peligro(nombre) -> Peligro:
+	return PELIGROS[nombre]
 
 func crear_icono_dinero(icono):
 	var atlas = AtlasTexture.new()

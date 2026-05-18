@@ -1,8 +1,11 @@
 extends Node2D
 
 var Hotbar = preload("res://scenes/Hotbar_encuentro.tscn")
+var danger_card = preload("res://scenes/danger_card.tscn")
+
 var auto
 var barra
+
 
 func _iniciar(referencia_auto: CharacterBody2D) -> void:
 	auto = referencia_auto
@@ -13,12 +16,6 @@ func _iniciar(referencia_auto: CharacterBody2D) -> void:
 
 func configurar_peligros(evento:Resource):
 	var hotbar_peligros = ["", "", "", "", "", "", "", "" ]
-	var danger_cards = {
-						"auto": load("res://items/peligros/auto.tres"),
-						"nafta": load("res://items/peligros/nafta.tres"), 
-						"energia": load("res://items/peligros/energia.tres"), 
-						"dinero": load("res://items/peligros/dinero.tres")
-						}
 	var aleatorizador = RandomNumberGenerator.new()
 	
 	var minimo_total =0
@@ -85,9 +82,20 @@ func configurar_peligros(evento:Resource):
 				
 			
 	print(hotbar_peligros)
+	colocar_eventos(hotbar_peligros)
 
-
-func colocar_eventos():
+func colocar_eventos(lista):
+	var i = 2
+	for peligro in lista:
+		if peligro == "":
+			i = i+1
+			continue
+		else:
+			var slot = barra.get_child(0).get_child(i)
+			var carta_peligro = GameManager.crear_peligro() 
+			slot.add_child(carta_peligro)
+			carta_peligro.configurar(GameManager.obtener_peligro(peligro))
+		i = i+1
 	pass
 
 func terminar():
