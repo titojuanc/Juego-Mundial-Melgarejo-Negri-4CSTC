@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://brydnioay0jdo"]
+
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="1_jqckv"]
+[ext_resource type="Script" uid="uid://c83orae0ir8g5" path="res://scripts/item.gd" id="2_rmpkp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oypvw"]
+atlas = ExtResource("1_jqckv")
+region = Rect2(560.2655, 288.3227, 15.636963, 15.17926)
+
+[resource]
+script = ExtResource("2_rmpkp")
+nombre = "cigarrillo"
+icono = SubResource("AtlasTexture_oypvw")
+indicadores = [null, 3, 3, null]
+usos_maximos = 12
+precio = 15
