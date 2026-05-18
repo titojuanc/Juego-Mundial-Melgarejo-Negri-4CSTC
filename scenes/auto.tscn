@@ -97,7 +97,7 @@ _data = {
 script = ExtResource("1_1uxfn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=172095698]
-scale = Vector2(0.15892312, 0.17003106)
+scale = Vector2(0.09, 0.096)
 sprite_frames = SubResource("SpriteFrames_glhpg")
 animation = &"idle"
 
