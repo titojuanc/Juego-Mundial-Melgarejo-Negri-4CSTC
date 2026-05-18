@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dgw6os41an5k2"]
+
+[ext_resource type="Texture2D" uid="uid://bahe3qlp7y6un" path="res://assets/Inventario/Sample-InventorySlotsSet.png" id="1_2o4u3"]
+[ext_resource type="Script" uid="uid://dj1fvkuo5r5hi" path="res://scripts/estados_hud.gd" id="1_32pmb"]
+
+[node name="EstadosHUD" type="CanvasLayer" unique_id=1557752554]
+script = ExtResource("1_32pmb")
+
+[node name="Control" type="Control" parent="." unique_id=33882748]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 25.0
+offset_top = 753.0
+offset_right = 516.0
+offset_bottom = 872.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1906075159]
+position = Vector2(200.5, 58.5)
+scale = Vector2(5.3466673, 4.9583344)
+texture = ExtResource("1_2o4u3")
+region_enabled = true
+region_rect = Rect2(27.642418, 78.71241, 75.61019, 24.49208)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control" unique_id=433940838]
+position = Vector2(435, 59.000004)
+scale = Vector2(5.3466673, 4.9583344)
+texture = ExtResource("1_2o4u3")
+region_enabled = true
+region_rect = Rect2(81.738045, 78.81109, 21.547981, 24.596008)
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1494720753]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 23.0
+offset_right = 104.0
+offset_bottom = 98.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control" unique_id=1601515900]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 23.0
+offset_right = 195.0
+offset_bottom = 98.0
+
+[node name="PanelContainer3" type="PanelContainer" parent="Control" unique_id=1734926724]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 23.0
+offset_right = 286.0
+offset_bottom = 98.0
+
+[node name="PanelContainer4" type="PanelContainer" parent="Control" unique_id=1524587523]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 23.0
+offset_right = 376.0
+offset_bottom = 98.0
+
+[node name="PanelContainer5" type="PanelContainer" parent="Control" unique_id=1375799206]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 23.0
+offset_right = 467.0
+offset_bottom = 98.0

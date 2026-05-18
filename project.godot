@@ -21,6 +21,7 @@ GameManager="*uid://bqvuuar5mcjk2"
 HotbarManager="*uid://cbe1vqyvu4e3s"
 InventarioManager="*uid://bvle4eqw1expc"
 StatsManager="*uid://dd4hp5dgbpc35"
+EstadoManager="*uid://edo8gdt3ggud"
 
 [display]
 

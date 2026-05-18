@@ -20,55 +20,55 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Energia" type="Node2D" parent="Control" unique_id=1817787375]
-position = Vector2(58, 959)
-scale = Vector2(2, 2)
+position = Vector2(-12, 990)
+scale = Vector2(1.5, 1.5)
 
 [node name="Vacio" type="Sprite2D" parent="Control/Energia" unique_id=798061863]
 position = Vector2(98, 16)
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_7hsmw")
 region_enabled = true
 region_rect = Rect2(0, 0, 98, 16.235)
 
 [node name="Lleno" type="Sprite2D" parent="Control/Energia" unique_id=165374024]
 position = Vector2(98, 16)
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_nysna")
 region_enabled = true
 region_rect = Rect2(0, 0, 98, 16.234917)
 
 [node name="Nafta" type="Node2D" parent="Control" unique_id=1573587516]
-position = Vector2(58, 859)
-scale = Vector2(2, 2)
+position = Vector2(-12, 940)
+scale = Vector2(1.5, 1.5)
 
 [node name="Vacio" type="Sprite2D" parent="Control/Nafta" unique_id=1455265158]
 position = Vector2(98, 16)
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_7hsmw")
 region_enabled = true
 region_rect = Rect2(0, 0, 98, 16.235)
 
 [node name="Lleno" type="Sprite2D" parent="Control/Nafta" unique_id=1716487808]
 position = Vector2(98, 16)
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_nysna")
 region_enabled = true
 region_rect = Rect2(0, 0, 98, 16.234917)
 
 [node name="Auto" type="Node2D" parent="Control" unique_id=2022656855]
-position = Vector2(58, 759)
-scale = Vector2(2, 2)
+position = Vector2(-12, 890)
+scale = Vector2(1.5, 1.5)
 
 [node name="Vacio" type="Sprite2D" parent="Control/Auto" unique_id=1147763307]
 position = Vector2(98, 16)
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_7hsmw")
 region_enabled = true
 region_rect = Rect2(0, 0, 98, 16.235)
 
 [node name="Lleno" type="Sprite2D" parent="Control/Auto" unique_id=1050664405]
 position = Vector2(98, 16)
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_f6qnu")
 region_enabled = true
 region_rect = Rect2(0, 0, 98, 16.234917)

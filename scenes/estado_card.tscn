@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c58jwrs1rypwv"]
+
+[ext_resource type="Script" uid="uid://bmou2fpx2g84o" path="res://scripts/estado_card.gd" id="1_u0dcx"]
+
+[node name="EstadoCard" type="PanelContainer" unique_id=2101624123]
+offset_right = 75.0
+offset_bottom = 75.0
+script = ExtResource("1_u0dcx")
+
+[node name="Control" type="Control" parent="." unique_id=1373287211]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="Control" unique_id=238693085]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

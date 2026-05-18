@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Estado" format=3 uid="uid://cko0hcucecpja"]
+
+[ext_resource type="Script" uid="uid://bmqlsxtpca6n3" path="res://scripts/estado.gd" id="1_858k2"]
+
+[resource]
+script = ExtResource("1_858k2")
+metadata/_custom_type_script = "uid://bmqlsxtpca6n3"

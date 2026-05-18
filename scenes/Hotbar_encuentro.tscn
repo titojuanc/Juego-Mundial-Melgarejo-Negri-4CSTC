@@ -11,9 +11,9 @@ script = ExtResource("1_8fyki")
 layout_mode = 3
 anchors_preset = 0
 offset_left = 560.0
-offset_top = 819.0
+offset_top = 908.0
 offset_right = 1359.0
-offset_bottom = 940.0
+offset_bottom = 1029.0
 mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
@@ -42,6 +42,7 @@ offset_right = -1046.55
 offset_bottom = -85.52501
 mouse_filter = 1
 script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot2" type="PanelContainer" parent="Control" unique_id=110414462]
 layout_mode = 1
@@ -56,6 +57,7 @@ offset_right = -101.012024
 offset_bottom = 38.5
 mouse_filter = 1
 script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot3" type="PanelContainer" parent="Control" unique_id=115165531]
 layout_mode = 1
@@ -70,6 +72,7 @@ offset_right = -176.99304
 offset_bottom = 38.5
 mouse_filter = 1
 script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot4" type="PanelContainer" parent="Control" unique_id=964588090]
 layout_mode = 1
@@ -84,6 +87,7 @@ offset_right = -275.74805
 offset_bottom = 38.5
 mouse_filter = 1
 script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot5" type="PanelContainer" parent="Control" unique_id=629168214]
 layout_mode = 1
@@ -96,6 +100,7 @@ offset_right = -658.55005
 offset_bottom = -85.52501
 mouse_filter = 1
 script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot6" type="PanelContainer" parent="Control" unique_id=1958923429]
 layout_mode = 1
@@ -110,6 +115,7 @@ offset_right = 279.98798
 offset_bottom = 38.5
 mouse_filter = 1
 script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot7" type="PanelContainer" parent="Control" unique_id=1612857732]
 layout_mode = 1
@@ -124,6 +130,7 @@ offset_right = 197.00696
 offset_bottom = 38.5
 mouse_filter = 1
 script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot8" type="PanelContainer" parent="Control" unique_id=1708898247]
 layout_mode = 1
@@ -138,3 +145,4 @@ offset_right = 92.25195
 offset_bottom = 38.5
 mouse_filter = 1
 script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true

@@ -1,14 +1,16 @@
 extends Node
 
-const MAX_ENERGIA = 6
-const MAX_NAFTA = 6
-const MAX_AUTO = 6
+var MAX_ENERGIA = 6
+var MAX_NAFTA = 6
+var MAX_AUTO = 6
 const DINERO_INICIAL = 500
 
 var energia: int = MAX_ENERGIA
 var nafta: int = MAX_NAFTA
 var vida_auto: int = MAX_AUTO
 var dinero: int = DINERO_INICIAL
+var reduccion_peligros: int = 0     # cuántos peligros menos aparecen
+var reduccion_dificultad: int = 0   # modificador de dificultad
 
 signal energia_cambiada(valor)
 signal nafta_cambiada(valor)
@@ -27,12 +29,15 @@ func aumentar_energia(cantidad):
 func chequear_energia():
 	if energia == 0:
 		print("auto detenido en banquina")
-	elif energia < MAX_ENERGIA * 0.5:
-		print("Modelar estado cansado")
+	if energia < MAX_ENERGIA * 0.5:
+		EstadoManager.aplicar_estado("cansancio")
+		EstadoManager.quitar_estado("descansado")
 	elif energia > MAX_ENERGIA * 0.75:
-		print("Modelar estado bien desansado")
+		EstadoManager.aplicar_estado("descansado")
+		EstadoManager.quitar_estado("cansancio")
 	else:
-		print("Modelar vaciar estados")
+		EstadoManager.quitar_estado("cansancio")
+		EstadoManager.quitar_estado("descansado")
 		
 func reducir_nafta(cantidad):
 	nafta = max(0, nafta - cantidad)
@@ -80,3 +85,8 @@ func reducir_dinero(cantidad):
 func aumentar_dinero(cantidad):
 	dinero += cantidad
 	emit_signal("dinero_cambiado", dinero)
+
+func get_multiplicador_dificultad() -> float:
+	var porcentaje = float(energia) / float(MAX_ENERGIA)
+	# 100% energia = dificultad normal (1.0), 0% energia = dificultad máxima (2.0 por ejemplo)
+	return 2.0 - porcentaje
