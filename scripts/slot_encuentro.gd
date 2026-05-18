@@ -1,5 +1,7 @@
 extends PanelContainer
 
+signal eliminar_peligro
+
 var index: int
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
@@ -21,7 +23,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		var slot = _get_slot(i)
 		if slot:
 			for hijo in slot.get_children():
-				if hijo is DangerCard and not hijo.get("es_preview") == false:
+				if hijo is DangerCard and not hijo.es_preview:
 					hijo.queue_free()
 	item.usos -= 1
 	if item.usos <= 0:
@@ -81,6 +83,6 @@ func _get_danger_card(slot: Node) -> DangerCard:
 	if slot == null:
 		return null
 	for hijo in slot.get_children():
-		if hijo is DangerCard and hijo.es_preview:
+		if hijo is DangerCard and not hijo.es_preview:
 			return hijo
 	return null

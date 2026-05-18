@@ -11,6 +11,6 @@ region = Rect2(560.2655, 288.3227, 15.636963, 15.17926)
 script = ExtResource("2_rmpkp")
 nombre = "cigarrillo"
 icono = SubResource("AtlasTexture_oypvw")
-indicadores = [null, 3, 3, null]
+indicadores = [3]
 usos_maximos = 12
 precio = 15
