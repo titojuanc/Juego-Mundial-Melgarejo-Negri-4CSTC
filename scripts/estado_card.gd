@@ -16,8 +16,9 @@ func configurar(p_estado: Estado) -> void:
 	tooltip_descripcion.text = estado.descripcion
 	
 func _on_mouse_entered() -> void:
-	tooltip_panel.set_position(Vector2(size.x, 0))
+	icono.hide()
 	tooltip_panel.visible = true
 	
 func _on_mouse_exited() -> void:
+	icono.show()
 	tooltip_panel.visible = false
