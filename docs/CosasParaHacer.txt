@@ -1,10 +1,9 @@
-- flag de acceder al inventario
 - Señal de evento por comenzar
-- cantidad de usos de los items
 - Hacer que la item_card cubra los peligros que dice cubrir en sus indicadores
-- que el evento termine cuando se acaban los peligros en su barra
-- agrandar la hotbar
-- agregar un icono de peligro nulo, para hacer items que cubran su 
+- que el evento termine cuando se acaban los peligros en su barra (EN PROCESO)
+- Que los peligros vayan al medio cuando se eliminan otros.
+- Empezar el gameplya de ciudad a ciudad (tito)
+- agregar un icono de peligro nulo, para hacer items que cubran espacios vacios 
 
 Fran:
 -
