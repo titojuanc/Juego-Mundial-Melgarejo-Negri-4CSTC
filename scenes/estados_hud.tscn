@@ -28,35 +28,35 @@ texture = ExtResource("1_2o4u3")
 region_enabled = true
 region_rect = Rect2(81.738045, 78.81109, 21.547981, 24.596008)
 
-[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1494720753]
+[node name="Slot1" type="PanelContainer" parent="Control" unique_id=1494720753]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 23.0
 offset_right = 104.0
 offset_bottom = 98.0
 
-[node name="PanelContainer2" type="PanelContainer" parent="Control" unique_id=1601515900]
+[node name="Slot2" type="PanelContainer" parent="Control" unique_id=1601515900]
 layout_mode = 0
 offset_left = 120.0
 offset_top = 23.0
 offset_right = 195.0
 offset_bottom = 98.0
 
-[node name="PanelContainer3" type="PanelContainer" parent="Control" unique_id=1734926724]
+[node name="Slot3" type="PanelContainer" parent="Control" unique_id=1734926724]
 layout_mode = 0
 offset_left = 211.0
 offset_top = 23.0
 offset_right = 286.0
 offset_bottom = 98.0
 
-[node name="PanelContainer4" type="PanelContainer" parent="Control" unique_id=1524587523]
+[node name="Slot4" type="PanelContainer" parent="Control" unique_id=1524587523]
 layout_mode = 0
 offset_left = 301.0
 offset_top = 23.0
 offset_right = 376.0
 offset_bottom = 98.0
 
-[node name="PanelContainer5" type="PanelContainer" parent="Control" unique_id=1375799206]
+[node name="Slot5" type="PanelContainer" parent="Control" unique_id=1375799206]
 layout_mode = 0
 offset_left = 392.0
 offset_top = 23.0

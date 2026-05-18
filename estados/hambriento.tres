@@ -1,7 +1,15 @@
 [gd_resource type="Resource" script_class="Estado" format=3 uid="uid://otspph35d5co"]
 
+[ext_resource type="Texture2D" uid="uid://byoo6x577anvo" path="res://assets/Estados/Hambre.png" id="1_aeb4m"]
 [ext_resource type="Script" uid="uid://bmqlsxtpca6n3" path="res://scripts/estado.gd" id="1_ob8mf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7qwl"]
+atlas = ExtResource("1_aeb4m")
 
 [resource]
 script = ExtResource("1_ob8mf")
+nombre = "Hambriento"
+descripcion = "Consume mas energia"
+icono = SubResource("AtlasTexture_v7qwl")
+tipo = 1
 metadata/_custom_type_script = "uid://bmqlsxtpca6n3"

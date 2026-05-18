@@ -4,7 +4,7 @@ var estados_activos: Array[Estado] = []
 
 signal estados_cambiados
 
-func aplicar_estado(tipo: String) -> void:
+func aplicar_estado(tipo) -> void:
 	if _tiene_estado(tipo):
 		return
 	var estado = _cargar_estado(tipo)
@@ -14,7 +14,7 @@ func aplicar_estado(tipo: String) -> void:
 	_aplicar_efecto(tipo)
 	emit_signal("estados_cambiados")
 	
-func quitar_estado(tipo: String) -> void:
+func quitar_estado(tipo) -> void:
 	for i in range(estados_activos.size()):
 		if estados_activos[i].tipo == tipo:
 			estados_activos.remove_at(i)
@@ -22,39 +22,41 @@ func quitar_estado(tipo: String) -> void:
 			emit_signal("estados_cambiados")
 			return
 	
-func _tiene_estado(tipo: String) -> bool:
+func _tiene_estado(tipo) -> bool:
 	for e in estados_activos:
 		if e.tipo == tipo:
 			return true
 	return false
 	
-func _aplicar_efecto(tipo: String) -> void:
+func _aplicar_efecto(tipo) -> void:
 	match tipo:
-		"cansancio":
+		Estado.Tipo.CANSANCIO:
 			StatsManager.MAX_ENERGIA -= 1
 			StatsManager.energia = min(StatsManager.energia, StatsManager.MAX_ENERGIA)
 			StatsManager.emit_signal("energia_cambiada", StatsManager.energia)
-		"hambriento":
+		Estado.Tipo.HAMBRIENTO:
 			print("Futura Logica")
-		"flow":
-			StatsManager.reduccion_peligros += 1
-		"descansado":
-			StatsManager.reduccion_dificultad += 1
-		"comido":
+		Estado.Tipo.FLOW:
+			print("Futura Logica")
+		Estado.Tipo.DESCANSADO:
+			print("Futura Logica")
+		Estado.Tipo.COMIDO:
 			print("Futura Logica")
 	
-func _revertir_efecto(tipo: String) -> void:
+func _revertir_efecto(tipo) -> void:
 	match tipo:
-		"cansancio":
+		Estado.Tipo.CANSANCIO:
 			StatsManager.MAX_ENERGIA += 1
-		"hambriento":
+		Estado.Tipo.HAMBRIENTO:
 			print("Futura Logica")
-		"flow":
-			StatsManager.reduccion_peligros -= 1
-		"descansado":
-			StatsManager.reduccion_dificultad -= 1
-		"comido":
+		Estado.Tipo.FLOW:
+			print("Futura Logica")
+		Estado.Tipo.DESCANSADO:
+			print("Futura Logica")
+		Estado.Tipo.COMIDO:
 			print("Futura Logica")
 	
-func _cargar_estado(tipo: String) -> Estado:
-	return load("res://estados/" + tipo + ".tres")
+func _cargar_estado(tipo) -> Estado:
+	var nombre = Estado.Tipo.keys()[tipo].to_lower()
+	print("Cargando estado: res://estados/" + nombre + ".tres")
+	return load("res://estados/" + nombre + ".tres")

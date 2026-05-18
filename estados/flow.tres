@@ -1,7 +1,15 @@
 [gd_resource type="Resource" script_class="Estado" format=3 uid="uid://drjdctvyvyvt8"]
 
+[ext_resource type="Texture2D" uid="uid://b8c6ky06apxex" path="res://assets/Estados/emoticonos.png" id="1_b15kn"]
 [ext_resource type="Script" uid="uid://bmqlsxtpca6n3" path="res://scripts/estado.gd" id="1_o40ms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vunjo"]
+atlas = ExtResource("1_b15kn")
 
 [resource]
 script = ExtResource("1_o40ms")
+nombre = "En Flow"
+descripcion = "Menos probabilidad de encontrar peligros"
+icono = SubResource("AtlasTexture_vunjo")
+tipo = 2
 metadata/_custom_type_script = "uid://bmqlsxtpca6n3"

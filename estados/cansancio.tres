@@ -1,7 +1,14 @@
 [gd_resource type="Resource" script_class="Estado" format=3 uid="uid://cys2114adhhe2"]
 
+[ext_resource type="Texture2D" uid="uid://btavvc4kt7m1p" path="res://assets/Estados/zzz icon.png" id="1_02ltc"]
 [ext_resource type="Script" uid="uid://bmqlsxtpca6n3" path="res://scripts/estado.gd" id="1_rvl3v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_milak"]
+atlas = ExtResource("1_02ltc")
 
 [resource]
 script = ExtResource("1_rvl3v")
+nombre = "Cansancio"
+descripcion = "Reduce la energía máxima en 1 punto."
+icono = SubResource("AtlasTexture_milak")
 metadata/_custom_type_script = "uid://bmqlsxtpca6n3"
