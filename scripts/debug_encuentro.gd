@@ -11,6 +11,7 @@ var instancia_encuentro = null
 var en_movimiento= true
 
 func _ready() -> void:
+	GameManager.terminar_evento.connect(on_terminar_evento)
 	auto.mover_ruedas()
 	auto.mover()
 	var cinta = load("res://items/cinta.tres")
@@ -39,10 +40,10 @@ func _physics_process(delta: float) -> void:
 			instancia_encuentro._iniciar(auto)
 			instancia_encuentro.configurar_peligros(evento)
 			inventario.bloquear_por_evento()
-		else:
-			fondo.reanudar()
-			auto.mover()
-			instancia_encuentro.terminar()
-			en_movimiento=true
-			inventario.cerrar_forzado()
-		
+
+func on_terminar_evento() -> void:
+	fondo.reanudar()
+	auto.mover()
+	instancia_encuentro.terminar()
+	en_movimiento=true
+	inventario.cerrar_forzado()

@@ -1,6 +1,7 @@
 extends Node
 
 signal eliminar_carta
+signal terminar_evento
 
 var item_arrastrando: Item = null
 var danger_card = load("res://scenes/danger_card.tscn")

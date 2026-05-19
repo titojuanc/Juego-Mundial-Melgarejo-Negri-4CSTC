@@ -19,5 +19,4 @@ offset_top = 6.1035156e-05
 metadata/_edit_use_anchors_ = true
 
 [node name="Auto" parent="." unique_id=651395351 instance=ExtResource("1_snvhl")]
-position = Vector2(330, 890)
-scale = Vector2(0.4, 0.4)
+position = Vector2(534, 828)

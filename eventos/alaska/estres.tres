@@ -6,19 +6,19 @@
 script = ExtResource("1_v0n0f")
 nombre = "estres"
 peligros = {
-"auto": 0.0,
+"auto": 50.0,
 "dinero": 0.0,
-"energia": 100.0,
+"energia": 50.0,
 "nafta": 0.0
 }
 minimos = {
-"auto": 0,
+"auto": 2,
 "dinero": 0,
 "energia": 2,
 "nafta": 0
 }
 maximos = {
-"auto": 0,
+"auto": 4,
 "dinero": 0,
 "energia": 4,
 "nafta": 0
