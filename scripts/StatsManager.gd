@@ -30,14 +30,14 @@ func chequear_energia():
 	if energia == 0:
 		print("auto detenido en banquina")
 	if energia < MAX_ENERGIA * 0.5:
-		EstadoManager.aplicar_estado("cansancio")
-		EstadoManager.quitar_estado("descansado")
+		EstadoManager.aplicar_estado(Estado.Tipo.CANSANCIO)
+		EstadoManager.quitar_estado(Estado.Tipo.DESCANSADO)
 	elif energia > MAX_ENERGIA * 0.75:
-		EstadoManager.aplicar_estado("descansado")
-		EstadoManager.quitar_estado("cansancio")
+		EstadoManager.aplicar_estado(Estado.Tipo.DESCANSADO)
+		EstadoManager.quitar_estado(Estado.Tipo.CANSANCIO)
 	else:
-		EstadoManager.quitar_estado("cansancio")
-		EstadoManager.quitar_estado("descansado")
+		EstadoManager.quitar_estado(Estado.Tipo.CANSANCIO)
+		EstadoManager.quitar_estado(Estado.Tipo.DESCANSADO)
 		
 func reducir_nafta(cantidad):
 	nafta = max(0, nafta - cantidad)
