@@ -6,4 +6,7 @@
 - agregar un icono de peligro nulo, para hacer items que cubran espacios vacios 
 
 Fran:
--
+-Las ciudades son resources
+-Escena ciudad vacia y se carga con los resources
+-Establecer posiciones con variables o markers
+-Las tiendas/garages ..etc si son escenas
