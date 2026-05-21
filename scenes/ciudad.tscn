@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b1qda3fjlrud0"]
+
+[ext_resource type="Script" uid="uid://cml75eno3k35g" path="res://scripts/ciudad_manager.gd" id="1_xupto"]
+
+[node name="Ciudad" type="Node2D" unique_id=512170517]
+script = ExtResource("1_xupto")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=153554990]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Estructuras" type="Node2D" parent="." unique_id=479256874]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=978189687]

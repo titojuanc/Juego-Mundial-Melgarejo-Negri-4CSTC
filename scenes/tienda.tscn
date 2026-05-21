@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c7bfes0kk7bg7"]
+
+[ext_resource type="Texture2D" uid="uid://bcssts14p0jq1" path="res://assets/Estructuras/The Old Shop.png" id="1_2puif"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wul1"]
+size = Vector2(750, 724)
+
+[node name="Tienda" type="Node2D" unique_id=661550392]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1640835348]
+scale = Vector2(10, 10)
+texture = ExtResource("1_2puif")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=730448908]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1661624561]
+position = Vector2(0, 148)
+shape = SubResource("RectangleShape2D_0wul1")

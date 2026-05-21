@@ -45,11 +45,6 @@ func _ready():
 	
 	
 func _input(event):
-	if event.is_action_pressed("ui_accept"): 
-		if $Tienda.visible:
-			$Tienda.cerrar()
-		else:
-			$Tienda.abrir(tienda_pool)
 	if event.is_action_pressed("ui_up"):
 		StatsManager.aumentar_energia(1)
 		StatsManager.aumentar_auto(1)
