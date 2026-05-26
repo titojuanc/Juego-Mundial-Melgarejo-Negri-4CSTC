@@ -5,6 +5,7 @@ var danger_card = preload("res://scenes/danger_card.tscn")
 
 var auto
 var barra
+var hotbar_peligros = ["", "", "", "", "", "", "", "" ]
 
 func _iniciar(referencia_auto: CharacterBody2D) -> void:
 	auto = referencia_auto
@@ -15,7 +16,7 @@ func _iniciar(referencia_auto: CharacterBody2D) -> void:
 	get_parent().add_child(barra_de_evento)
 
 func configurar_peligros(evento:Resource):
-	var hotbar_peligros = ["", "", "", "", "", "", "", "" ]
+	
 	var aleatorizador = RandomNumberGenerator.new()
 	
 	var minimo_total =0
@@ -128,7 +129,7 @@ func ordenar_izquierda(i):
 			var carta = slot_izquierda.get_child(0)
 			slot_izquierda.remove_child(carta)
 			slot_derecha.add_child(carta)
-		ordenar_izquierda(-1)
+		ordenar_izquierda(i-1)
 	else:
 		return
 
@@ -156,7 +157,9 @@ func centrar():
 	for i in range(peligros.size()):
 		barra.slots_encuentro[inicio + i].add_child(peligros[i])
 	
-
+	# Actualizar index de todos los slots
+	for i in range(barra.slots_encuentro.size()):
+		barra.slots_encuentro[i].index = i
 
 func terminar():
 	queue_free()

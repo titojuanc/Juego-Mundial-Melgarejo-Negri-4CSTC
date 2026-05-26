@@ -24,7 +24,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 				if hijo is DangerCard and not hijo.es_preview:
 					hijo.queue_free()
 					await get_tree().process_frame  # espera al siguiente frame
-					GameManager.eliminar_carta.emit()
+	GameManager.eliminar_carta.emit()
 	item.usos -= 1
 	if item.usos <= 0:
 		for hijo in origen.get_children():
