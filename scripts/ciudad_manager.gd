@@ -6,6 +6,10 @@ extends Node2D
 @onready var estructuras = $Estructuras
 @onready var hotbar_slots = $UI/Hotbar/Control
 @onready var inventario_slots = $UI/Inventario/Control
+@onready var spawn_jugador = $Marker2D
+
+var jugador
+
 
 func _ready():
 	if datos == null:
@@ -16,6 +20,14 @@ func _ready():
 	_restaurar_stats()
 	_restaurar_estados()
 	
+	jugador = GameManager.auto_scene.instantiate()
+	jugador.global_position = spawn_jugador
+	var camara = Camera2D.new()
+	jugador.add_child(camara)
+	camara.limit_left = 0
+	camara.limit_top = 0
+	camara.limit_right
+	
 func cargar_ciudad(ciudad: Ciudad):
 	fondo.texture = ciudad.fondo
 	
@@ -23,7 +35,7 @@ func cargar_ciudad(ciudad: Ciudad):
 		var tienda = datos.tienda.instantiate()
 		tienda.position = ciudad.posicion_tienda
 		estructuras.add_child(tienda)
-		tienda.get_node("Tienda").pool = ciudad.pool_tienda
+		tienda.get_node("Tienda").pool = ciudad.tienda_pool
 	
 	if ciudad.tiene_garage:
 		var garage = datos.garage.instantiate()

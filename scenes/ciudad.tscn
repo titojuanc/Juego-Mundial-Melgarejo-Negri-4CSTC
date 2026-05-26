@@ -13,6 +13,60 @@
 script = ExtResource("1_xupto")
 datos = ExtResource("2_oe04e")
 
+[node name="Background" type="Control" parent="." unique_id=1422121221]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Buildings1" type="TextureRect" parent="Background" unique_id=346233323]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Buildings2" type="TextureRect" parent="Background" unique_id=1212753446]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Buildings3" type="TextureRect" parent="Background" unique_id=598813313]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Buildings4" type="TextureRect" parent="Background" unique_id=180622305]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Shade1" type="TextureRect" parent="Background" unique_id=2079705393]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Shade2" type="TextureRect" parent="Background" unique_id=1913988246]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Shade3" type="TextureRect" parent="Background" unique_id=231535445]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Sky" type="TextureRect" parent="Background" unique_id=1282604234]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
 [node name="Ruta_1" parent="." unique_id=1021237360 instance=ExtResource("3_piqg3")]
 
 [node name="Estructuras" type="Node2D" parent="." unique_id=479256874]
@@ -29,13 +83,16 @@ visible = false
 [node name="EstadosHUD" parent="UI" unique_id=1557752554 instance=ExtResource("5_314re")]
 
 [node name="Auto" parent="." unique_id=651395351 instance=ExtResource("2_s3twk")]
-position = Vector2(298, 607)
+position = Vector2(505, 607)
 
 [node name="Camera2D" type="Camera2D" parent="Auto" unique_id=1819984043]
-position = Vector2(662, -67)
+position = Vector2(455, -67)
 limit_left = 0
 limit_top = 0
 limit_right = 7000
 limit_bottom = 1080
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1269696011]
+position = Vector2(505, 607)
