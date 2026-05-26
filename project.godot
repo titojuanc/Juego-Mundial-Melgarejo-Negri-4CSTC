@@ -35,6 +35,7 @@ Hotbar=""
 Tienda=""
 jugador=""
 Estacion=""
+Inventario=""
 
 [input]
 

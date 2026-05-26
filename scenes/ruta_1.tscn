@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sk34u7jera4u"]
 
-[ext_resource type="Script" uid="uid://b1ibm7bts1wie" path="res://scripts/Ruta.gd" id="1_ix6bq"]
+[ext_resource type="Script" path="res://scripts/Ruta.gd" id="1_ix6bq"]
 [ext_resource type="Texture2D" uid="uid://yjduftt2w0sq" path="res://assets/Fondos/ruta-de-arte-píxeles-con-nubes-silueta-ciudad-fondo-gradiente-salida-al-sol-antecedentes-para-carreras-273647056.jpg" id="1_jpvqy"]
 
 [node name="Ruta_1" type="Control" unique_id=1021237360]
@@ -14,6 +14,7 @@ script = ExtResource("1_ix6bq")
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=89474031]
 repeat_size = Vector2(1920, 0)
 autoscroll = Vector2(-600, 0)
+repeat_times = 12
 
 [node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1351200975]
 offset_right = 1920.0

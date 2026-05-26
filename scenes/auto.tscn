@@ -94,6 +94,7 @@ _data = {
 }
 
 [node name="Auto" type="CharacterBody2D" unique_id=651395351 groups=["jugador"]]
+z_index = 1
 script = ExtResource("1_1uxfn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=172095698]

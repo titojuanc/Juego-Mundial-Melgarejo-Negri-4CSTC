@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @export var pool: TiendaPool
 
-@onready var inventario = get_parent().get_node("Inventario")
+@onready var inventario = get_tree().get_first_node_in_group("Inventario")
 
 var slots: Array = []
 var generada: bool = false

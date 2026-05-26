@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b524mx0y70ouv" path="res://assets/Inventario/inventoryOnly.png" id="2_hswsb"]
 [ext_resource type="Script" uid="uid://dav5ymg72pggr" path="res://scripts/slot_inventario.gd" id="3_mu20r"]
 
-[node name="Inventario" type="CanvasLayer" unique_id=1702106210]
+[node name="Inventario" type="CanvasLayer" unique_id=1702106210 groups=["Inventario"]]
 script = ExtResource("1_q836x")
 
 [node name="Control" type="Control" parent="." unique_id=1393897798]
