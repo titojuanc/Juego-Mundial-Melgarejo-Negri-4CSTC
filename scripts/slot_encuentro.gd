@@ -23,8 +23,15 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 			for hijo in slot.get_children():
 				if hijo is DangerCard and not hijo.es_preview:
 					hijo.queue_free()
-					await get_tree().process_frame  # espera al siguiente frame
+					await get_tree().process_frame
 	GameManager.eliminar_carta.emit()
+	
+	var indicadores = item.indicadores.filter(func(x): return x != null)
+	if slots_a_borrar.size() == indicadores.size():
+		GameManager.cambiar_turno("extra")
+	else:
+		GameManager.cambiar_turno("ruta")
+	
 	item.usos -= 1
 	if item.usos <= 0:
 		for hijo in origen.get_children():

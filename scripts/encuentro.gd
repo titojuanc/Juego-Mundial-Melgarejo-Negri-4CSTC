@@ -2,6 +2,7 @@ extends Node2D
 
 var Hotbar = preload("res://scenes/Hotbar_encuentro.tscn")
 var danger_card = preload("res://scenes/danger_card.tscn")
+@onready var mensaje = $Label
 
 var auto
 var barra
@@ -14,6 +15,8 @@ func _iniciar(referencia_auto: CharacterBody2D) -> void:
 	barra=barra_de_evento
 	GameManager.eliminar_carta.connect(_on_peligro_eliminado)
 	get_parent().add_child(barra_de_evento)
+	mensaje.text = "tu turno"
+	GameManager.cambiar_turno("propio")
 
 func configurar_peligros(evento:Resource):
 	

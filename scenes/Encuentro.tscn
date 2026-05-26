@@ -6,7 +6,7 @@
 script = ExtResource("1_xiebq")
 
 [node name="Label" type="Label" parent="." unique_id=1540254990]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 40
+offset_right = 499.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 60
 text = "hola soy un encuentro"

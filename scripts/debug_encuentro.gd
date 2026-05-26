@@ -3,17 +3,24 @@ extends Node2D
 var encuentro = preload("res://scenes/Encuentro.tscn")
 var evento = preload("res://eventos/alaska/estres.tres")
 var item_card_scene = preload("res://scenes/item_card.tscn")
+var ruta = preload("res://rutas/ruta_1_alaska.tres")
+
 @onready var auto:CharacterBody2D = $Auto
 @onready var fondo:Control = $Ruta_1
 @onready var inventario:CanvasLayer = $"Inventario"
 @onready var hotbar:CanvasLayer = $"Hotbar"
+@onready var timer_ruta: Timer = $Timer
+var timer_eventos = Timer.new()
+
 var instancia_encuentro = null 
 var en_movimiento= true
+var randomizador = RandomNumberGenerator.new()
+var eventos_ocurridos = 0
+
 
 func _ready() -> void:
 	GameManager.terminar_evento.connect(on_terminar_evento)
-	auto.mover_ruedas()
-	auto.mover()
+	GameManager.empezar_evento.connect(on_empezar_evento)
 	var cinta = load("res://items/cinta.tres")
 	var manzana = load("res://items/manzana.tres")
 	var cigarrillo = load("res://items/cigarrillo.tres")
@@ -29,21 +36,47 @@ func _ready() -> void:
 	$Hotbar/Control/Slot3.add_child(card_3)  
 	card_3.configurar(cigarrillo.duplicate(), true)
 	HotbarManager.colocar_item(1, cigarrillo)
+	
+	var intervalo = timer_ruta.wait_time / ruta.cant_eventos
+	timer_eventos.one_shot = true
+	add_child(timer_eventos)
+	timer_eventos.wait_time = intervalo
+	timer_eventos.timeout.connect(on_empezar_evento)
+	
+
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_up"):
-		if en_movimiento:
-			fondo.parar() 
-			en_movimiento=false
-			instancia_encuentro = encuentro.instantiate()
-			add_child(instancia_encuentro)
-			instancia_encuentro._iniciar(auto)
-			instancia_encuentro.configurar_peligros(evento)
-			inventario.bloquear_por_evento()
+		timer_eventos.start()
+		timer_ruta.start()
+		fondo.reanudar()
+		auto.mover()
 
 func on_terminar_evento() -> void:
+	timer_ruta.paused = false 
 	fondo.reanudar()
 	auto.mover()
 	instancia_encuentro.terminar()
 	en_movimiento=true
 	inventario.cerrar_forzado()
+	
+	if eventos_ocurridos < ruta.cant_eventos:
+		timer_eventos.start()
+	else:
+		terminar_ruta()
+
+func on_empezar_evento() -> void:
+	eventos_ocurridos += 1
+	timer_ruta.paused = true 
+	fondo.parar() 
+	en_movimiento=false
+	instancia_encuentro = encuentro.instantiate()
+	add_child(instancia_encuentro)
+	instancia_encuentro._iniciar(auto)
+	instancia_encuentro.configurar_peligros(ruta.encuentros[randomizador.randi_range(0, ruta.encuentros.size()-1)])
+	inventario.bloquear_por_evento()
+
+func terminar_ruta() -> void:
+	get_tree().quit(0)
+	pass
+	

@@ -1,7 +1,12 @@
 extends Node
 
+enum Turno {PROPIO, EXTRA, RUTA}
+
 signal eliminar_carta
 signal terminar_evento
+signal empezar_evento 
+
+var turno_actual
 
 var item_arrastrando: Item = null
 var danger_card = load("res://scenes/danger_card.tscn")
@@ -34,3 +39,15 @@ func crear_icono_dinero(icono):
 	icono.texture = atlas
 	icono.custom_minimum_size = Vector2(20, 20)
 	icono.visible = true
+
+func cambiar_turno(turno):
+	match turno:
+		"propio":
+			turno_actual = Turno.PROPIO
+			print("tu turno")
+		"extra":
+			turno_actual = Turno.EXTRA
+			print("turno extra")
+		"ruta":
+			turno_actual = Turno.RUTA
+			print("turno ruta")
