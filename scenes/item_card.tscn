@@ -29,7 +29,7 @@ stretch_mode = 6
 
 [node name="Indicadores" type="HBoxContainer" parent="Control" unique_id=1056070333]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
 theme_override_constants/separation = 0
 alignment = 1
 

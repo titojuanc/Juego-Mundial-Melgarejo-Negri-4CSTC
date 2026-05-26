@@ -16,6 +16,7 @@ signal energia_cambiada(valor)
 signal nafta_cambiada(valor)
 signal auto_cambiado(valor)
 signal dinero_cambiado(valor)
+signal max_energia_cambiada(valor)
 
 func reducir_energia(cantidad):
 	energia = max(0, energia - cantidad)
@@ -68,7 +69,6 @@ func reducir_auto(cantidad):
 	emit_signal("auto_cambiado", vida_auto)
 	chequear_auto()
 	
-
 func aumentar_auto(cantidad):
 	vida_auto = min(vida_auto + cantidad, MAX_AUTO)
 	emit_signal("auto_cambiado", vida_auto)

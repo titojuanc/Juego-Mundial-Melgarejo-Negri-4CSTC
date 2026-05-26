@@ -49,7 +49,10 @@ func actualizar_layout():
 		else:
 			slots[i].texture = null
 			slots[i].custom_minimum_size = Vector2(0, 0)
-
+	
+	var tiene_indicadores = item.indicadores.any(func(x): return x != null)
+	$Control/Indicadores.visible = tiene_indicadores
+	
 func cargar_icono_indicador(id : int):
 	var atlas = AtlasTexture.new()
 	atlas.atlas = load("res://assets/Items/items_sheet.png")
@@ -102,3 +105,39 @@ func mostrar_precio(precio: int):
 
 func actualizar_usos():
 	actualizar_usos_label()
+
+func _gui_input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		if item is ItemConsumible:
+			_mostrar_menu_usar()
+			
+func _mostrar_menu_usar():
+	var menu = PopupMenu.new()
+	menu.add_item("Usar")
+	menu.add_item("Cancelar")
+	add_child(menu)
+	menu.position = Vector2i(global_position)
+	menu.popup()
+	menu.id_pressed.connect(_on_menu_seleccionado)
+	
+func _on_menu_seleccionado(id: int):
+	if id == 0:
+		_usar()
+	
+func _usar():
+	var consumible = item as ItemConsumible
+	
+	if get_parent().get_script() == preload("res://scripts/slot_tienda.gd"):
+		if StatsManager.dinero < item.precio:
+			print("Sin dinero suficiente")
+			return
+		StatsManager.reducir_dinero(item.precio)
+		
+	match consumible.tipo_efecto:
+		ItemConsumible.TipoEfecto.NAFTA:
+			StatsManager.aumentar_nafta(consumible.valor)
+		ItemConsumible.TipoEfecto.ENERGIA:
+			StatsManager.aumentar_energia(consumible.valor)
+		ItemConsumible.TipoEfecto.AUTO:
+			StatsManager.aumentar_auto(consumible.valor)
+	get_parent().limpiar()

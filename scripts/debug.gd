@@ -43,6 +43,11 @@ func _ready():
 	EstadoManager.aplicar_estado(Estado.Tipo.FLOW)
 	EstadoManager.aplicar_estado(Estado.Tipo.HAMBRIENTO)
 	
+	var bidon = load("res://items/consumibles/bidon_nafta.tres")
+	var card_3 = item_card_scene.instantiate()
+	$Hotbar/Control/Slot3.add_child(card_3)
+	card_3.configurar(bidon.duplicate(), true)
+	HotbarManager.colocar_item(2, bidon)
 	
 func _input(event):
 	if event.is_action_pressed("ui_up"):

@@ -93,7 +93,7 @@ _data = {
 &"parar": SubResource("Animation_bo7k4")
 }
 
-[node name="Auto" type="CharacterBody2D" unique_id=651395351]
+[node name="Auto" type="CharacterBody2D" unique_id=651395351 groups=["jugador"]]
 script = ExtResource("1_1uxfn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=172095698]

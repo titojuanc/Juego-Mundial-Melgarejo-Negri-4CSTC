@@ -73,9 +73,3 @@ func _elegir_item() -> Item:
 			return entrada.item
 	return pool.entradas[-1].item
 	
-func _input(event):
-	if event.is_action_pressed("ui_accept"): 
-		if $Tienda.visible:
-			$Tienda.cerrar()
-		else:
-			$Tienda.abrir(pool)

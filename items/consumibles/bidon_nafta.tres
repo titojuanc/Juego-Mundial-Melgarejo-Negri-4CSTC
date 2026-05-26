@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemConsumible" format=3 uid="uid://bitvk7l3ehw4p"]
+
+[ext_resource type="Script" uid="uid://vmt14clbp4wr" path="res://scripts/item_consumible.gd" id="1_38q74"]
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="1_itc32"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuvek"]
+atlas = ExtResource("1_itc32")
+region = Rect2(17.98807, 417.01596, 13.022182, 14.008667)
+
+[resource]
+script = ExtResource("1_38q74")
+valor = 3
+nombre = "Bidon"
+icono = SubResource("AtlasTexture_uuvek")
+indicadores = []
+precio = 75
+metadata/_custom_type_script = "uid://vmt14clbp4wr"

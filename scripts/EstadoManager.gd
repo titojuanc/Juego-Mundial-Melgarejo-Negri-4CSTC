@@ -33,6 +33,7 @@ func _aplicar_efecto(tipo) -> void:
 		Estado.Tipo.CANSANCIO:
 			StatsManager.MAX_ENERGIA -= 1
 			StatsManager.energia = min(StatsManager.energia, StatsManager.MAX_ENERGIA)
+			StatsManager.emit_signal("max_energia_cambiada", StatsManager.MAX_ENERGIA)
 			StatsManager.emit_signal("energia_cambiada", StatsManager.energia)
 		Estado.Tipo.HAMBRIENTO:
 			print("Futura Logica")
@@ -47,6 +48,8 @@ func _revertir_efecto(tipo) -> void:
 	match tipo:
 		Estado.Tipo.CANSANCIO:
 			StatsManager.MAX_ENERGIA += 1
+			StatsManager.emit_signal("max_energia_cambiada", StatsManager.MAX_ENERGIA)
+			StatsManager.emit_signal("energia_cambiada", StatsManager.energia)
 		Estado.Tipo.HAMBRIENTO:
 			print("Futura Logica")
 		Estado.Tipo.FLOW:

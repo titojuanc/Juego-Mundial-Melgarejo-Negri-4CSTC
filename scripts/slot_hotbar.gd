@@ -36,3 +36,8 @@ func _drop_data(at_position: Vector2, data: Variant):
 	add_child(card)
 	card.configurar(item, false)
 	HotbarManager.colocar_item(index, item)
+
+func limpiar() -> void:
+	for hijo in get_children():
+		hijo.queue_free()
+	HotbarManager.sacar_item(index)

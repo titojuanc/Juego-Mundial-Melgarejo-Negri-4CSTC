@@ -1,18 +1,23 @@
 [gd_scene format=3 uid="uid://c7bfes0kk7bg7"]
 
-[ext_resource type="Texture2D" uid="uid://bcssts14p0jq1" path="res://assets/Estructuras/The Old Shop.png" id="1_2puif"]
+[ext_resource type="Script" uid="uid://bfx8rame10phb" path="res://scripts/estructura.gd" id="1_xyyja"]
+[ext_resource type="Texture2D" uid="uid://bcssts14p0jq1" path="res://assets/Estructuras/The Old Shop.png" id="2_qyx65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wul1"]
 size = Vector2(750, 724)
 
 [node name="Tienda" type="Node2D" unique_id=661550392]
+script = ExtResource("1_xyyja")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1640835348]
 scale = Vector2(10, 10)
-texture = ExtResource("1_2puif")
+texture = ExtResource("2_qyx65")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=730448908]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1661624561]
 position = Vector2(0, 148)
 shape = SubResource("RectangleShape2D_0wul1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

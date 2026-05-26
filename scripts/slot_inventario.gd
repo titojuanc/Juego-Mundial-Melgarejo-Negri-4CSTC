@@ -20,6 +20,8 @@ func _can_drop_data(at_position: Vector2, data: Variant):
 	return true
 	
 func _drop_data(at_position: Vector2, data: Variant) -> void:
+	print("origen script: ", data["origen"].get_script())
+	print("es slot_tienda: ", data["origen"].get_script() == preload("res://scripts/slot_tienda.gd"))
 	var item = data["item"]
 	var origen = data["origen"]
 	if InventarioManager.slots[index] != null:
@@ -42,3 +44,8 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	add_child(card)
 	card.configurar(item, false)
 	InventarioManager.colocar_item(index, item)
+
+func limpiar() -> void:
+	for hijo in get_children():
+		hijo.queue_free()
+	InventarioManager.sacar_item(index)

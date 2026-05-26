@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dfc2rr8jptm0b" path="res://menues/tienda.tscn" id="6_j2wbo"]
 [ext_resource type="PackedScene" uid="uid://dgw6os41an5k2" path="res://scenes/estados_hud.tscn" id="7_t48sv"]
 [ext_resource type="PackedScene" uid="uid://ctp6c5ids34rm" path="res://scenes/auto.tscn" id="8_svo7y"]
+[ext_resource type="PackedScene" uid="uid://d3phvvw7c2dun" path="res://scenes/EstructuraEstacion.tscn" id="9_5ph7u"]
 
 [node name="Debug" type="Node2D" unique_id=325662370]
 script = ExtResource("1_4pmxj")
@@ -21,10 +22,13 @@ visible = false
 
 [node name="HUD" parent="." unique_id=1799149189 instance=ExtResource("4_hqhvd")]
 
-[node name="Tienda" parent="." unique_id=195477967 instance=ExtResource("6_j2wbo")]
+[node name="Tienda" parent="." unique_id=1890331605 instance=ExtResource("6_j2wbo")]
 visible = false
 
 [node name="EstadosHUD" parent="." unique_id=1557752554 instance=ExtResource("7_t48sv")]
 
 [node name="Auto" parent="." unique_id=651395351 instance=ExtResource("8_svo7y")]
 position = Vector2(349, 630)
+
+[node name="Estacion" parent="." unique_id=1290168128 instance=ExtResource("9_5ph7u")]
+position = Vector2(1858, 220)
