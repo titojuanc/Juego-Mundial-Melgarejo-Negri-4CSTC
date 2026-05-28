@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ctp6c5ids34rm" path="res://scenes/auto.tscn" id="8_svo7y"]
 [ext_resource type="PackedScene" uid="uid://d3phvvw7c2dun" path="res://scenes/EstructuraEstacion.tscn" id="9_5ph7u"]
 [ext_resource type="PackedScene" uid="uid://c7bfes0kk7bg7" path="res://scenes/EstructuraTienda.tscn" id="10_o7ao6"]
+[ext_resource type="PackedScene" uid="uid://txqierkvdn53" path="res://scenes/exit.tscn" id="11_naxnx"]
 
 [node name="Debug" type="Node2D" unique_id=325662370]
 script = ExtResource("1_4pmxj")
@@ -36,3 +37,6 @@ position = Vector2(1826, 190)
 
 [node name="Tienda2" parent="." unique_id=661550392 instance=ExtResource("10_o7ao6")]
 position = Vector2(3327, 210)
+
+[node name="Exit" parent="." unique_id=1294964650 instance=ExtResource("11_naxnx")]
+position = Vector2(3920, 439)

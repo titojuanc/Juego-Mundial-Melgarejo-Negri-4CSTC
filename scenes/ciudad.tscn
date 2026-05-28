@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dr7uu3mk1toit" path="res://scenes/Hotbar.tscn" id="4_oe04e"]
 [ext_resource type="PackedScene" uid="uid://dgw6os41an5k2" path="res://scenes/estados_hud.tscn" id="5_314re"]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u28n2"]
+b = Vector2(0, 1080)
+
 [node name="Ciudad" type="Node2D" unique_id=512170517]
 script = ExtResource("1_xupto")
 datos = ExtResource("2_oe04e")
@@ -96,3 +99,8 @@ position_smoothing_enabled = true
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1269696011]
 position = Vector2(505, 607)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=249728695]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1214773034]
+shape = SubResource("SegmentShape2D_u28n2")

@@ -27,3 +27,6 @@ extends Resource
 @export var tiene_casa: bool = false
 @export var casa: PackedScene
 @export var posicion_casa: Vector2 = Vector2.ZERO
+
+@export var exit: PackedScene
+@export var posicion_exit: Vector2 = Vector2.ZERO

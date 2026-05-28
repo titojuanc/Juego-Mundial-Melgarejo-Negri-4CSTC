@@ -21,7 +21,7 @@ func _ready():
 	_restaurar_estados()
 	
 	jugador = GameManager.auto_scene.instantiate()
-	jugador.global_position = spawn_jugador
+	jugador.global_position = spawn_jugador.global_position
 	var camara = Camera2D.new()
 	jugador.add_child(camara)
 	camara.limit_left = 0
@@ -56,6 +56,10 @@ func cargar_ciudad(ciudad: Ciudad):
 		var casa = datos.casa.instantiate()
 		casa.position = ciudad.posicion_casa
 		estructuras.add_child(casa)
+	
+	var salida = datos.exit.instantiate()
+	salida.position = ciudad.posicion_exit
+	estructuras.add_child(salida)
 	
 func _restaurar_hotbar():
 	for i in range(HotbarManager.MAX_SLOTS):

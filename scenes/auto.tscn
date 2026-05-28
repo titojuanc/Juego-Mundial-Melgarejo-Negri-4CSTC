@@ -27,6 +27,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1uxfn"]
+size = Vector2(20, 165)
 
 [sub_resource type="Animation" id="Animation_1uxfn"]
 resource_name = "andar"
@@ -95,6 +96,7 @@ _data = {
 
 [node name="Auto" type="CharacterBody2D" unique_id=651395351 groups=["jugador"]]
 z_index = 1
+collision_mask = 2
 script = ExtResource("1_1uxfn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=172095698]
@@ -103,6 +105,7 @@ sprite_frames = SubResource("SpriteFrames_glhpg")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=159593156]
+position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_1uxfn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=511620876]

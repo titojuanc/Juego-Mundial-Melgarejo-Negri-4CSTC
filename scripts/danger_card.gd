@@ -18,7 +18,6 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 		return get_parent()._can_drop_data(at_position, data)
 	return false
 
-
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	if get_parent().has_method("_drop_data"):
 		get_parent()._drop_data(at_position, data)
