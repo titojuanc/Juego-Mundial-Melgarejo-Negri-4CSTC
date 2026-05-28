@@ -111,3 +111,6 @@ func _get_slot_cercano(mouse_pos: Vector2):
 			menor_distancia = distancia
 			slot_cercano = i
 	return slot_cercano
+
+func _on_button_pressed() -> void:
+	GameManager.huir.emit()

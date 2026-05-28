@@ -146,3 +146,12 @@ offset_bottom = 38.5
 mouse_filter = 1
 script = ExtResource("3_8fyki")
 metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=434838673]
+offset_left = 1369.0
+offset_top = 929.0
+offset_right = 1474.0
+offset_bottom = 1015.0
+text = "HUIR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

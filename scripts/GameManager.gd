@@ -8,6 +8,7 @@ signal empezar_evento
 signal cambiar_turno(turno: String)
 signal turno_extra #esta medio que no es tan necesaria
 signal ejecutar_turno_ruta
+signal huir
 
 var turno_actual: Turno = Turno.PROPIO
 var ruta_actual: Resource
