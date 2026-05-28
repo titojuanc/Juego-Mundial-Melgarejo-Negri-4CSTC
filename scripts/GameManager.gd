@@ -5,8 +5,10 @@ enum Turno {PROPIO, EXTRA, RUTA}
 signal eliminar_carta
 signal terminar_evento
 signal empezar_evento 
+signal cambiar_turno(turno: String)
+signal ejecutar_turno_ruta
 
-var turno_actual
+var turno_actual: Turno = Turno.PROPIO
 
 var item_arrastrando: Item = null
 var danger_card = load("res://scenes/danger_card.tscn")
@@ -25,6 +27,12 @@ const PELIGROS = {
 	"dinero":preload("res://items/peligros/dinero.tres")
 }
 
+func _ready() -> void:
+	cambiar_turno.connect(_on_cambiar_turno)
+
+func puede_dropear() -> bool:
+	return turno_actual == Turno.PROPIO or turno_actual == Turno.EXTRA
+
 func crear_peligro() -> DangerCard:
 	var peligro = danger_card.instantiate()
 	return peligro
@@ -40,7 +48,7 @@ func crear_icono_dinero(icono):
 	icono.custom_minimum_size = Vector2(20, 20)
 	icono.visible = true
 
-func cambiar_turno(turno):
+func _on_cambiar_turno(turno):
 	match turno:
 		"propio":
 			turno_actual = Turno.PROPIO
@@ -50,4 +58,5 @@ func cambiar_turno(turno):
 			print("turno extra")
 		"ruta":
 			turno_actual = Turno.RUTA
+			ejecutar_turno_ruta.emit()
 			print("turno ruta")

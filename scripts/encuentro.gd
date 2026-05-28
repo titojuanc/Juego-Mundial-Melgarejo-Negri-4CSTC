@@ -14,9 +14,12 @@ func _iniciar(referencia_auto: CharacterBody2D) -> void:
 	var barra_de_evento = Hotbar.instantiate()
 	barra=barra_de_evento
 	GameManager.eliminar_carta.connect(_on_peligro_eliminado)
+	GameManager.ejecutar_turno_ruta.connect(_on_turno_ruta)
 	get_parent().add_child(barra_de_evento)
 	mensaje.text = "tu turno"
-	GameManager.cambiar_turno("propio")
+	GameManager.cambiar_turno.emit("propio")
+	_definir_atacantes()
+	_mostrar_advertencias()
 
 func configurar_peligros(evento:Resource):
 	
@@ -122,7 +125,7 @@ func reordenar() -> void:
 	ordenar_izquierda(iz)
 	ordenar_derecha(der)
 	centrar()
-	pass
+	_actualizar_advertencias()
 
 func ordenar_izquierda(i):
 	if i >= 1:
@@ -166,3 +169,59 @@ func centrar():
 
 func terminar():
 	queue_free()
+
+var advertencia_scene = preload("res://scenes/advertencia.tscn")
+var advertencias_activas = []
+var peligros_que_atacan = []
+
+func _on_turno_ruta() -> void:
+	mensaje.text = "turno de la ruta"
+	await get_tree().create_timer(1.5).timeout
+	_atacar()
+	_limpiar_advertencias()
+	await get_tree().create_timer(0.5).timeout
+	_definir_atacantes()
+	_mostrar_advertencias()
+	GameManager.cambiar_turno.emit("propio")
+	mensaje.text = "tu turno"
+
+func _definir_atacantes() -> void:
+	peligros_que_atacan.clear()
+	for slot in barra.slots_encuentro:
+		for hijo in slot.get_children():
+			if hijo is DangerCard and not hijo.es_preview:
+				if randf() < 0.7:
+					peligros_que_atacan.append(hijo)
+
+func _mostrar_advertencias() -> void:
+	for carta in peligros_que_atacan:
+		if not is_instance_valid(carta):
+			continue
+		var slot = carta.get_parent()
+		var adv = advertencia_scene.instantiate()
+		barra.get_child(0).add_child(adv)
+		adv.position = Vector2(slot.position.x, slot.position.y + slot.size.y)
+		advertencias_activas.append(adv)
+#ANASHEEEEEE - Lopez Calo 28/05/2026 -
+
+func _actualizar_advertencias() -> void:
+	_limpiar_advertencias()
+	#esta funcion filtra las cartas que eno existen
+	peligros_que_atacan = peligros_que_atacan.filter(func(c): return is_instance_valid(c))
+	_mostrar_advertencias()
+
+func _limpiar_advertencias() -> void:
+	for adv in advertencias_activas:
+		if is_instance_valid(adv):
+			adv.queue_free()
+	advertencias_activas.clear()
+
+func _atacar() -> void:
+	for carta in peligros_que_atacan:
+		if not is_instance_valid(carta):
+			continue
+		match carta.peligro.tipo:
+			1: StatsManager.reducir_auto(1)
+			2: StatsManager.reducir_nafta(1)
+			3: StatsManager.reducir_energia(1)
+			4: StatsManager.reducir_dinero(1)

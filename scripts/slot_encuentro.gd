@@ -3,6 +3,8 @@ extends PanelContainer
 var index: int
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+	if not GameManager.puede_dropear():
+		return false
 	if not data is Dictionary:
 		return false
 	if not data.has("item") or not data.has("origen"):
@@ -27,10 +29,10 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	GameManager.eliminar_carta.emit()
 	
 	var indicadores = item.indicadores.filter(func(x): return x != null)
-	if slots_a_borrar.size() == indicadores.size():
-		GameManager.cambiar_turno("extra")
+	if slots_a_borrar.size() == indicadores.size() and GameManager.turno_actual == GameManager.Turno.PROPIO:
+		GameManager.cambiar_turno.emit("extra")
 	else:
-		GameManager.cambiar_turno("ruta")
+		GameManager.cambiar_turno.emit("ruta")
 	
 	item.usos -= 1
 	if item.usos <= 0:

@@ -2,6 +2,7 @@ extends PanelContainer
 class_name DangerCard
 
 @onready var icono: TextureRect = $Control/Icono
+@onready var peligro_icon: TextureRect = $Peligro
 var peligro: Peligro
 var es_preview: bool = false
 
@@ -18,6 +19,8 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 		return get_parent()._can_drop_data(at_position, data)
 	return false
 
+func mostrar_advertencia() -> void:
+	peligro_icon.visible = true
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	if get_parent().has_method("_drop_data"):
