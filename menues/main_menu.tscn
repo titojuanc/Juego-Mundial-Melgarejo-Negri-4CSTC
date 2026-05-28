@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bdjn4qjohhi51" path="res://assets/Fondos/forest/forest_sky.png" id="1_e47kt"]
 [ext_resource type="Texture2D" uid="uid://dq2trtfkayls" path="res://assets/Fondos/forest/forest_mountain.png" id="2_bqgr7"]
 [ext_resource type="Texture2D" uid="uid://ddpj2vjxld18b" path="res://assets/Fondos/forest/forest_back.png" id="3_1e0ll"]
+[ext_resource type="Script" uid="uid://cunnkpqfrtvo1" path="res://menues/JugarButton.gd" id="4_y7ip6"]
 
 [node name="MainMenu" type="Control" unique_id=768065045]
 layout_mode = 3
@@ -60,6 +61,7 @@ offset_top = 580.0
 offset_right = 234.0
 offset_bottom = 664.0
 text = "JUGAR"
+script = ExtResource("4_y7ip6")
 
 [node name="Button4" type="Button" parent="." unique_id=395669591]
 layout_mode = 0
@@ -84,3 +86,5 @@ offset_top = 688.0
 offset_right = 237.0
 offset_bottom = 772.0
 text = "JUGAR"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

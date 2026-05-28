@@ -12,6 +12,7 @@ signal huir
 
 var turno_actual: Turno = Turno.PROPIO
 var ruta_actual: Resource
+var ciudad_siguiente: Ciudad
 
 var item_arrastrando: Item = null
 var danger_card = load("res://scenes/danger_card.tscn")

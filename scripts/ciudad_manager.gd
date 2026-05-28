@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var datos: Ciudad
+@export var datos: Ciudad = GameManager.ciudad_siguiente
 
 @onready var fondo = $Ruta_1/Parallax2D/TextureRect
 @onready var estructuras = $Estructuras
@@ -59,6 +59,8 @@ func cargar_ciudad(ciudad: Ciudad):
 	
 	var salida = datos.exit.instantiate()
 	salida.position = ciudad.posicion_exit
+	salida.ruta = ciudad.ruta_siguiente
+	salida.ciudad_siguiente = ciudad.ciudad_siguiente
 	estructuras.add_child(salida)
 	
 func _restaurar_hotbar():
@@ -68,7 +70,7 @@ func _restaurar_hotbar():
 			var slot = hotbar_slots.get_child(i)
 			var card = GameManager.item_card_scene.instantiate()
 			slot.add_child(card)
-			card.configurar(item)
+			card.configurar(item, true)
 	
 	
 func _restaurar_inventario():

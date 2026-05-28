@@ -6,6 +6,7 @@ extends Resource
 @export var pais: String = ""
 @export var descripcion: String = ""
 @export var ruta_siguiente: Resource
+@export var ciudad_siguiente: Ciudad
 
 @export var tiene_tienda: bool = false
 @export var tienda: PackedScene

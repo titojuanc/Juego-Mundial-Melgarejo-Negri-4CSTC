@@ -2,7 +2,10 @@ extends Node2D
 
 var encuentro = preload("res://scenes/Encuentro.tscn")
 var item_card_scene = preload("res://scenes/item_card.tscn") #Del test. Depsués borrar
-var ruta = preload("res://rutas/ruta_1_alaska.tres")
+
+#Lo va a cargar la ciudad de donde viene
+var ruta = GameManager.ruta_actual
+var siguiente_ciudad = GameManager.ciudad_siguiente
 
 @onready var auto:CharacterBody2D = $Auto
 @onready var fondo:Control = $Ruta_1
@@ -20,24 +23,7 @@ var eventos_ocurridos = 0
 func _ready() -> void:
 	GameManager.terminar_evento.connect(on_terminar_evento)
 	GameManager.empezar_evento.connect(on_empezar_evento)
-	GameManager
 	#Test. después sacar.
-	var cinta = load("res://items/cinta.tres")
-	var manzana = load("res://items/manzana.tres")
-	var cigarrillo = load("res://items/cigarrillo.tres")
-	var card_1 = item_card_scene.instantiate()
-	$Hotbar/Control/Slot1.add_child(card_1)  
-	card_1.configurar(cinta.duplicate(), true)  
-	HotbarManager.colocar_item(0, cinta)
-	var card_2 = item_card_scene.instantiate()
-	$Hotbar/Control/Slot2.add_child(card_2)  
-	card_2.configurar(manzana.duplicate(), true)
-	HotbarManager.colocar_item(1, manzana)
-	var card_3 = item_card_scene.instantiate()
-	$Hotbar/Control/Slot3.add_child(card_3)  
-	card_3.configurar(cigarrillo.duplicate(), true)
-	HotbarManager.colocar_item(1, cigarrillo)
-	
 	#la ruta va a durar 20 segundos andando. Esto cambiaría según el auto o la distancia
 	var intervalo = timer_ruta.wait_time / ruta.cant_eventos
 	timer_eventos.one_shot = true
@@ -92,4 +78,5 @@ func terminar_ruta() -> void:
 	
 	var tween = create_tween()
 	tween.tween_property(pantalla_transicion, "color:a", 1.0, 1.5)
-	tween.tween_callback(get_tree().quit)
+	#estuve buscando y la solución para esto era meter una lambda, pq sino era como que la llamaba en un callback o algo así  no sé estoy cansado :/
+	tween.tween_callback(func(): get_tree().change_scene_to_file("res://scenes/ciudad.tscn"))
