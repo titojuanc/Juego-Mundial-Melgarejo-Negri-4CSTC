@@ -71,7 +71,12 @@ func on_empezar_evento() -> void:
 	instancia_encuentro = encuentro.instantiate()
 	add_child(instancia_encuentro)
 	instancia_encuentro._iniciar(auto)
-	instancia_encuentro.configurar_peligros(ruta.encuentros[randomizador.randi_range(0, ruta.encuentros.size()-1)])
+	var peligros_a_usar
+	if EstadoManager._tiene_estado(Estado.Tipo.CANSANCIO):
+		peligros_a_usar = ruta.encuentros_cansado
+	else:
+		peligros_a_usar = ruta.encuentros
+	instancia_encuentro.configurar_peligros(peligros_a_usar[randomizador.randi_range(0, ruta.encuentros.size()-1)])
 	inventario.bloquear_por_evento()
 
 func terminar_ruta() -> void:

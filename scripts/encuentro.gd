@@ -16,6 +16,7 @@ func _iniciar(referencia_auto: CharacterBody2D) -> void:
 	GameManager.turno_extra.connect(_on_turno_extra)
 	GameManager.eliminar_carta.connect(_on_peligro_eliminado)
 	GameManager.ejecutar_turno_ruta.connect(_on_turno_ruta)
+	GameManager.huir.connect(_huir)
 	get_parent().add_child(barra_de_evento)
 	mensaje.text = "tu turno"
 	GameManager.cambiar_turno.emit("propio")
@@ -229,3 +230,17 @@ func _atacar() -> void:
 			2: StatsManager.reducir_nafta(1)
 			3: StatsManager.reducir_energia(1)
 			4: StatsManager.reducir_dinero(1)
+
+func _huir() -> void:
+	if GameManager.turno_actual == GameManager.Turno.RUTA:
+		return
+	peligros_que_atacan.clear()
+	for slot in barra.slots_encuentro:
+		for hijo in slot.get_children():
+			if hijo is DangerCard and not hijo.es_preview:
+				peligros_que_atacan.append(hijo)
+	_limpiar_advertencias()
+	_atacar()
+	await get_tree().create_timer(0.5).timeout
+	barra.queue_free()
+	GameManager.terminar_evento.emit()
