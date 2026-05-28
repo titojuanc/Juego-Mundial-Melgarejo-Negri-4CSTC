@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sk34u7jera4u"]
 
-[ext_resource type="Script" uid="uid://b1ibm7bts1wie" path="res://scripts/Ruta.gd" id="1_ix6bq"]
+[ext_resource type="Script" uid="uid://b5madouku5a8f" path="res://scripts/fondo_ruta.gd" id="1_ix6bq"]
 [ext_resource type="Texture2D" uid="uid://yjduftt2w0sq" path="res://assets/Fondos/ruta-de-arte-píxeles-con-nubes-silueta-ciudad-fondo-gradiente-salida-al-sol-antecedentes-para-carreras-273647056.jpg" id="1_jpvqy"]
 
 [node name="Ruta_1" type="Control" unique_id=1021237360]

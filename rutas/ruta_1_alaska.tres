@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Ruta" format=3 uid="uid://n7rxwh5iqr16"]
 
 [ext_resource type="Resource" uid="uid://cqh4hne3023le" path="res://eventos/alaska/rueda_pinchada.tres" id="1_6gtnl"]
-[ext_resource type="Script" uid="uid://dbmesu4s5y1n4" path="res://scripts/ruta.gd" id="1_i6brh"]
+[ext_resource type="Script" path="res://scripts/ruta.gd" id="1_i6brh"]
 [ext_resource type="Resource" uid="uid://7d8o42xbme6w" path="res://eventos/alaska/estres.tres" id="2_q2nov"]
 
 [resource]
 script = ExtResource("1_i6brh")
-encuentros = Array[Resource]([ExtResource("1_6gtnl"), ExtResource("2_q2nov")])
+encuentros = Array[Resource]([ExtResource("2_q2nov"), ExtResource("1_6gtnl")])
 cant_eventos = 3

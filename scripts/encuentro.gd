@@ -13,13 +13,12 @@ func _iniciar(referencia_auto: CharacterBody2D) -> void:
 	auto.parar_anim_player()
 	var barra_de_evento = Hotbar.instantiate()
 	barra=barra_de_evento
+	GameManager.turno_extra.connect(_on_turno_extra)
 	GameManager.eliminar_carta.connect(_on_peligro_eliminado)
 	GameManager.ejecutar_turno_ruta.connect(_on_turno_ruta)
 	get_parent().add_child(barra_de_evento)
 	mensaje.text = "tu turno"
 	GameManager.cambiar_turno.emit("propio")
-	_definir_atacantes()
-	_mostrar_advertencias()
 
 func configurar_peligros(evento:Resource):
 	
@@ -103,6 +102,8 @@ func colocar_eventos(lista):
 			slot.add_child(carta_peligro)
 			carta_peligro.configurar(GameManager.obtener_peligro(peligro))
 			i = i+1
+	_definir_atacantes()
+	_mostrar_advertencias()
 	pass
 
 func _on_peligro_eliminado()-> void:
@@ -184,6 +185,9 @@ func _on_turno_ruta() -> void:
 	_mostrar_advertencias()
 	GameManager.cambiar_turno.emit("propio")
 	mensaje.text = "tu turno"
+
+func _on_turno_extra() -> void:
+	mensaje.text = "turno extra!"
 
 func _definir_atacantes() -> void:
 	peligros_que_atacan.clear()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5xitfpml36ul"]
 
-[ext_resource type="Texture2D" uid="uid://dp6cpq2w0ujmj" path="res://icon_emote.png" id="1_bm221"]
+[ext_resource type="Texture2D" uid="uid://dp6cpq2w0ujmj" path="res://assets/icon_emote.png" id="1_bm221"]
 
 [node name="Advertencia" type="TextureRect" unique_id=1143252501]
 texture_filter = 1

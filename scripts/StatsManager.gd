@@ -75,6 +75,7 @@ func aumentar_auto(cantidad):
 
 func chequear_auto():
 	if vida_auto == 0:
+		
 		#Costo mecanido exponencial por llamada - Futura logica
 		print("Auto destruido - Llamar mecanico")
 

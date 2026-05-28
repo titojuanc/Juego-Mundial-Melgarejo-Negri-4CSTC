@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://62vsp0bsh0b"]
+
+[ext_resource type="Script" uid="uid://dvjqjn1aou886" path="res://scripts/ruta_gameplay.gd" id="1_j2ia2"]
+[ext_resource type="PackedScene" uid="uid://dr7uu3mk1toit" path="res://scenes/Hotbar.tscn" id="2_ffmh5"]
+[ext_resource type="PackedScene" uid="uid://vgsvj06505qw" path="res://scenes/inventario.tscn" id="3_quyvd"]
+[ext_resource type="PackedScene" uid="uid://sk34u7jera4u" path="res://scenes/ruta_1.tscn" id="4_lp2ob"]
+[ext_resource type="PackedScene" uid="uid://ctp6c5ids34rm" path="res://scenes/auto.tscn" id="5_53vip"]
+[ext_resource type="PackedScene" uid="uid://c64m30gfi5l2e" path="res://scenes/HUD.tscn" id="6_g4412"]
+
+[node name="Game" type="Node2D" unique_id=1386822980]
+script = ExtResource("1_j2ia2")
+
+[node name="Hotbar" parent="." unique_id=2060931644 instance=ExtResource("2_ffmh5")]
+
+[node name="Inventario" parent="." unique_id=1702106210 instance=ExtResource("3_quyvd")]
+
+[node name="Ruta_1" parent="." unique_id=1021237360 instance=ExtResource("4_lp2ob")]
+offset_left = 3.0517578e-05
+offset_top = 6.1035156e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Auto" parent="." unique_id=651395351 instance=ExtResource("5_53vip")]
+position = Vector2(534, 828)
+
+[node name="Timer" type="Timer" parent="." unique_id=1089650887]
+wait_time = 20.0
+
+[node name="HUD" parent="." unique_id=1799149189 instance=ExtResource("6_g4412")]

@@ -6,9 +6,11 @@ signal eliminar_carta
 signal terminar_evento
 signal empezar_evento 
 signal cambiar_turno(turno: String)
+signal turno_extra #esta medio que no es tan necesaria
 signal ejecutar_turno_ruta
 
 var turno_actual: Turno = Turno.PROPIO
+var ruta_actual: Resource
 
 var item_arrastrando: Item = null
 var danger_card = load("res://scenes/danger_card.tscn")
@@ -55,6 +57,7 @@ func _on_cambiar_turno(turno):
 			print("tu turno")
 		"extra":
 			turno_actual = Turno.EXTRA
+			turno_extra.emit()
 			print("turno extra")
 		"ruta":
 			turno_actual = Turno.RUTA
