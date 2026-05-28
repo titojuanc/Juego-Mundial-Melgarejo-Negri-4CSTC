@@ -2,11 +2,13 @@ extends Node2D
 class_name EstructuraGD
 
 @export var pool: TiendaPool
+
+@onready var tienda = $Tienda
+
 var en_rango: bool = false
 
 func _input(event):
 	if en_rango and event.is_action_pressed("Interactuar"):
-		var tienda = get_tree().get_first_node_in_group("Tienda")
 		if tienda.visible:
 			tienda.cerrar()
 		else:

@@ -1,14 +1,106 @@
 [gd_scene format=3 uid="uid://b1qda3fjlrud0"]
 
 [ext_resource type="Script" uid="uid://cml75eno3k35g" path="res://scripts/ciudad_manager.gd" id="1_xupto"]
+[ext_resource type="Resource" uid="uid://rwx1bydqiy56" path="res://ciudades/debug.tres" id="2_oe04e"]
+[ext_resource type="PackedScene" uid="uid://ctp6c5ids34rm" path="res://scenes/auto.tscn" id="2_s3twk"]
+[ext_resource type="PackedScene" uid="uid://c64m30gfi5l2e" path="res://scenes/HUD.tscn" id="2_y1ry1"]
+[ext_resource type="PackedScene" uid="uid://vgsvj06505qw" path="res://scenes/inventario.tscn" id="3_314re"]
+[ext_resource type="PackedScene" uid="uid://sk34u7jera4u" path="res://scenes/ruta_1.tscn" id="3_piqg3"]
+[ext_resource type="PackedScene" uid="uid://dr7uu3mk1toit" path="res://scenes/Hotbar.tscn" id="4_oe04e"]
+[ext_resource type="PackedScene" uid="uid://dgw6os41an5k2" path="res://scenes/estados_hud.tscn" id="5_314re"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_u28n2"]
+b = Vector2(0, 1080)
 
 [node name="Ciudad" type="Node2D" unique_id=512170517]
 script = ExtResource("1_xupto")
+datos = ExtResource("2_oe04e")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=153554990]
+[node name="Background" type="Control" parent="." unique_id=1422121221]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Buildings1" type="TextureRect" parent="Background" unique_id=346233323]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Buildings2" type="TextureRect" parent="Background" unique_id=1212753446]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Buildings3" type="TextureRect" parent="Background" unique_id=598813313]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Buildings4" type="TextureRect" parent="Background" unique_id=180622305]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Shade1" type="TextureRect" parent="Background" unique_id=2079705393]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Shade2" type="TextureRect" parent="Background" unique_id=1913988246]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Shade3" type="TextureRect" parent="Background" unique_id=231535445]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Sky" type="TextureRect" parent="Background" unique_id=1282604234]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Ruta_1" parent="." unique_id=1021237360 instance=ExtResource("3_piqg3")]
 
 [node name="Estructuras" type="Node2D" parent="." unique_id=479256874]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=978189687]
+
+[node name="HUD" parent="UI" unique_id=1799149189 instance=ExtResource("2_y1ry1")]
+
+[node name="Inventario" parent="UI" unique_id=1702106210 instance=ExtResource("3_314re")]
+visible = false
+
+[node name="Hotbar" parent="UI" unique_id=2060931644 instance=ExtResource("4_oe04e")]
+
+[node name="EstadosHUD" parent="UI" unique_id=1557752554 instance=ExtResource("5_314re")]
+
+[node name="Auto" parent="." unique_id=651395351 instance=ExtResource("2_s3twk")]
+position = Vector2(505, 607)
+
+[node name="Camera2D" type="Camera2D" parent="Auto" unique_id=1819984043]
+position = Vector2(455, -67)
+limit_left = 0
+limit_top = 0
+limit_right = 7000
+limit_bottom = 1080
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1269696011]
+position = Vector2(505, 607)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=249728695]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1214773034]
+shape = SubResource("SegmentShape2D_u28n2")

@@ -2,7 +2,8 @@ extends CanvasLayer
 
 @export var pool: TiendaPool
 
-@onready var inventario = get_parent().get_node("Inventario")
+@onready var inventario = get_tree().get_first_node_in_group("Inventario")
+@onready var jugador = get_tree().get_first_node_in_group("jugador")
 
 var slots: Array = []
 var generada: bool = false
@@ -49,10 +50,12 @@ func abrir(p_pool: TiendaPool = null) -> void:
 		generada = true
 	show()
 	inventario.abrir_forzado()
+	jugador.bloquear_movimiento()
 
 func cerrar() -> void:
 	hide()
 	inventario.cerrar_forzado()
+	jugador.desbloquear_movimiento()
 
 func _generar() -> void:
 	var cantidad = randi_range(pool.min_items, pool.max_items)

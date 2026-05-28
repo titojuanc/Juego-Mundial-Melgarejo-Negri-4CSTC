@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Ciudad" format=3 uid="uid://rwx1bydqiy56"]
+
+[ext_resource type="PackedScene" uid="uid://txqierkvdn53" path="res://scenes/exit.tscn" id="1_03qjy"]
+[ext_resource type="Script" uid="uid://iqklvos3lsea" path="res://scripts/ciudad.gd" id="1_mcav7"]
+[ext_resource type="Texture2D" uid="uid://yjduftt2w0sq" path="res://assets/Fondos/ruta-de-arte-píxeles-con-nubes-silueta-ciudad-fondo-gradiente-salida-al-sol-antecedentes-para-carreras-273647056.jpg" id="1_rjjlv"]
+[ext_resource type="PackedScene" uid="uid://d3phvvw7c2dun" path="res://scenes/EstructuraEstacion.tscn" id="2_2aqxr"]
+[ext_resource type="PackedScene" uid="uid://c7bfes0kk7bg7" path="res://scenes/EstructuraTienda.tscn" id="4_03qjy"]
+[ext_resource type="Resource" uid="uid://b5e4buhv61uu5" path="res://tiendas/tienda_debug.tres" id="5_2aqxr"]
+
+[resource]
+script = ExtResource("1_mcav7")
+nombre = "Debug"
+fondo = ExtResource("1_rjjlv")
+pais = "Debug"
+descripcion = "Es una ciudad debug"
+tiene_tienda = true
+tienda = ExtResource("4_03qjy")
+posicion_tienda = Vector2(4143, 210)
+tienda_pool = ExtResource("5_2aqxr")
+tiene_gasolineria = true
+gasolineria = ExtResource("2_2aqxr")
+posicion_gasolineria = Vector2(1800, 190)
+exit = ExtResource("1_03qjy")
+posicion_exit = Vector2(5000, 439)
+metadata/_custom_type_script = "uid://iqklvos3lsea"

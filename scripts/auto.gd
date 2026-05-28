@@ -5,21 +5,24 @@ extends CharacterBody2D
 
 @export var velocidad = 1000
 
+var puede_moverse = true
 var si = true
+
 func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	var direction = Input.get_action_strength("mover_der") - Input.get_action_strength("mover_izq")
-	
-	velocity.x = direction * velocidad
-	
-	move_and_slide()
-	
-	if direction != 0:
-		mover()
-	else:
-		parar_anim_player()
+	if puede_moverse:
+		var direction = Input.get_action_strength("mover_der") - Input.get_action_strength("mover_izq")
+		
+		velocity.x = direction * velocidad
+		
+		move_and_slide()
+		
+		if direction != 0:
+			mover()
+		else:
+			parar_anim_player()
 	
 func mover_arriba():
 	sprite.position.y += 5
@@ -41,3 +44,9 @@ func mover_ruedas():
 	
 func parar_ruedas():
 	sprite.stop()
+
+func bloquear_movimiento():
+	puede_moverse = false
+	
+func desbloquear_movimiento():
+	puede_moverse = true

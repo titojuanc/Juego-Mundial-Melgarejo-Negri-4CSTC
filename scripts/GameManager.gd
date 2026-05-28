@@ -14,6 +14,8 @@ var ruta_actual: Resource
 
 var item_arrastrando: Item = null
 var danger_card = load("res://scenes/danger_card.tscn")
+var item_card_scene = preload("res://scenes/item_card.tscn")
+var auto_scene = preload("res://scenes/auto.tscn")
 
 const INDICADORES = {
 	"auto": Rect2(528.624, 400.607, 14.589, 14.713),
