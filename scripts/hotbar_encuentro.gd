@@ -8,6 +8,7 @@ var altura_card = 100
 var mouse 
 var slot_inicio
 var ultimo_slot = -1
+var huyendo = false
 
 @onready var slots_encuentro = [
 	$Control/Slot1,
@@ -113,4 +114,6 @@ func _get_slot_cercano(mouse_pos: Vector2):
 	return slot_cercano
 
 func _on_button_pressed() -> void:
-	GameManager.huir.emit()
+	if huyendo == false and GameManager.turno_actual != GameManager.Turno.RUTA:
+		huyendo = true
+		GameManager.huir.emit()

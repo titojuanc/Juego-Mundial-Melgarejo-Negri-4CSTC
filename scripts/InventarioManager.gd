@@ -24,3 +24,12 @@ func esta_lleno() -> bool:
 	
 func colocar_item(index: int, item: Item):
 	slots[index] = item
+
+func _restaurar_inventario(instancia_inventario):
+	for i in range(InventarioManager.MAX_SLOTS):
+		var item = InventarioManager.slots[i]
+		if item != null:
+			var slot = instancia_inventario.get_child(i+1)
+			var card = GameManager.item_card_scene.instantiate()
+			slot.add_child(card)
+			card.configurar(item, true)

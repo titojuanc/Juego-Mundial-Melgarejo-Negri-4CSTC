@@ -10,7 +10,6 @@ var siguiente_ciudad = GameManager.ciudad_siguiente
 @onready var auto:CharacterBody2D = $Auto
 @onready var fondo:Control = $Ruta_1
 @onready var inventario:CanvasLayer = $"Inventario"
-@onready var hotbar:CanvasLayer = $"Hotbar"
 @onready var timer_ruta: Timer = $Timer
 var timer_eventos = Timer.new() #Esto podría ser un nodo predefinido también.
 
@@ -21,6 +20,8 @@ var eventos_ocurridos = 0
 
 
 func _ready() -> void:
+	HotbarManager._restaurar_hotbar($Hotbar/Control)
+	InventarioManager._restaurar_inventario($Inventario/Control)
 	GameManager.terminar_evento.connect(on_terminar_evento)
 	GameManager.empezar_evento.connect(on_empezar_evento)
 	#Test. después sacar.
@@ -56,13 +57,13 @@ func on_empezar_evento() -> void:
 	en_movimiento=false
 	instancia_encuentro = encuentro.instantiate()
 	add_child(instancia_encuentro)
-	instancia_encuentro._iniciar(auto)
+	instancia_encuentro._iniciar()
 	var peligros_a_usar
 	if EstadoManager._tiene_estado(Estado.Tipo.CANSANCIO):
 		peligros_a_usar = ruta.encuentros_cansado
 	else:
 		peligros_a_usar = ruta.encuentros
-	instancia_encuentro.configurar_peligros(peligros_a_usar[randomizador.randi_range(0, ruta.encuentros.size()-1)])
+	instancia_encuentro.configurar_peligros(peligros_a_usar[randomizador.randi_range(0, peligros_a_usar.size()-1)])
 	inventario.bloquear_por_evento()
 
 func terminar_ruta() -> void:

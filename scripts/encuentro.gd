@@ -4,13 +4,10 @@ var Hotbar = preload("res://scenes/Hotbar_encuentro.tscn")
 var danger_card = preload("res://scenes/danger_card.tscn")
 @onready var mensaje = $Label
 
-var auto
 var barra
 var hotbar_peligros = ["", "", "", "", "", "", "", "" ]
 
-func _iniciar(referencia_auto: CharacterBody2D) -> void:
-	auto = referencia_auto
-	auto.parar_anim_player()
+func _iniciar() -> void:
 	var barra_de_evento = Hotbar.instantiate()
 	barra=barra_de_evento
 	GameManager.turno_extra.connect(_on_turno_extra)

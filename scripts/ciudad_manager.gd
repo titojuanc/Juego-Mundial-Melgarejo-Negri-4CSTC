@@ -15,8 +15,8 @@ func _ready():
 	if datos == null:
 		return
 	cargar_ciudad(datos)
-	_restaurar_hotbar()
-	_restaurar_inventario()
+	HotbarManager._restaurar_hotbar(hotbar_slots)
+	InventarioManager._restaurar_inventario(inventario_slots)
 	_restaurar_stats()
 	_restaurar_estados()
 	
@@ -62,25 +62,6 @@ func cargar_ciudad(ciudad: Ciudad):
 	salida.ruta = ciudad.ruta_siguiente
 	salida.ciudad_siguiente = ciudad.ciudad_siguiente
 	estructuras.add_child(salida)
-	
-func _restaurar_hotbar():
-	for i in range(HotbarManager.MAX_SLOTS):
-		var item = HotbarManager.slots[i]
-		if item != null:
-			var slot = hotbar_slots.get_child(i)
-			var card = GameManager.item_card_scene.instantiate()
-			slot.add_child(card)
-			card.configurar(item, true)
-	
-	
-func _restaurar_inventario():
-	for i in range(InventarioManager.MAX_SLOTS):
-		var item = InventarioManager.slots[i]
-		if item != null:
-			var slot = inventario_slots.get_child(i)
-			var card = GameManager.item_card_scene.instantiate()
-			slot.add_child(card)
-			card.configurar(item)
 	
 func _restaurar_stats():
 	StatsManager.emit_signal("energia_cambiada", StatsManager.energia)
