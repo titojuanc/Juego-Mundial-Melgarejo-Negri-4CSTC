@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b1qda3fjlrud0"]
 
 [ext_resource type="Script" uid="uid://cml75eno3k35g" path="res://scripts/ciudad_manager.gd" id="1_xupto"]
-[ext_resource type="Resource" uid="uid://rwx1bydqiy56" path="res://ciudades/debug.tres" id="2_oe04e"]
 [ext_resource type="PackedScene" uid="uid://ctp6c5ids34rm" path="res://scenes/auto.tscn" id="2_s3twk"]
 [ext_resource type="PackedScene" uid="uid://c64m30gfi5l2e" path="res://scenes/HUD.tscn" id="2_y1ry1"]
 [ext_resource type="PackedScene" uid="uid://vgsvj06505qw" path="res://scenes/inventario.tscn" id="3_314re"]
@@ -14,7 +13,6 @@ b = Vector2(0, 1080)
 
 [node name="Ciudad" type="Node2D" unique_id=512170517]
 script = ExtResource("1_xupto")
-datos = ExtResource("2_oe04e")
 
 [node name="Background" type="Control" parent="." unique_id=1422121221]
 layout_mode = 3

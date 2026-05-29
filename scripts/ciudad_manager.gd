@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var datos: Ciudad = GameManager.ciudad_siguiente
+var datos: Ciudad = GameManager.ciudad_siguiente
 
 @onready var fondo = $Ruta_1/Parallax2D/TextureRect
 @onready var estructuras = $Estructuras

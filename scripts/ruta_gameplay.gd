@@ -36,14 +36,14 @@ func _ready() -> void:
 	timer_ruta.start()
 	fondo.reanudar()
 	auto.mover()
-
+	
 func on_terminar_evento() -> void:
 	timer_ruta.paused = false 
 	fondo.reanudar()
-	auto.mover()
 	instancia_encuentro.terminar()
 	en_movimiento=true
 	inventario.cerrar_forzado()
+	auto.mover()
 	
 	if eventos_ocurridos < ruta.cant_eventos:
 		timer_eventos.start()
@@ -65,6 +65,7 @@ func on_empezar_evento() -> void:
 		peligros_a_usar = ruta.encuentros
 	instancia_encuentro.configurar_peligros(peligros_a_usar[randomizador.randi_range(0, peligros_a_usar.size()-1)])
 	inventario.bloquear_por_evento()
+	auto.parar_anim_player()
 
 func terminar_ruta() -> void:
 	#el canvas es para que se dibuje por encima de todo

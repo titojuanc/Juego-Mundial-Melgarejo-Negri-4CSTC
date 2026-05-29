@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://sk34u7jera4u" path="res://scenes/ruta_1.tscn" id="4_lp2ob"]
 [ext_resource type="PackedScene" uid="uid://ctp6c5ids34rm" path="res://scenes/auto.tscn" id="5_53vip"]
 [ext_resource type="PackedScene" uid="uid://c64m30gfi5l2e" path="res://scenes/HUD.tscn" id="6_g4412"]
+[ext_resource type="Script" uid="uid://s4j82kpt7kqo" path="res://scripts/auto_static.gd" id="6_quyvd"]
+[ext_resource type="PackedScene" uid="uid://dgw6os41an5k2" path="res://scenes/estados_hud.tscn" id="7_ffmh5"]
 
 [node name="Game" type="Node2D" unique_id=1386822980]
 script = ExtResource("1_j2ia2")
@@ -21,8 +23,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Auto" parent="." unique_id=651395351 instance=ExtResource("5_53vip")]
 position = Vector2(534, 828)
+script = ExtResource("6_quyvd")
 
 [node name="Timer" type="Timer" parent="." unique_id=1089650887]
 wait_time = 20.0
 
 [node name="HUD" parent="." unique_id=1799149189 instance=ExtResource("6_g4412")]
+
+[node name="EstadosHUD" parent="." unique_id=1557752554 instance=ExtResource("7_ffmh5")]
