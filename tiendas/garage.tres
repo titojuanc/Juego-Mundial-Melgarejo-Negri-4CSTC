@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TiendaPool" format=3 uid="uid://bw6f8t5kovqr3"]
+
+[ext_resource type="Script" uid="uid://8t7gr1ub67il" path="res://scripts/tienda_entry.gd" id="1_l22tc"]
+[ext_resource type="Resource" uid="uid://crhdrmnv2ivaj" path="res://items/consumibles/llave.tres" id="2_34nly"]
+[ext_resource type="Script" uid="uid://clwp4sf4wub5w" path="res://scripts/tienda_pool.gd" id="2_a2oxr"]
+
+[sub_resource type="Resource" id="Resource_ofej3"]
+script = ExtResource("1_l22tc")
+item = ExtResource("2_34nly")
+metadata/_custom_type_script = "uid://8t7gr1ub67il"
+
+[resource]
+script = ExtResource("2_a2oxr")
+entradas = Array[ExtResource("1_l22tc")]([SubResource("Resource_ofej3")])
+min_items = 1
+metadata/_custom_type_script = "uid://clwp4sf4wub5w"

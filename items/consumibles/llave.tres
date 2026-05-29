@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemConsumible" format=3 uid="uid://crhdrmnv2ivaj"]
+
+[ext_resource type="Script" uid="uid://vmt14clbp4wr" path="res://scripts/item_consumible.gd" id="1_2wy36"]
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="1_v4kqm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jym6c"]
+atlas = ExtResource("1_v4kqm")
+region = Rect2(449.01956, 400.9802, 13.987091, 14.016327)
+
+[resource]
+script = ExtResource("1_2wy36")
+tipo_efecto = 2
+valor = 2
+nombre = "Llave"
+icono = SubResource("AtlasTexture_jym6c")
+usos_maximos = 2
+precio = 75
+metadata/_custom_type_script = "uid://vmt14clbp4wr"

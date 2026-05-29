@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://yxsxvgg5dxsk"]
+
+[ext_resource type="Script" uid="uid://bfx8rame10phb" path="res://scripts/estructura.gd" id="1_3c3yy"]
+[ext_resource type="Texture2D" uid="uid://d0n83cc4oxgab" path="res://assets/Estructuras/Garage.png" id="1_6bkwd"]
+[ext_resource type="PackedScene" uid="uid://dfc2rr8jptm0b" path="res://menues/tienda.tscn" id="2_fafd8"]
+[ext_resource type="Resource" uid="uid://bw6f8t5kovqr3" path="res://tiendas/garage.tres" id="2_h208w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24aao"]
+size = Vector2(872, 450)
+
+[node name="EstructuraGarage" type="Node2D" unique_id=352620566]
+script = ExtResource("1_3c3yy")
+pool = ExtResource("2_h208w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=218004417]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_6bkwd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1758041291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=281410270]
+position = Vector2(0, 96)
+shape = SubResource("RectangleShape2D_24aao")
+
+[node name="Tienda" parent="." unique_id=1890331605 instance=ExtResource("2_fafd8")]
+visible = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

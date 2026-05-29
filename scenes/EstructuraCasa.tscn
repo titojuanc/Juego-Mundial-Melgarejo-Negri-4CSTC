@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d2818b57crhhj"]
+
+[ext_resource type="Texture2D" uid="uid://1qwp1ae1sy1q" path="res://assets/Estructuras/House0-1.png(1).png" id="1_schtd"]
+
+[node name="Casa" type="Node2D" unique_id=1018440745]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1493837551]
+scale = Vector2(3, 3)
+texture = ExtResource("1_schtd")

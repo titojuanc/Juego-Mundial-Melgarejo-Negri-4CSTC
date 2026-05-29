@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemConsumible" format=3 uid="uid://8bwx255wuucw"]
+
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="1_t1fs7"]
+[ext_resource type="Script" uid="uid://vmt14clbp4wr" path="res://scripts/item_consumible.gd" id="1_xfkv7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phkv5"]
+atlas = ExtResource("1_t1fs7")
+region = Rect2(161.0465, 176.97507, 13.985306, 14.053848)
+
+[resource]
+script = ExtResource("1_xfkv7")
+tipo_efecto = 1
+valor = 2
+nombre = "Sanguche"
+icono = SubResource("AtlasTexture_phkv5")
+precio = 25
+metadata/_custom_type_script = "uid://vmt14clbp4wr"
