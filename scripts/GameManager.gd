@@ -10,6 +10,7 @@ signal turno_extra #esta medio que no es tan necesaria
 signal ejecutar_turno_ruta
 signal huir
 signal varado(motivo: String)   #motivo: "nafta" o "auto"
+signal varado_resuelto
 
 var turno_actual: Turno = Turno.PROPIO
 var ruta_actual: Resource

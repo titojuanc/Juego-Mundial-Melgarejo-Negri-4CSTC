@@ -2,7 +2,14 @@ class_name Ciudad
 extends Resource
 
 @export var nombre: String = ""
+
 @export var fondo: Texture2D = null
+@export var fondo1: Texture2D = null
+@export var fondo2: Texture2D = null
+@export var fondo3: Texture2D = null
+@export var fondo4: Texture2D = null
+@export var fondo5: Texture2D = null
+
 @export var pais: String = ""
 @export var descripcion: String = ""
 @export var ruta_siguiente: Resource

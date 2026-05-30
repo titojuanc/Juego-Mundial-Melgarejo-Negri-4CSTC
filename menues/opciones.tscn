@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c8weegc1lwtfe"]
+
+[ext_resource type="Script" uid="uid://dtd0787ma24i" path="res://scripts/opciones.gd" id="1_3wx4e"]
+[ext_resource type="Texture2D" uid="uid://bdjn4qjohhi51" path="res://assets/Fondos/forest/forest_sky.png" id="1_p7oge"]
+[ext_resource type="Texture2D" uid="uid://dq2trtfkayls" path="res://assets/Fondos/forest/forest_mountain.png" id="2_3wx4e"]
+[ext_resource type="Texture2D" uid="uid://ddpj2vjxld18b" path="res://assets/Fondos/forest/forest_back.png" id="3_l7o7b"]
+
+[node name="Opciones" type="Control" unique_id=2084479520]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3wx4e")
+
+[node name="Fondo" type="Control" parent="." unique_id=1004415849]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Parallax2D" type="Parallax2D" parent="Fondo" unique_id=666140280]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D" unique_id=2016346482]
+position = Vector2(960.49994, 489)
+scale = Vector2(1.0099999, 1)
+texture = ExtResource("1_p7oge")
+
+[node name="Parallax2D_" type="Parallax2D" parent="Fondo" unique_id=1201641155]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D_" unique_id=244274011]
+position = Vector2(1897, 912)
+texture = ExtResource("2_3wx4e")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Fondo" unique_id=104947062]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(25, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Parallax2D3" unique_id=918681728]
+position = Vector2(1900, 396)
+texture = ExtResource("3_l7o7b")
+
+[node name="Titulo" type="Label" parent="." unique_id=250308445]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 90.0
+offset_right = 248.0
+offset_bottom = 171.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Opciones"
+
+[node name="Volver" type="Button" parent="." unique_id=1190040522]
+layout_mode = 0
+offset_left = 1728.0
+offset_top = 970.0
+offset_right = 1898.0
+offset_bottom = 1054.0
+text = "VOLVER"
+
+[connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]

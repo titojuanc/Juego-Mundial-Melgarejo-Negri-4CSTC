@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bqm0rbgdv1age"]
 
 [ext_resource type="Texture2D" uid="uid://bdjn4qjohhi51" path="res://assets/Fondos/forest/forest_sky.png" id="1_e47kt"]
+[ext_resource type="Script" uid="uid://cswtvictk6big" path="res://scripts/main_menu.gd" id="1_y7ip6"]
 [ext_resource type="Texture2D" uid="uid://dq2trtfkayls" path="res://assets/Fondos/forest/forest_mountain.png" id="2_bqgr7"]
 [ext_resource type="Texture2D" uid="uid://ddpj2vjxld18b" path="res://assets/Fondos/forest/forest_back.png" id="3_1e0ll"]
-[ext_resource type="Script" uid="uid://cunnkpqfrtvo1" path="res://menues/JugarButton.gd" id="4_y7ip6"]
 
 [node name="MainMenu" type="Control" unique_id=768065045]
 layout_mode = 3
@@ -12,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y7ip6")
 
 [node name="Fondo" type="Control" parent="." unique_id=1205391279]
 anchors_preset = 0
@@ -45,46 +46,38 @@ texture = ExtResource("3_1e0ll")
 
 [node name="Titulo" type="Label" parent="." unique_id=100646653]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 145.0
-offset_right = 376.0
-offset_bottom = 286.0
+offset_left = 23.0
+offset_top = 90.0
+offset_right = 437.0
+offset_bottom = 171.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "PLACEHOLDER
-"
+text = "American Persier"
 
-[node name="Button" type="Button" parent="." unique_id=1196191634]
+[node name="Jugar" type="Button" parent="." unique_id=1196191634]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 580.0
 offset_right = 234.0
 offset_bottom = 664.0
 text = "JUGAR"
-script = ExtResource("4_y7ip6")
 
-[node name="Button4" type="Button" parent="." unique_id=395669591]
-layout_mode = 0
-offset_left = 65.0
-offset_top = 925.0
-offset_right = 235.0
-offset_bottom = 1009.0
-text = "JUGAR"
-
-[node name="Button3" type="Button" parent="." unique_id=1959145507]
-layout_mode = 0
-offset_left = 67.0
-offset_top = 799.0
-offset_right = 237.0
-offset_bottom = 883.0
-text = "JUGAR"
-
-[node name="Button2" type="Button" parent="." unique_id=379727649]
+[node name="Opciones" type="Button" parent="." unique_id=379727649]
 layout_mode = 0
 offset_left = 67.0
 offset_top = 688.0
 offset_right = 237.0
 offset_bottom = 772.0
-text = "JUGAR"
+text = "OPCIONES"
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="Salir" type="Button" parent="." unique_id=1959145507]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 799.0
+offset_right = 237.0
+offset_bottom = 883.0
+text = "SALIR"
+
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]

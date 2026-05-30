@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://b18380bxrvmok"]
+
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="1_8fog3"]
+[ext_resource type="Script" uid="uid://c83orae0ir8g5" path="res://scripts/item.gd" id="2_soppa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0dqd"]
+atlas = ExtResource("1_8fog3")
+region = Rect2(0.9794328, 417.0035, 14.024079, 14.022369)
+
+[resource]
+script = ExtResource("2_soppa")
+nombre = "Aceite"
+icono = SubResource("AtlasTexture_x0dqd")
+indicadores = [2, 2]
+usos_maximos = 3
+precio = 40
+metadata/_custom_type_script = "uid://c83orae0ir8g5"

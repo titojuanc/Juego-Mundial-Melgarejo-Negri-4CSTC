@@ -26,10 +26,11 @@ func reducir_energia(cantidad):
 func aumentar_energia(cantidad):
 	energia = min(energia + cantidad, MAX_ENERGIA)
 	emit_signal("energia_cambiada", energia)
+	_chequear_resolucion_varado()
 
 func chequear_energia():
 	if energia == 0:
-		print("auto detenido en banquina")
+		GameManager.emit_signal("varado", "energia")
 	if energia < MAX_ENERGIA * 0.5:
 		EstadoManager.aplicar_estado(Estado.Tipo.CANSANCIO)
 		EstadoManager.quitar_estado(Estado.Tipo.DESCANSADO)
@@ -48,21 +49,11 @@ func reducir_nafta(cantidad):
 func aumentar_nafta(cantidad):
 	nafta = min(nafta + cantidad, MAX_NAFTA)
 	emit_signal("nafta_cambiada", nafta)
+	_chequear_resolucion_varado()
 
 func chequear_nafta():
 	if nafta == 0:
-		#if not tiene_bidon():
 		GameManager.emit_signal("varado", "nafta")
-		#else: llamar alguien
-
-func tiene_bidon():
-	for slot in HotbarManager.slots:
-		if slot != null and slot.nombre == "Bidon": #Despues verificar que sea item bidon
-			return true
-	for slot in InventarioManager.slots:
-		if slot != null and slot.nombre == "Bidon":
-			return true
-	return false
 
 func reducir_auto(cantidad):
 	vida_auto = max(0, vida_auto - cantidad)
@@ -72,6 +63,7 @@ func reducir_auto(cantidad):
 func aumentar_auto(cantidad):
 	vida_auto = min(vida_auto + cantidad, MAX_AUTO)
 	emit_signal("auto_cambiado", vida_auto)
+	_chequear_resolucion_varado()
 
 func chequear_auto():
 	if vida_auto == 0:
@@ -91,3 +83,7 @@ func get_multiplicador_dificultad() -> float:
 	var porcentaje = float(energia) / float(MAX_ENERGIA)
 	# 100% energia = dificultad normal (1.0), 0% energia = dificultad máxima (2.0 por ejemplo)
 	return 2.0 - porcentaje
+
+func _chequear_resolucion_varado():
+	if nafta > 0 and vida_auto > 0 and energia > 0:
+		GameManager.emit_signal("varado_resuelto")

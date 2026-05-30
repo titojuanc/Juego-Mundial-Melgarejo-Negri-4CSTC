@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b1qda3fjlrud0"]
 
 [ext_resource type="Script" uid="uid://cml75eno3k35g" path="res://scripts/ciudad_manager.gd" id="1_xupto"]
+[ext_resource type="Texture2D" uid="uid://h0i2w00asc1l" path="res://assets/Fondos/road&border.png" id="2_oe04e"]
 [ext_resource type="PackedScene" uid="uid://ctp6c5ids34rm" path="res://scenes/auto.tscn" id="2_s3twk"]
 [ext_resource type="PackedScene" uid="uid://c64m30gfi5l2e" path="res://scenes/HUD.tscn" id="2_y1ry1"]
 [ext_resource type="PackedScene" uid="uid://vgsvj06505qw" path="res://scenes/inventario.tscn" id="3_314re"]
-[ext_resource type="PackedScene" uid="uid://sk34u7jera4u" path="res://scenes/ruta_1.tscn" id="3_piqg3"]
 [ext_resource type="PackedScene" uid="uid://dr7uu3mk1toit" path="res://scenes/Hotbar.tscn" id="4_oe04e"]
 [ext_resource type="PackedScene" uid="uid://dgw6os41an5k2" path="res://scenes/estados_hud.tscn" id="5_314re"]
 
@@ -16,59 +16,19 @@ script = ExtResource("1_xupto")
 
 [node name="Background" type="Control" parent="." unique_id=1422121221]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Buildings1" type="TextureRect" parent="Background" unique_id=346233323]
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=44808174]
+z_index = 10
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 4892.0
+offset_bottom = 1080.0
+texture = ExtResource("2_oe04e")
 stretch_mode = 1
-
-[node name="Buildings2" type="TextureRect" parent="Background" unique_id=1212753446]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-stretch_mode = 1
-
-[node name="Buildings3" type="TextureRect" parent="Background" unique_id=598813313]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-stretch_mode = 1
-
-[node name="Buildings4" type="TextureRect" parent="Background" unique_id=180622305]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-stretch_mode = 1
-
-[node name="Shade1" type="TextureRect" parent="Background" unique_id=2079705393]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-stretch_mode = 1
-
-[node name="Shade2" type="TextureRect" parent="Background" unique_id=1913988246]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-stretch_mode = 1
-
-[node name="Shade3" type="TextureRect" parent="Background" unique_id=231535445]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-stretch_mode = 1
-
-[node name="Sky" type="TextureRect" parent="Background" unique_id=1282604234]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-stretch_mode = 1
-
-[node name="Ruta_1" parent="." unique_id=1021237360 instance=ExtResource("3_piqg3")]
 
 [node name="Estructuras" type="Node2D" parent="." unique_id=479256874]
 

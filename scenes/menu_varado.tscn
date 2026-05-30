@@ -18,18 +18,19 @@ layout_mode = 0
 offset_left = 644.0
 offset_top = 192.0
 offset_right = 708.0
-offset_bottom = 252.0
+offset_bottom = 265.1
 scale = Vector2(10, 10)
 texture = ExtResource("1_omkkm")
 
 [node name="Label" type="Label" parent="Control" unique_id=1602170021]
 layout_mode = 0
-offset_left = 778.0
-offset_top = 239.0
+offset_left = 785.0
+offset_top = 255.0
 offset_right = 1142.0
-offset_bottom = 294.0
+offset_bottom = 310.0
 theme_override_font_sizes/font_size = 40
-text = "Quedaste varado..."
+text = "Quedaste varado."
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Control" unique_id=719719147]
 layout_mode = 0
@@ -57,6 +58,15 @@ offset_right = 1114.0
 offset_bottom = 718.0
 theme_override_font_sizes/font_size = 30
 text = "Abrir inventario"
+
+[node name="ButtonDormir" type="Button" parent="Control" unique_id=624452681]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 762.0
+offset_right = 1114.0
+offset_bottom = 837.0
+theme_override_font_sizes/font_size = 30
+text = "Dormir en el auto"
 
 [node name="Label2" type="Label" parent="Control" unique_id=1448896832]
 layout_mode = 0

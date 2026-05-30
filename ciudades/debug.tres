@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d3phvvw7c2dun" path="res://scenes/EstructuraEstacion.tscn" id="2_2aqxr"]
 [ext_resource type="PackedScene" uid="uid://c7bfes0kk7bg7" path="res://scenes/EstructuraTienda.tscn" id="4_03qjy"]
 [ext_resource type="Resource" uid="uid://n7rxwh5iqr16" path="res://rutas/ruta_1_alaska.tres" id="4_bupt6"]
-[ext_resource type="Resource" uid="uid://b5e4buhv61uu5" path="res://tiendas/tienda_debug.tres" id="5_2aqxr"]
+[ext_resource type="Resource" uid="uid://lx8jlld2oso3" path="res://tiendas/tienda.tres" id="8_jp3e5"]
 
 [resource]
 script = ExtResource("1_mcav7")
@@ -20,7 +20,7 @@ ciudad_siguiente = ExtResource("1_jp3e5")
 tiene_tienda = true
 tienda = ExtResource("4_03qjy")
 posicion_tienda = Vector2(4143, 210)
-tienda_pool = ExtResource("5_2aqxr")
+tienda_pool = ExtResource("8_jp3e5")
 tiene_gasolineria = true
 gasolineria = ExtResource("2_2aqxr")
 posicion_gasolineria = Vector2(1800, 190)

@@ -48,6 +48,7 @@ func on_varado(_motivo: String) -> void:
 	menu.elegir_rendirse.connect(func(): get_tree().change_scene_to_file("res://menues/main_menu.tscn"))
 	menu.elegir_inventario.connect(_on_varado_abrir_inventario)
 	menu.elegir_mecanico.connect(func(): menu.queue_free(); menu = null; terminar_ruta())
+	GameManager.varado_resuelto.connect(_on_varado_resuelto, CONNECT_ONE_SHOT)
 
 func on_terminar_evento() -> void:
 	instancia_encuentro.terminar()
@@ -107,3 +108,11 @@ func _on_varado_abrir_inventario() -> void:
 
 func _on_inventario_cerrado_desde_varado() -> void:
 	inventario.layer = 1  # restaurar capa original
+
+func _on_varado_resuelto() -> void:
+	if menu != null:
+		menu.queue_free()
+		menu = null
+	timer_ruta.paused = false
+	fondo.reanudar()
+	auto.mover()
