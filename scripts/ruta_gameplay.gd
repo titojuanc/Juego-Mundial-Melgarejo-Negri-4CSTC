@@ -1,7 +1,8 @@
 extends Node2D
 
 var encuentro = preload("res://scenes/Encuentro.tscn")
-var item_card_scene = preload("res://scenes/item_card.tscn") #Del test. Depsués borrar
+var menu_varado_scene = preload("res://scenes/menu_varado.tscn")
+var menu = null
 
 #Lo va a cargar la ciudad de donde viene
 var ruta = GameManager.ruta_actual
@@ -24,7 +25,8 @@ func _ready() -> void:
 	InventarioManager._restaurar_inventario($Inventario/Control)
 	GameManager.terminar_evento.connect(on_terminar_evento)
 	GameManager.empezar_evento.connect(on_empezar_evento)
-	#Test. después sacar.
+	GameManager.varado.connect(on_varado)
+	
 	#la ruta va a durar 20 segundos andando. Esto cambiaría según el auto o la distancia
 	var intervalo = timer_ruta.wait_time / ruta.cant_eventos
 	timer_eventos.one_shot = true
@@ -37,12 +39,27 @@ func _ready() -> void:
 	fondo.reanudar()
 	auto.mover()
 	
+func on_varado(_motivo: String) -> void:
+	timer_ruta.paused = true
+	fondo.parar()
+	auto.parar_anim_player()
+	menu = menu_varado_scene.instantiate()
+	add_child(menu)
+	menu.elegir_rendirse.connect(func(): get_tree().change_scene_to_file("res://menues/main_menu.tscn"))
+	menu.elegir_inventario.connect(_on_varado_abrir_inventario)
+	menu.elegir_mecanico.connect(func(): menu.queue_free(); menu = null; terminar_ruta())
+
 func on_terminar_evento() -> void:
-	timer_ruta.paused = false 
-	fondo.reanudar()
 	instancia_encuentro.terminar()
-	en_movimiento=true
 	inventario.cerrar_forzado()
+	
+	# Si quedó varado durante el evento, no reanudar la ruta
+	if menu != null:
+		return
+	
+	timer_ruta.paused = false
+	fondo.reanudar()
+	en_movimiento = true
 	auto.mover()
 	
 	if eventos_ocurridos < ruta.cant_eventos:
@@ -82,3 +99,11 @@ func terminar_ruta() -> void:
 	tween.tween_property(pantalla_transicion, "color:a", 1.0, 1.5)
 	#estuve buscando y la solución para esto era meter una lambda, pq sino era como que la llamaba en un callback o algo así  no sé estoy cansado :/
 	tween.tween_callback(func(): get_tree().change_scene_to_file("res://scenes/ciudad.tscn"))
+
+func _on_varado_abrir_inventario() -> void:
+	inventario.layer = menu.layer + 10  # por encima del menú y su overlay
+	inventario.abrir_desde_varado()
+	inventario.inventario_cerrado.connect(_on_inventario_cerrado_desde_varado, CONNECT_ONE_SHOT)
+
+func _on_inventario_cerrado_desde_varado() -> void:
+	inventario.layer = 1  # restaurar capa original

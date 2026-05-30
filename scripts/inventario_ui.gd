@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal inventario_cerrado
+
 var bloqueado: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -17,16 +19,22 @@ func _input(event: InputEvent) -> void:
 			return
 		if visible:
 			hide()
+			inventario_cerrado.emit()
 		else:
 			show() # visible = true
 
 func abrir_forzado() -> void:
 	bloqueado = true
 	show()
+
+func abrir_desde_varado() -> void:
+	bloqueado = false
+	show()
 	
 func cerrar_forzado() -> void:
 	bloqueado = false
 	hide()
+	inventario_cerrado.emit()
 	
 func bloquear_por_evento() -> void:
 	bloqueado = true

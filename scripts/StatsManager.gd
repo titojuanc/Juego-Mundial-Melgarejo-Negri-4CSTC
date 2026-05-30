@@ -51,8 +51,8 @@ func aumentar_nafta(cantidad):
 
 func chequear_nafta():
 	if nafta == 0:
-		if not tiene_bidon():
-			print("Game over")
+		#if not tiene_bidon():
+		GameManager.emit_signal("varado", "nafta")
 		#else: llamar alguien
 
 func tiene_bidon():
@@ -77,7 +77,7 @@ func chequear_auto():
 	if vida_auto == 0:
 		
 		#Costo mecanido exponencial por llamada - Futura logica
-		print("Auto destruido - Llamar mecanico")
+		GameManager.emit_signal("varado", "auto")
 
 func reducir_dinero(cantidad):
 	dinero = max(0, dinero - cantidad)

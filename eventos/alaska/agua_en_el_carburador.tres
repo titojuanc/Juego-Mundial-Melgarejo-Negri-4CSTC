@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Evento" format=3 uid="uid://lkel52agkyd3"]
+
+[ext_resource type="Script" uid="uid://cxspuao0kc7kw" path="res://scripts/evento_encuentro.gd" id="1_qo5mp"]
+
+[resource]
+script = ExtResource("1_qo5mp")
+nombre = "agua en el carburador"
+peligros = {
+"auto": 100.0,
+"dinero": 0.0,
+"energia": 0.0,
+"nafta": 0.0
+}
+minimos = {
+"auto": 8,
+"dinero": 0,
+"energia": 0,
+"nafta": 0
+}
+maximos = {
+"auto": 8.0,
+"dinero": 0.0,
+"energia": 0.0,
+"nafta": 0.0
+}
