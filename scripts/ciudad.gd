@@ -2,6 +2,8 @@ class_name Ciudad
 extends Resource
 
 @export var nombre: String = ""
+## Posición normalizada (0.0 a 1.0) sobre America.jpg para dibujar en el mapa
+@export var posicion_mapa: Vector2 = Vector2(0.5, 0.5)
 
 @export var fondo: Texture2D = null
 @export var fondo1: Texture2D = null

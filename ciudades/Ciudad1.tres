@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Ciudad" format=3 uid="uid://dqhki7hfhhhkt"]
 
 [ext_resource type="Script" uid="uid://iqklvos3lsea" path="res://scripts/ciudad.gd" id="1_lqbcr"]
-[ext_resource type="Resource" uid="uid://rwx1bydqiy56" path="res://ciudades/debug.tres" id="1_y8k3c"]
+[ext_resource type="Resource" uid="uid://cnur3v54enswc" path="res://ciudades/ciudad_2.tres" id="1_y8k3c"]
 [ext_resource type="PackedScene" uid="uid://6o6pmniyry5l" path="res://scenes/exit.tscn" id="2_c7pda"]
 [ext_resource type="Texture2D" uid="uid://csk3witk45dgg" path="res://assets/Fondos/ciudad1/0.png" id="3_rjpoy"]
 [ext_resource type="PackedScene" uid="uid://yxsxvgg5dxsk" path="res://scenes/EstructuraGarage.tscn" id="4_s351b"]
@@ -14,6 +14,7 @@
 [resource]
 script = ExtResource("1_lqbcr")
 nombre = "Ciudad1"
+posicion_mapa = Vector2(0.12, 0.1)
 fondo = ExtResource("3_rjpoy")
 pais = "EEUU"
 descripcion = "Alaska"

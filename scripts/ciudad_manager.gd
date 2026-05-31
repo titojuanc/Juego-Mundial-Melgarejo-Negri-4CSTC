@@ -30,7 +30,7 @@ func _ready():
 	
 	HotbarManager._restaurar_hotbar(hotbar_slots)
 	InventarioManager._restaurar_inventario(inventario_slots)
-	_restaurar_stats()
+	StatsManager._restaurar_stats()
 	_restaurar_estados()
 	
 func cargar_ciudad(ciudad: Ciudad):
@@ -79,12 +79,6 @@ func cargar_ciudad(ciudad: Ciudad):
 			rect.position = Vector2.ZERO
 			rect.stretch_mode = TextureRect.STRETCH_TILE
 			fondo.add_child(rect)
-	
-func _restaurar_stats():
-	StatsManager.emit_signal("energia_cambiada", StatsManager.energia)
-	StatsManager.emit_signal("nafta_cambiada", StatsManager.nafta)
-	StatsManager.emit_signal("auto_cambiado", StatsManager.vida_auto)
-	StatsManager.emit_signal("dinero_cambiado", StatsManager.dinero)
 	
 func _restaurar_estados():
 	EstadoManager.emit_signal("estados_cambiados")

@@ -14,6 +14,7 @@ signal varado_resuelto
 
 var turno_actual: Turno = Turno.PROPIO
 var ruta_actual: Resource
+var ciudad_actual: Ciudad = null
 var ciudad_siguiente: Ciudad
 
 var item_arrastrando: Item = null

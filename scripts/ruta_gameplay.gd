@@ -23,6 +23,7 @@ var eventos_ocurridos = 0
 func _ready() -> void:
 	HotbarManager._restaurar_hotbar($Hotbar/Control)
 	InventarioManager._restaurar_inventario($Inventario/Control)
+	StatsManager._restaurar_stats()
 	GameManager.terminar_evento.connect(on_terminar_evento)
 	GameManager.empezar_evento.connect(on_empezar_evento)
 	GameManager.varado.connect(on_varado)
@@ -40,18 +41,22 @@ func _ready() -> void:
 	auto.mover()
 	
 func on_varado(_motivo: String) -> void:
+	if menu != null:
+		return
 	timer_ruta.paused = true
 	fondo.parar()
 	auto.parar_anim_player()
 	menu = menu_varado_scene.instantiate()
 	add_child(menu)
+	#acá descubrimos que se podían hacer minifunciones para no alargar el código.
 	menu.elegir_rendirse.connect(func(): get_tree().change_scene_to_file("res://menues/main_menu.tscn"))
 	menu.elegir_inventario.connect(_on_varado_abrir_inventario)
-	menu.elegir_mecanico.connect(func(): menu.queue_free(); menu = null; terminar_ruta())
+	menu.elegir_mecanico.connect(func(): if is_instance_valid(menu): menu.queue_free(); menu = null; terminar_ruta())
 	GameManager.varado_resuelto.connect(_on_varado_resuelto, CONNECT_ONE_SHOT)
 
 func on_terminar_evento() -> void:
 	instancia_encuentro.terminar()
+	instancia_encuentro = null
 	inventario.cerrar_forzado()
 	
 	# Si quedó varado durante el evento, no reanudar la ruta
@@ -113,6 +118,10 @@ func _on_varado_resuelto() -> void:
 	if menu != null:
 		menu.queue_free()
 		menu = null
+	# Si el encuentro ya terminó y era el último, terminar la ruta
+	if instancia_encuentro == null and eventos_ocurridos >= ruta.cant_eventos:
+		terminar_ruta()
+		return
 	timer_ruta.paused = false
 	fondo.reanudar()
 	auto.mover()

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Ciudad" format=3 uid="uid://cnur3v54enswc"]
+
+[ext_resource type="Resource" uid="uid://stlqjr5j73ir" path="res://ciudades/ciudad_3.tres" id="1_lu50f"]
+[ext_resource type="PackedScene" uid="uid://6o6pmniyry5l" path="res://scenes/exit.tscn" id="2_i8jed"]
+[ext_resource type="Texture2D" uid="uid://cfeik4gakv4ew" path="res://posibles-assets/Mapa/City Landscape/Buildings 2.png" id="3_6usmb"]
+[ext_resource type="PackedScene" uid="uid://d3phvvw7c2dun" path="res://scenes/EstructuraEstacion.tscn" id="4_u218i"]
+[ext_resource type="Resource" uid="uid://euf3uvp8hext" path="res://rutas/ruta_2_alaska.tres" id="5_tog3b"]
+[ext_resource type="Script" uid="uid://iqklvos3lsea" path="res://scripts/ciudad.gd" id="6_kc11s"]
+[ext_resource type="PackedScene" uid="uid://c7bfes0kk7bg7" path="res://scenes/EstructuraTienda.tscn" id="7_pehr2"]
+[ext_resource type="Resource" uid="uid://b5e4buhv61uu5" path="res://tiendas/tienda_debug.tres" id="8_0u1ej"]
+
+[resource]
+script = ExtResource("6_kc11s")
+nombre = "ciudad 2"
+posicion_mapa = Vector2(0.14, 0.135)
+fondo = ExtResource("3_6usmb")
+pais = "Debug 2"
+descripcion = "Es una ciudad debug"
+ruta_siguiente = ExtResource("5_tog3b")
+ciudad_siguiente = ExtResource("1_lu50f")
+tiene_tienda = true
+tienda = ExtResource("7_pehr2")
+posicion_tienda = Vector2(4143, 210)
+tienda_pool = ExtResource("8_0u1ej")
+tiene_gasolineria = true
+gasolineria = ExtResource("4_u218i")
+posicion_gasolineria = Vector2(1800, 190)
+exit = ExtResource("2_i8jed")
+posicion_exit = Vector2(5000, 439)
+metadata/_custom_type_script = "uid://iqklvos3lsea"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ciudad" format=3 uid="uid://stlqjr5j73ir"]
+
+[ext_resource type="Resource" uid="uid://dyoq2xpw1ylsd" path="res://ciudades/ciudad_4.tres" id="1_ij1aq"]
+[ext_resource type="Script" uid="uid://iqklvos3lsea" path="res://scripts/ciudad.gd" id="1_up7jf"]
+[ext_resource type="PackedScene" uid="uid://6o6pmniyry5l" path="res://scenes/exit.tscn" id="2_mcdb1"]
+
+[resource]
+script = ExtResource("1_up7jf")
+posicion_mapa = Vector2(0.2, 0.2)
+ciudad_siguiente = ExtResource("1_ij1aq")
+exit = ExtResource("2_mcdb1")
+metadata/_custom_type_script = "uid://iqklvos3lsea"

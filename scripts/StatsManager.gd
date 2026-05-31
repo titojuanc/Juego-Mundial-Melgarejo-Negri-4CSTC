@@ -87,3 +87,9 @@ func get_multiplicador_dificultad() -> float:
 func _chequear_resolucion_varado():
 	if nafta > 0 and vida_auto > 0 and energia > 0:
 		GameManager.emit_signal("varado_resuelto")
+
+func _restaurar_stats():
+	StatsManager.emit_signal("energia_cambiada", StatsManager.energia)
+	StatsManager.emit_signal("nafta_cambiada", StatsManager.nafta)
+	StatsManager.emit_signal("auto_cambiado", StatsManager.vida_auto)
+	StatsManager.emit_signal("dinero_cambiado", StatsManager.dinero)

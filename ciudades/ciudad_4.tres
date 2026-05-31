@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ciudad" format=3 uid="uid://dyoq2xpw1ylsd"]
+
+[ext_resource type="PackedScene" uid="uid://6o6pmniyry5l" path="res://scenes/exit.tscn" id="1_qwlyf"]
+[ext_resource type="Script" uid="uid://iqklvos3lsea" path="res://scripts/ciudad.gd" id="1_ttr1e"]
+
+[resource]
+script = ExtResource("1_ttr1e")
+posicion_mapa = Vector2(0.3, 0.3)
+exit = ExtResource("1_qwlyf")
+metadata/_custom_type_script = "uid://iqklvos3lsea"
