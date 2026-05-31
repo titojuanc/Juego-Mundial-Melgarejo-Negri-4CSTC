@@ -31,24 +31,15 @@ const ZOOM_PASO := 0.1
 @onready var boton_partir: Button = $CanvasLayer/Control/VBoxContainer/Partir
 @onready var boton_volver: Button = $CanvasLayer/Control/VBoxContainer/Volver
 
-
 func _ready() -> void:
 	_recolectar_ciudades()
-	
-	# Configurar referencia para el nodo de dibujo
 	nodo_dibujo.mapa = self
-	
-	# Configurar label
 	if ciudades.size() >= 2:
 		label_destino.text = "Próxima parada: " + ciudades[1].nombre
 	else:
 		label_destino.text = ""
-	
-	# Conectar botones
 	boton_partir.pressed.connect(_al_partir)
 	boton_volver.pressed.connect(_al_volver)
-	
-	# Posicionar cámara
 	if ciudades.size() > 0:
 		camara.position = _pos(ciudades[0].posicion_mapa)
 	else:
@@ -57,9 +48,7 @@ func _ready() -> void:
 	
 	nodo_dibujo.queue_redraw()
 
-
 func _recolectar_ciudades() -> void:
-	# GameManager.ciudad_siguiente es la ciudad donde estás parado
 	var c: Ciudad = GameManager.ciudad_siguiente
 	if c == null:
 		return
@@ -67,10 +56,8 @@ func _recolectar_ciudades() -> void:
 		ciudades.append(c)
 		c = c.ciudad_siguiente
 
-
 func _pos(normalizada: Vector2) -> Vector2:
 	return normalizada * TAMANIO_MAPA
-
 
 func _input(evento: InputEvent) -> void:
 	if evento is InputEventMouseButton:
@@ -88,13 +75,11 @@ func _input(evento: InputEvent) -> void:
 		camara.position -= evento.relative * nivel_zoom
 		_limitar_camara()
 
-
 func _limitar_camara() -> void:
 	var tamanio_visible: Vector2 = Vector2(sub_viewport.size) * nivel_zoom
 	var mitad := tamanio_visible / 2.0
 	camara.position.x = clampf(camara.position.x, mitad.x, max(TAMANIO_MAPA.x - mitad.x, mitad.x))
 	camara.position.y = clampf(camara.position.y, mitad.y, max(TAMANIO_MAPA.y - mitad.y, mitad.y))
-
 
 func _al_partir() -> void:
 	GameManager.ciudad_actual = GameManager.ciudad_siguiente
@@ -102,7 +87,6 @@ func _al_partir() -> void:
 	GameManager.ciudad_siguiente = ciudad_a_cargar
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/ruta_gameplay.tscn")
-
 
 func _al_volver() -> void:
 	cerrado.emit()

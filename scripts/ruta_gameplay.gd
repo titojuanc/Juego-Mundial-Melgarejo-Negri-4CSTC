@@ -19,7 +19,6 @@ var en_movimiento= true
 var randomizador = RandomNumberGenerator.new()
 var eventos_ocurridos = 0
 
-
 func _ready() -> void:
 	HotbarManager._restaurar_hotbar($Hotbar/Control)
 	InventarioManager._restaurar_inventario($Inventario/Control)
