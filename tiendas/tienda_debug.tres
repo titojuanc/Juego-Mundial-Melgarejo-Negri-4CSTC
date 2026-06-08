@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TiendaPool" format=3 uid="uid://b5e4buhv61uu5"]
+
+[ext_resource type="Script" uid="uid://8t7gr1ub67il" path="res://scripts/tienda_entry.gd" id="1_dp0bj"]
+[ext_resource type="Resource" uid="uid://o1la8vfkepk8" path="res://items/manzana.tres" id="2_dp0bj"]
+[ext_resource type="Script" uid="uid://clwp4sf4wub5w" path="res://scripts/tienda_pool.gd" id="2_ei0tj"]
+[ext_resource type="Resource" uid="uid://r1jkhdfno5l" path="res://items/cinta.tres" id="3_yh60x"]
+
+[sub_resource type="Resource" id="Resource_dp0bj"]
+script = ExtResource("1_dp0bj")
+item = ExtResource("2_dp0bj")
+metadata/_custom_type_script = "uid://8t7gr1ub67il"
+
+[sub_resource type="Resource" id="Resource_yh60x"]
+script = ExtResource("1_dp0bj")
+item = ExtResource("3_yh60x")
+metadata/_custom_type_script = "uid://8t7gr1ub67il"
+
+[resource]
+script = ExtResource("2_ei0tj")
+entradas = Array[ExtResource("1_dp0bj")]([SubResource("Resource_dp0bj"), SubResource("Resource_yh60x")])
+min_items = 3
+metadata/_custom_type_script = "uid://clwp4sf4wub5w"

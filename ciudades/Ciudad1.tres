@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="Ciudad" format=3 uid="uid://dqhki7hfhhhkt"]
+
+[ext_resource type="Script" uid="uid://iqklvos3lsea" path="res://scripts/ciudad.gd" id="1_lqbcr"]
+[ext_resource type="Resource" uid="uid://cnur3v54enswc" path="res://ciudades/ciudad_2.tres" id="1_y8k3c"]
+[ext_resource type="PackedScene" uid="uid://6o6pmniyry5l" path="res://scenes/exit.tscn" id="2_c7pda"]
+[ext_resource type="Texture2D" uid="uid://csk3witk45dgg" path="res://assets/Fondos/ciudad1/0.png" id="3_rjpoy"]
+[ext_resource type="PackedScene" uid="uid://yxsxvgg5dxsk" path="res://scenes/EstructuraGarage.tscn" id="4_s351b"]
+[ext_resource type="PackedScene" uid="uid://d3phvvw7c2dun" path="res://scenes/EstructuraEstacion.tscn" id="5_ym142"]
+[ext_resource type="PackedScene" uid="uid://dblefkkpa02or" path="res://scenes/EstructuraHotel.tscn" id="6_woqef"]
+[ext_resource type="Resource" uid="uid://euf3uvp8hext" path="res://rutas/ruta_2_alaska.tres" id="7_4qwev"]
+[ext_resource type="PackedScene" uid="uid://c7bfes0kk7bg7" path="res://scenes/EstructuraTienda.tscn" id="9_35wrn"]
+[ext_resource type="Resource" uid="uid://lx8jlld2oso3" path="res://tiendas/tienda.tres" id="10_prij0"]
+
+[resource]
+script = ExtResource("1_lqbcr")
+nombre = "Ciudad1"
+posicion_mapa = Vector2(0.12, 0.1)
+fondo = ExtResource("3_rjpoy")
+pais = "EEUU"
+descripcion = "Alaska"
+ruta_siguiente = ExtResource("7_4qwev")
+ciudad_siguiente = ExtResource("1_y8k3c")
+tiene_tienda = true
+tienda = ExtResource("9_35wrn")
+posicion_tienda = Vector2(500, 210)
+tienda_pool = ExtResource("10_prij0")
+tiene_garage = true
+garage = ExtResource("4_s351b")
+posicion_garage = Vector2(1600, 399)
+tiene_gasolineria = true
+gasolineria = ExtResource("5_ym142")
+posicion_gasolineria = Vector2(3200, 190)
+tiene_hotel = true
+hotel = ExtResource("6_woqef")
+posicion_hotel = Vector2(5600, 272)
+exit = ExtResource("2_c7pda")
+posicion_exit = Vector2(6800, 439)
+metadata/_custom_type_script = "uid://iqklvos3lsea"

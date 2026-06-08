@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemConsumible" format=3 uid="uid://dt3w3qrjkch40"]
+
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="1_timpe"]
+[ext_resource type="Script" uid="uid://vmt14clbp4wr" path="res://scripts/item_consumible.gd" id="1_udcfp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ein10"]
+atlas = ExtResource("1_timpe")
+region = Rect2(17.982002, 176.93518, 12.056154, 14.083038)
+
+[resource]
+script = ExtResource("1_udcfp")
+tipo_efecto = 1
+nombre = "Helado"
+icono = SubResource("AtlasTexture_ein10")
+precio = 15
+metadata/_custom_type_script = "uid://vmt14clbp4wr"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Peligro" format=3 uid="uid://by4gcr3pgt3mp"]
+
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="1_2psig"]
+[ext_resource type="Script" uid="uid://01asixolwx2d" path="res://scripts/peligro.gd" id="2_ow0gn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_317w2"]
+atlas = ExtResource("1_2psig")
+region = Rect2(528.624, 400.607, 14.589, 14.713)
+
+[resource]
+script = ExtResource("2_ow0gn")
+nombre = "Mecanico"
+icono = SubResource("AtlasTexture_317w2")
+tipo = 1

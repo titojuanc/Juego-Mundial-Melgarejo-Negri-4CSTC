@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="TiendaPool" format=3 uid="uid://lx8jlld2oso3"]
+
+[ext_resource type="Script" uid="uid://8t7gr1ub67il" path="res://scripts/tienda_entry.gd" id="1_a74uf"]
+[ext_resource type="Script" uid="uid://clwp4sf4wub5w" path="res://scripts/tienda_pool.gd" id="2_4larg"]
+[ext_resource type="Resource" uid="uid://dt3w3qrjkch40" path="res://items/consumibles/helado.tres" id="2_kf7h3"]
+[ext_resource type="Resource" uid="uid://8bwx255wuucw" path="res://items/consumibles/sanguche.tres" id="4_ahvsq"]
+[ext_resource type="Resource" uid="uid://brydnioay0jdo" path="res://items/cigarrillo.tres" id="5_j88y3"]
+[ext_resource type="Resource" uid="uid://r1jkhdfno5l" path="res://items/cinta.tres" id="6_ryuxh"]
+[ext_resource type="Resource" uid="uid://o1la8vfkepk8" path="res://items/manzana.tres" id="7_3e7xn"]
+[ext_resource type="Resource" uid="uid://b18380bxrvmok" path="res://items/aceite.tres" id="8_lndsr"]
+
+[sub_resource type="Resource" id="Resource_qldyb"]
+script = ExtResource("1_a74uf")
+item = ExtResource("2_kf7h3")
+peso = 4
+metadata/_custom_type_script = "uid://8t7gr1ub67il"
+
+[sub_resource type="Resource" id="Resource_gfdus"]
+script = ExtResource("1_a74uf")
+item = ExtResource("4_ahvsq")
+peso = 2
+metadata/_custom_type_script = "uid://8t7gr1ub67il"
+
+[sub_resource type="Resource" id="Resource_5xmgh"]
+script = ExtResource("1_a74uf")
+item = ExtResource("5_j88y3")
+metadata/_custom_type_script = "uid://8t7gr1ub67il"
+
+[sub_resource type="Resource" id="Resource_sm5bv"]
+script = ExtResource("1_a74uf")
+item = ExtResource("6_ryuxh")
+peso = 2
+metadata/_custom_type_script = "uid://8t7gr1ub67il"
+
+[sub_resource type="Resource" id="Resource_7a80p"]
+script = ExtResource("1_a74uf")
+item = ExtResource("7_3e7xn")
+metadata/_custom_type_script = "uid://8t7gr1ub67il"
+
+[sub_resource type="Resource" id="Resource_8o1gx"]
+script = ExtResource("1_a74uf")
+item = ExtResource("8_lndsr")
+metadata/_custom_type_script = "uid://8t7gr1ub67il"
+
+[resource]
+script = ExtResource("2_4larg")
+entradas = Array[ExtResource("1_a74uf")]([SubResource("Resource_qldyb"), SubResource("Resource_gfdus"), SubResource("Resource_5xmgh"), SubResource("Resource_sm5bv"), SubResource("Resource_7a80p"), SubResource("Resource_8o1gx")])
+min_items = 5
+max_items = 14
+metadata/_custom_type_script = "uid://clwp4sf4wub5w"

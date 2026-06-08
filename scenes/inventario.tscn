@@ -1,0 +1,263 @@
+[gd_scene format=3 uid="uid://vgsvj06505qw"]
+
+[ext_resource type="Script" uid="uid://begsttduvlu83" path="res://scripts/inventario_ui.gd" id="1_q836x"]
+[ext_resource type="Texture2D" uid="uid://b524mx0y70ouv" path="res://assets/Inventario/inventoryOnly.png" id="2_hswsb"]
+[ext_resource type="Script" uid="uid://dav5ymg72pggr" path="res://scripts/slot_inventario.gd" id="3_mu20r"]
+
+[node name="Inventario" type="CanvasLayer" unique_id=1702106210 groups=["Inventario"]]
+script = ExtResource("1_q836x")
+
+[node name="Control" type="Control" parent="." unique_id=1393897798]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 852.0
+offset_bottom = 702.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=285843596]
+layout_mode = 0
+offset_right = 387.0
+offset_bottom = 319.0
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_hswsb")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Slot1" type="PanelContainer" parent="Control" unique_id=1913941977]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 42.0
+offset_right = 156.0
+offset_bottom = 156.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot2" type="PanelContainer" parent="Control" unique_id=1260928586]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 42.0
+offset_right = 288.0
+offset_bottom = 156.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot3" type="PanelContainer" parent="Control" unique_id=674067501]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 42.0
+offset_right = 420.0
+offset_bottom = 156.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot4" type="PanelContainer" parent="Control" unique_id=1399273391]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 42.0
+offset_right = 552.0
+offset_bottom = 156.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot5" type="PanelContainer" parent="Control" unique_id=111794099]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 42.0
+offset_right = 684.0
+offset_bottom = 156.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot6" type="PanelContainer" parent="Control" unique_id=1943472872]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 42.0
+offset_right = 814.0
+offset_bottom = 156.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot7" type="PanelContainer" parent="Control" unique_id=935583507]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 170.0
+offset_right = 156.0
+offset_bottom = 284.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot8" type="PanelContainer" parent="Control" unique_id=978363941]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 170.0
+offset_right = 288.0
+offset_bottom = 284.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot9" type="PanelContainer" parent="Control" unique_id=1637029127]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 170.0
+offset_right = 420.0
+offset_bottom = 284.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot10" type="PanelContainer" parent="Control" unique_id=1009124825]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 170.0
+offset_right = 552.0
+offset_bottom = 284.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot11" type="PanelContainer" parent="Control" unique_id=1131778917]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 170.0
+offset_right = 684.0
+offset_bottom = 284.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot12" type="PanelContainer" parent="Control" unique_id=880038127]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 170.0
+offset_right = 814.0
+offset_bottom = 284.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot13" type="PanelContainer" parent="Control" unique_id=195353625]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 298.0
+offset_right = 156.0
+offset_bottom = 412.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot14" type="PanelContainer" parent="Control" unique_id=2040727170]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 298.0
+offset_right = 288.0
+offset_bottom = 412.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot15" type="PanelContainer" parent="Control" unique_id=1226457326]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 298.0
+offset_right = 420.0
+offset_bottom = 412.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot16" type="PanelContainer" parent="Control" unique_id=942969847]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 298.0
+offset_right = 552.0
+offset_bottom = 412.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot17" type="PanelContainer" parent="Control" unique_id=844552912]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 298.0
+offset_right = 684.0
+offset_bottom = 412.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot18" type="PanelContainer" parent="Control" unique_id=261200339]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 298.0
+offset_right = 814.0
+offset_bottom = 412.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot19" type="PanelContainer" parent="Control" unique_id=863780841]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 426.0
+offset_right = 156.0
+offset_bottom = 540.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot20" type="PanelContainer" parent="Control" unique_id=1082016255]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 426.0
+offset_right = 288.0
+offset_bottom = 540.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot21" type="PanelContainer" parent="Control" unique_id=1682864500]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 426.0
+offset_right = 420.0
+offset_bottom = 540.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot22" type="PanelContainer" parent="Control" unique_id=1667547053]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 426.0
+offset_right = 552.0
+offset_bottom = 540.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot23" type="PanelContainer" parent="Control" unique_id=1303681983]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 426.0
+offset_right = 684.0
+offset_bottom = 540.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot24" type="PanelContainer" parent="Control" unique_id=1391322023]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 426.0
+offset_right = 814.0
+offset_bottom = 540.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot25" type="PanelContainer" parent="Control" unique_id=235485484]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 554.0
+offset_right = 156.0
+offset_bottom = 668.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot26" type="PanelContainer" parent="Control" unique_id=167249318]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 554.0
+offset_right = 288.0
+offset_bottom = 668.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot27" type="PanelContainer" parent="Control" unique_id=1923091156]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 554.0
+offset_right = 420.0
+offset_bottom = 668.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot28" type="PanelContainer" parent="Control" unique_id=1886305906]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 554.0
+offset_right = 552.0
+offset_bottom = 668.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot29" type="PanelContainer" parent="Control" unique_id=491740062]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 554.0
+offset_right = 684.0
+offset_bottom = 668.0
+script = ExtResource("3_mu20r")
+
+[node name="Slot30" type="PanelContainer" parent="Control" unique_id=1990990752]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 554.0
+offset_right = 814.0
+offset_bottom = 668.0
+script = ExtResource("3_mu20r")

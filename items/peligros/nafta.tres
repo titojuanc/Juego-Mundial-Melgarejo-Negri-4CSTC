@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Peligro" format=3 uid="uid://bewsice7ymvq3"]
+
+[ext_resource type="Texture2D" uid="uid://byr4pdacd8px" path="res://assets/Items/items_sheet.png" id="1_axoy0"]
+[ext_resource type="Script" uid="uid://01asixolwx2d" path="res://scripts/peligro.gd" id="1_peligro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd7wp"]
+atlas = ExtResource("1_axoy0")
+region = Rect2(64.73, 416.69, 14.335, 14.713)
+
+[resource]
+script = ExtResource("1_peligro")
+nombre = "Nafta"
+icono = SubResource("AtlasTexture_gd7wp")
+tipo = 2

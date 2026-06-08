@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ruta" format=3 uid="uid://euf3uvp8hext"]
+
+[ext_resource type="Resource" uid="uid://7d8o42xbme6w" path="res://eventos/alaska/estres.tres" id="1_erueb"]
+[ext_resource type="Resource" uid="uid://cqh4hne3023le" path="res://eventos/alaska/rueda_pinchada.tres" id="2_rfd1t"]
+[ext_resource type="Resource" uid="uid://wbuovsmfbf4w" path="res://eventos/alaska/peaje.tres" id="3_cukjw"]
+[ext_resource type="Script" uid="uid://b23j8ck76kec1" path="res://scripts/ruta.gd" id="4_8v5ou"]
+
+[resource]
+script = ExtResource("4_8v5ou")
+encuentros = Array[Resource]([ExtResource("1_erueb"), ExtResource("2_rfd1t")])
+encuentros_cansado = Array[Resource]([ExtResource("3_cukjw")])
+cant_eventos = 3

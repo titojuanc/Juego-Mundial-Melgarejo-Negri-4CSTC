@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://cem3bdpiokhig"]
+
+[ext_resource type="Script" uid="uid://b8l1c7ne4hss6" path="res://scripts/hotbar_encuentro.gd" id="1_8fyki"]
+[ext_resource type="Texture2D" uid="uid://bahe3qlp7y6un" path="res://assets/Inventario/Sample-InventorySlotsSet.png" id="2_2erd5"]
+[ext_resource type="Script" uid="uid://br0gqqehb83q7" path="res://scripts/slot_encuentro.gd" id="3_8fyki"]
+
+[node name="Hotbar_Encuentro" type="CanvasLayer" unique_id=2060931644]
+script = ExtResource("1_8fyki")
+
+[node name="Control" type="Control" parent="." unique_id=664930822]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 560.0
+offset_top = 908.0
+offset_right = 1359.0
+offset_bottom = 1029.0
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1477252612]
+position = Vector2(606.5, 60.5)
+scale = Vector2(5.3466673, 4.9583344)
+texture = ExtResource("2_2erd5")
+region_enabled = true
+region_rect = Rect2(31.023838, 78.71241, 72.228775, 24.49208)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control" unique_id=372916532]
+position = Vector2(206.6535, 60.751953)
+scale = Vector2(5.7562385, 4.937331)
+texture = ExtResource("2_2erd5")
+region_enabled = true
+region_rect = Rect2(27.642418, 78.647514, 71.8515, 24.556976)
+
+[node name="Slot1" type="PanelContainer" parent="Control" unique_id=279240254]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.45
+anchor_bottom = 1.5250001
+offset_left = 37.0
+offset_top = 24.0
+offset_right = -1046.55
+offset_bottom = -85.52501
+mouse_filter = 1
+script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot2" type="PanelContainer" parent="Control" unique_id=110414462]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.5
+anchor_right = 0.388
+anchor_bottom = 0.5
+offset_left = -176.01202
+offset_top = -36.5
+offset_right = -101.012024
+offset_bottom = 38.5
+mouse_filter = 1
+script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot3" type="PanelContainer" parent="Control" unique_id=115165531]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.60700005
+anchor_top = 0.5
+anchor_right = 0.60700005
+anchor_bottom = 0.5
+offset_left = -251.99304
+offset_top = -36.5
+offset_right = -176.99304
+offset_bottom = 38.5
+mouse_filter = 1
+script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot4" type="PanelContainer" parent="Control" unique_id=964588090]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85200006
+anchor_top = 0.5
+anchor_right = 0.85200006
+anchor_bottom = 0.5
+offset_left = -350.74805
+offset_top = -36.5
+offset_right = -275.74805
+offset_bottom = 38.5
+mouse_filter = 1
+script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot5" type="PanelContainer" parent="Control" unique_id=629168214]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.45
+anchor_bottom = 1.5250001
+offset_left = 425.0
+offset_top = 24.0
+offset_right = -658.55005
+offset_bottom = -85.52501
+mouse_filter = 1
+script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot6" type="PanelContainer" parent="Control" unique_id=1958923429]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.5
+anchor_right = 0.388
+anchor_bottom = 0.5
+offset_left = 204.98798
+offset_top = -36.5
+offset_right = 279.98798
+offset_bottom = 38.5
+mouse_filter = 1
+script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot7" type="PanelContainer" parent="Control" unique_id=1612857732]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.60700005
+anchor_top = 0.5
+anchor_right = 0.60700005
+anchor_bottom = 0.5
+offset_left = 122.00696
+offset_top = -36.5
+offset_right = 197.00696
+offset_bottom = 38.5
+mouse_filter = 1
+script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot8" type="PanelContainer" parent="Control" unique_id=1708898247]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.85200006
+anchor_top = 0.5
+anchor_right = 0.85200006
+anchor_bottom = 0.5
+offset_left = 17.251953
+offset_top = -36.5
+offset_right = 92.25195
+offset_bottom = 38.5
+mouse_filter = 1
+script = ExtResource("3_8fyki")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=434838673]
+offset_left = 1369.0
+offset_top = 929.0
+offset_right = 1474.0
+offset_bottom = 1015.0
+text = "HUIR"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

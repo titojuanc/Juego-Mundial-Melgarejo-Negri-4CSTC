@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://d0krflh2qifp3"]
+
+[ext_resource type="Script" uid="uid://c8dk2uwvnjgip" path="res://scripts/item_card.gd" id="1_ce1kl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce1kl"]
+bg_color = Color(0, 0, 0, 0.5882353)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+
+[node name="ItemCard" type="PanelContainer" unique_id=68152229]
+z_index = 1
+custom_minimum_size = Vector2(55, 55)
+offset_right = 75.0
+offset_bottom = 75.0
+mouse_filter = 1
+script = ExtResource("1_ce1kl")
+
+[node name="Control" type="VBoxContainer" parent="." unique_id=229762191]
+layout_mode = 2
+
+[node name="Icono" type="TextureRect" parent="Control" unique_id=279266791]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Indicadores" type="HBoxContainer" parent="Control" unique_id=1056070333]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Slot1" type="TextureRect" parent="Control/Indicadores" unique_id=1914787448]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Slot2" type="TextureRect" parent="Control/Indicadores" unique_id=420767865]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Slot3" type="TextureRect" parent="Control/Indicadores" unique_id=1672462881]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Slot4" type="TextureRect" parent="Control/Indicadores" unique_id=701204198]
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="LabelControl" type="Control" parent="." unique_id=105836089]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="LabelControl" unique_id=1978819023]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ce1kl")
+
+[node name="Labels" type="HBoxContainer" parent="LabelControl" unique_id=978507483]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = -23.0
+grow_horizontal = 2
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="UsosLabel" type="Label" parent="LabelControl/Labels" unique_id=989824151]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Espaciador" type="Control" parent="LabelControl/Labels" unique_id=1862028628]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0

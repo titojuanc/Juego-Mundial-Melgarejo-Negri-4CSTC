@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://daho8rj50hss4"]
+
+[ext_resource type="Script" uid="uid://eixlmo5xecc6" path="res://scripts/encuentro.gd" id="1_xiebq"]
+
+[node name="Encuentro" type="Node2D" unique_id=438315190]
+script = ExtResource("1_xiebq")
+
+[node name="Label" type="Label" parent="." unique_id=1540254990]
+offset_right = 499.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 60
+text = "hola soy un encuentro"

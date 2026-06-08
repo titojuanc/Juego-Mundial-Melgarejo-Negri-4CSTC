@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bl1cgh0jl4ufw"]
+
+[ext_resource type="Script" uid="uid://dex4rn13xu8ne" path="res://scripts/debug.gd" id="1_4pmxj"]
+[ext_resource type="PackedScene" uid="uid://dr7uu3mk1toit" path="res://scenes/Hotbar.tscn" id="2_4pmxj"]
+[ext_resource type="PackedScene" uid="uid://vgsvj06505qw" path="res://scenes/inventario.tscn" id="3_3vd64"]
+[ext_resource type="PackedScene" uid="uid://c64m30gfi5l2e" path="res://scenes/HUD.tscn" id="4_hqhvd"]
+[ext_resource type="PackedScene" uid="uid://cem3bdpiokhig" path="res://scenes/Hotbar_encuentro.tscn" id="5_kayp2"]
+[ext_resource type="PackedScene" uid="uid://dfc2rr8jptm0b" path="res://menues/tienda.tscn" id="6_j2wbo"]
+[ext_resource type="PackedScene" uid="uid://dgw6os41an5k2" path="res://scenes/estados_hud.tscn" id="7_t48sv"]
+[ext_resource type="PackedScene" uid="uid://ctp6c5ids34rm" path="res://scenes/auto.tscn" id="8_svo7y"]
+[ext_resource type="PackedScene" uid="uid://d3phvvw7c2dun" path="res://scenes/EstructuraEstacion.tscn" id="9_5ph7u"]
+[ext_resource type="PackedScene" uid="uid://c7bfes0kk7bg7" path="res://scenes/EstructuraTienda.tscn" id="10_o7ao6"]
+[ext_resource type="PackedScene" uid="uid://6o6pmniyry5l" path="res://scenes/exit.tscn" id="11_naxnx"]
+[ext_resource type="PackedScene" uid="uid://d2818b57crhhj" path="res://scenes/EstructuraCasa.tscn" id="12_05sef"]
+[ext_resource type="PackedScene" uid="uid://yxsxvgg5dxsk" path="res://scenes/EstructuraGarage.tscn" id="13_vf3rk"]
+[ext_resource type="PackedScene" uid="uid://dblefkkpa02or" path="res://scenes/EstructuraHotel.tscn" id="14_oydge"]
+
+[node name="Debug" type="Node2D" unique_id=325662370]
+script = ExtResource("1_4pmxj")
+
+[node name="HotbarEncuentro" parent="." unique_id=2060931644 instance=ExtResource("5_kayp2")]
+
+[node name="Hotbar" parent="." unique_id=1073938056 instance=ExtResource("2_4pmxj")]
+
+[node name="Inventario" parent="." unique_id=1702106210 instance=ExtResource("3_3vd64")]
+visible = false
+
+[node name="HUD" parent="." unique_id=1799149189 instance=ExtResource("4_hqhvd")]
+
+[node name="Tienda" parent="." unique_id=1890331605 instance=ExtResource("6_j2wbo")]
+visible = false
+
+[node name="EstadosHUD" parent="." unique_id=1557752554 instance=ExtResource("7_t48sv")]
+
+[node name="Auto" parent="." unique_id=651395351 instance=ExtResource("8_svo7y")]
+position = Vector2(349, 630)
+
+[node name="Estacion" parent="." unique_id=1290168128 instance=ExtResource("9_5ph7u")]
+position = Vector2(1826, 190)
+pool = null
+
+[node name="Tienda2" parent="." unique_id=661550392 instance=ExtResource("10_o7ao6")]
+position = Vector2(3327, 210)
+
+[node name="Exit" parent="." unique_id=1294964650 instance=ExtResource("11_naxnx")]
+position = Vector2(3920, 439)
+
+[node name="Casa" parent="." unique_id=1018440745 instance=ExtResource("12_05sef")]
+position = Vector2(4383, 336)
+
+[node name="EstructuraGarage" parent="." unique_id=352620566 instance=ExtResource("13_vf3rk")]
+position = Vector2(5066, 399)
+pool = null
+
+[node name="EstructuraHotel" parent="." unique_id=1354685703 instance=ExtResource("14_oydge")]
+position = Vector2(5956, 272)

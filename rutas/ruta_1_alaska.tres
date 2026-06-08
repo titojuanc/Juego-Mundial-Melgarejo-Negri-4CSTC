@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ruta" format=3 uid="uid://n7rxwh5iqr16"]
+
+[ext_resource type="Script" uid="uid://b23j8ck76kec1" path="res://scripts/ruta.gd" id="1_i6brh"]
+[ext_resource type="Resource" uid="uid://lkel52agkyd3" path="res://eventos/alaska/agua_en_el_carburador.tres" id="2_6gtnl"]
+[ext_resource type="Resource" uid="uid://7d8o42xbme6w" path="res://eventos/alaska/estres.tres" id="2_q2nov"]
+
+[resource]
+script = ExtResource("1_i6brh")
+encuentros = Array[Resource]([ExtResource("2_q2nov"), ExtResource("2_6gtnl")])
+encuentros_cansado = Array[Resource]([ExtResource("2_6gtnl")])
+cant_eventos = 3

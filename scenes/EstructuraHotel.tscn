@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dblefkkpa02or"]
+
+[ext_resource type="Script" uid="uid://cglgncn7y6ig6" path="res://scripts/estructura_hotel.gd" id="1_n6gaf"]
+[ext_resource type="Texture2D" uid="uid://du3rvyulowhhx" path="res://assets/Estructuras/Tavern-1.png(1).png" id="2_7cp2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rats4"]
+size = Vector2(851, 515)
+
+[node name="EstructuraHotel" type="Node2D" unique_id=1354685703]
+script = ExtResource("1_n6gaf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=504674182]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_7cp2l")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1994017061]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=93183415]
+position = Vector2(-22.5, 190.5)
+shape = SubResource("RectangleShape2D_rats4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1279744177]
+layer = 100
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2065359321]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://6o6pmniyry5l"]
+
+[ext_resource type="Texture2D" uid="uid://dd6ryr0wlm2ia" path="res://assets/Estructuras/Exit.png" id="1_l0aq0"]
+[ext_resource type="Script" uid="uid://byg3us01h0bc0" path="res://scripts/Salida.gd" id="1_uyw7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0aq0"]
+size = Vector2(282, 561)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyw7u"]
+size = Vector2(123, 390.5)
+
+[node name="Exit" type="Node2D" unique_id=1294964650]
+script = ExtResource("1_uyw7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1829993013]
+scale = Vector2(2, 2)
+texture = ExtResource("1_l0aq0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1859430911]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1149570776]
+position = Vector2(-73, 0.5)
+shape = SubResource("RectangleShape2D_l0aq0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1725981769]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1026368648]
+position = Vector2(130.5, 85.75)
+shape = SubResource("RectangleShape2D_uyw7u")
+
+[node name="Label" type="Label" parent="." unique_id=1926909301]
+offset_left = -137.0
+offset_top = -262.0
+offset_right = 68.0
+offset_bottom = -125.0
+theme_override_font_sizes/font_size = 100
+text = "EXIT"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
